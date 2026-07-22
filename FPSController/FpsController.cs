@@ -15,6 +15,14 @@ public partial class FpsController : CharacterBody3D
 	[ExportGroup("Movement Speed")]
 	[Export] public float WalkSpeed { get; set; } = 7.0f;
 	[Export] public float SprintSpeed { get; set; } = 11f;
+	[Export] public float GroundAcceleration { get; set; } = 14.0f;
+	[Export] public float GroundDeceleration { get; set; } = 10.0f;
+	[Export] public float GroundFriction { get; set; } = 6.0f;
+
+	[ExportGroup("Air Movement")]
+	[Export] public float AirCap = 0.85f;
+	[Export] public float AirAcceleration = 800.0f;
+	[Export] public float AirMoveSpeed = 500.0f;
 
 	Vector2 CurrentControllerLook;
 
@@ -120,16 +128,47 @@ public partial class FpsController : CharacterBody3D
 		Vector3 currentVelocity = Velocity;
 		currentVelocity.Y -= _gravity * (float)delta;
 		Velocity = currentVelocity;
+
+		var currentSpeedInWishDir = currentVelocity.Dot(_wishDir);
+		var cappedSpeed = Mathf.Min((AirMoveSpeed * _wishDir).Length(), AirCap);
+		var addSpeedTillCap = cappedSpeed - currentSpeedInWishDir;
+
+		if (addSpeedTillCap > 0)
+		{
+			var accelerationSpeed = AirAcceleration * AirMoveSpeed * (float)delta;
+			accelerationSpeed = Mathf.Min(accelerationSpeed, addSpeedTillCap);
+			currentVelocity += accelerationSpeed * _wishDir;
+			Velocity = currentVelocity;
+		}
 	}
 
 	public void _HandleGroundPhysics(double delta) 
 	{
-		float speed = _GetMoveSpeed();
-
 		Vector3 currentVelocity = Velocity;
+		float currentSpeed = currentVelocity.Length();
 
-		currentVelocity.X = _wishDir.X * speed;
-		currentVelocity.Z = _wishDir.Z * speed;
+		if (currentSpeed > 0.0f)
+		{
+			float control = Mathf.Max(currentSpeed, GroundDeceleration);
+			float drop = control * GroundFriction * (float)delta;
+			float newSpeed = Mathf.Max(currentSpeed - drop, 0.0f) / currentSpeed;
+
+			currentVelocity *= newSpeed;
+		}
+
+		if (_wishDir.LengthSquared() > 0.001f)
+		{
+			float maxSpeed = _GetMoveSpeed();
+			float currentSpeedInWishDir = currentVelocity.Dot(_wishDir);
+			float addSpeedTillCap = maxSpeed - currentSpeedInWishDir;
+
+			if (addSpeedTillCap > 0.0f)
+			{
+				float accelSpeed = GroundAcceleration * maxSpeed * (float)delta;
+				accelSpeed = Mathf.Min(accelSpeed, addSpeedTillCap);
+				currentVelocity += accelSpeed * _wishDir;
+			}
+		}
 
 		Velocity = currentVelocity;
 
