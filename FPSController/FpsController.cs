@@ -92,6 +92,12 @@ public partial class FpsController : CharacterBody3D
 		Vector2 targetLook = Input.GetVector("look_left", "look_right", "look_down", "look_up").Normalized();
 		CurrentControllerLook = targetLook;
 
+		if (targetLook.Length() < CurrentControllerLook.Length())
+			CurrentControllerLook = targetLook;
+		else
+			CurrentControllerLook = CurrentControllerLook.Lerp(targetLook, 5.0f * (float)delta);
+			
+
 		RotateY(-CurrentControllerLook.X * ControllerLookSensitivity);
 		_camera.RotateX(-CurrentControllerLook.Y * ControllerLookSensitivity);
 		
