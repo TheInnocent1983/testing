@@ -159,4 +159,8 @@ public partial class FpsController : CharacterBody3D
 
 		MoveAndSlide();
 	}
+	public void Wallrun()
+	{
+		// Implement wall running logic here
+	}
 }
