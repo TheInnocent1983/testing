@@ -4,39 +4,24 @@ using System;
 public partial class FpsController : CharacterBody3D 
 {
 	[ExportGroup("Sensitivity")]
-	[Export]
-	public float LookSensitivity { get; set; } = 0.006f;
+	[Export] public float LookSensitivity { get; set; } = 0.006f;
 	
 	[ExportGroup("Jump")]
-	[Export]
-	public float JumpVelocity { get; set; } = 6.0f;
-
-	[Export]
-	public bool AutoBunnyHop { get; set; } = true;
+	[Export] public float JumpVelocity { get; set; } = 6.0f;
+	[Export] public bool AutoBunnyHop { get; set; } = true;
 
 	[ExportGroup("Movement Speed")]
-	[Export]
-	public float WalkSpeed { get; set; } = 7.0f;
+	[Export] public float WalkSpeed { get; set; } = 7.0f;
+	[Export] public float SprintSpeed { get; set; } = 11f;
 
-	[Export]
-	public float SprintSpeed { get; set; } = 11f;
-
-	Vector3 WishDir = Vector3.Zero;
-
-	public float _GetMoveSpeed()
-	{
-		if (Input.IsActionPressed("sprint"))
-		{
-			return SprintSpeed;
-		}
-		else 
-		{
-			return WalkSpeed;
-		}
-	}
+	private Camera3D _camera;
+	Vector3 _wishDir = Vector3.Zero;
+	float _gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
 
 	public override void _Ready()
 	{
+		_camera = GetNode<Camera3D>("%Camera3D");
+
 		foreach (Node child in GetNode("%WorldModel").FindChildren("*", "VisualInstance3D"))
 		{
 			if (child is VisualInstance3D visualChild)
@@ -67,17 +52,19 @@ public partial class FpsController : CharacterBody3D
 				// Rotate the body horizontally
 				RotateY(-eventMouseMotion.Relative.X * LookSensitivity);
 
-				// Get the Camera3D node from Hierarchy
-				Camera3D camera = GetNode<Camera3D>("%Camera3D");
-
 				// Rotate the camera vertically
-				camera.RotateX(-eventMouseMotion.Relative.Y * LookSensitivity);
+				_camera.RotateX(-eventMouseMotion.Relative.Y * LookSensitivity);
 
-				Vector3 cameraRotation = camera.Rotation;
+				Vector3 cameraRotation = _camera.Rotation;
 				cameraRotation.X = Mathf.Clamp(cameraRotation.X, Mathf.DegToRad(-89f), Mathf.DegToRad(89f));
-				camera.Rotation = cameraRotation;
+				_camera.Rotation = cameraRotation;
 			}
 		}
+	}
+
+	public float _GetMoveSpeed()
+	{
+		return Input.IsActionPressed("sprint") ? SprintSpeed : WalkSpeed;
 	}
 
 	public override void _Process(double delta)
@@ -88,9 +75,8 @@ public partial class FpsController : CharacterBody3D
 
 	public void _HandleAirPhysics(double delta)
 	{
-		float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
 		Vector3 currentVelocity = Velocity;
-		currentVelocity.Y -= gravity * (float)delta;
+		currentVelocity.Y -= _gravity * (float)delta;
 		Velocity = currentVelocity;
 	}
 
@@ -100,8 +86,8 @@ public partial class FpsController : CharacterBody3D
 
 		Vector3 currentVelocity = Velocity;
 
-		currentVelocity.X = WishDir.X * speed;
-		currentVelocity.Z = WishDir.Z * speed;
+		currentVelocity.X = _wishDir.X * speed;
+		currentVelocity.Z = _wishDir.Z * speed;
 
 		Velocity = currentVelocity;
 	}
@@ -109,7 +95,7 @@ public partial class FpsController : CharacterBody3D
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 inputDirection = Input.GetVector("move_left", "move_right", "move_forward", "move_backwards").Normalized();
-		WishDir = this.GlobalTransform.Basis * new Vector3(inputDirection.X, 0.0f, inputDirection.Y);
+		_wishDir = GlobalTransform.Basis * new Vector3(inputDirection.X, 0.0f, inputDirection.Y);
 
 		if (IsOnFloor())
 		{
