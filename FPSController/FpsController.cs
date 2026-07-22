@@ -14,6 +14,11 @@ public partial class FpsController : CharacterBody3D
 	[Export] public float WalkSpeed { get; set; } = 7.0f;
 	[Export] public float SprintSpeed { get; set; } = 11f;
 
+	private float HeadbobMoveAmount = 0.0275f;
+	private float HeadbobFrequency = 2.4f;
+	private float HeadbobTime = 0.0f;
+	private float DefaultCameraY;
+
 	private Camera3D _camera;
 	Vector3 _wishDir = Vector3.Zero;
 	float _gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
@@ -21,6 +26,7 @@ public partial class FpsController : CharacterBody3D
 	public override void _Ready()
 	{
 		_camera = GetNode<Camera3D>("%Camera3D");
+		DefaultCameraY = _camera.Position.Y;
 
 		foreach (Node child in GetNode("%WorldModel").FindChildren("*", "VisualInstance3D"))
 		{
@@ -62,6 +68,23 @@ public partial class FpsController : CharacterBody3D
 		}
 	}
 
+	public void _HeadbobEffect(double delta)
+	{
+		Vector3 currentVelocity = Velocity;
+		HeadbobTime += (float)delta * currentVelocity.Length();	
+
+		Transform3D camTransform = _camera.Transform;
+
+		camTransform.Origin = new Vector3(
+			Mathf.Cos(HeadbobTime * HeadbobFrequency * 0.75f) * HeadbobMoveAmount,
+			DefaultCameraY + Mathf.Sin(HeadbobTime * HeadbobFrequency) * HeadbobMoveAmount, 
+			0f);
+
+		_camera.Transform = camTransform;
+
+
+	}
+
 	public float _GetMoveSpeed()
 	{
 		return Input.IsActionPressed("sprint") ? SprintSpeed : WalkSpeed;
@@ -90,6 +113,8 @@ public partial class FpsController : CharacterBody3D
 		currentVelocity.Z = _wishDir.Z * speed;
 
 		Velocity = currentVelocity;
+
+		_HeadbobEffect(delta);
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -101,7 +126,7 @@ public partial class FpsController : CharacterBody3D
 		{
 			_HandleGroundPhysics(delta);
 
-			if (Input.IsActionJustPressed("jump"))
+			if (Input.IsActionJustPressed("jump") || (AutoBunnyHop && Input.IsActionPressed("jump")))
 			{
 				Vector3 currentVelocity = Velocity;
 				currentVelocity.Y = JumpVelocity;
