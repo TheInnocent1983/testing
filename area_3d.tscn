@@ -31,3 +31,4 @@ size = Vector3(15, 0.1, 15)
 
 [node name="CharacterBody3D" parent="." unique_id=2009058340 instance=ExtResource("1_ti8w2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19546509, 1, -0.05524063)
+AutoBunnyHop = false

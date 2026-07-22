@@ -1,10 +1,12 @@
 using Godot;
 using System;
+using System.Collections.Specialized;
 
 public partial class FpsController : CharacterBody3D 
 {
 	[ExportGroup("Sensitivity")]
 	[Export] public float LookSensitivity { get; set; } = 0.006f;
+	[Export] public float ControllerLookSensitivity { get; set; } = 0.06f;
 	
 	[ExportGroup("Jump")]
 	[Export] public float JumpVelocity { get; set; } = 6.0f;
@@ -13,6 +15,8 @@ public partial class FpsController : CharacterBody3D
 	[ExportGroup("Movement Speed")]
 	[Export] public float WalkSpeed { get; set; } = 7.0f;
 	[Export] public float SprintSpeed { get; set; } = 11f;
+
+	Vector2 CurrentControllerLook;
 
 	private float HeadbobMoveAmount = 0.0275f;
 	private float HeadbobFrequency = 2.4f;
@@ -81,8 +85,19 @@ public partial class FpsController : CharacterBody3D
 			0f);
 
 		_camera.Transform = camTransform;
+	}
 
+	public void _HandleControllerLookInput(double delta)
+	{
+		Vector2 targetLook = Input.GetVector("look_left", "look_right", "look_down", "look_up").Normalized();
+		CurrentControllerLook = targetLook;
 
+		RotateY(-CurrentControllerLook.X * ControllerLookSensitivity);
+		_camera.RotateX(-CurrentControllerLook.Y * ControllerLookSensitivity);
+		
+		Vector3 cameraRotation = _camera.Rotation;
+		cameraRotation.X = Mathf.Clamp(cameraRotation.X, Mathf.DegToRad(-89f), Mathf.DegToRad(89f));
+		_camera.Rotation = cameraRotation;
 	}
 
 	public float _GetMoveSpeed()
@@ -92,8 +107,7 @@ public partial class FpsController : CharacterBody3D
 
 	public override void _Process(double delta)
 	{
-		// Called every frame. Delta is time since the last frame.
-		// Update game logic here.
+		_HandleControllerLookInput(delta);
 	} 
 
 	public void _HandleAirPhysics(double delta)
