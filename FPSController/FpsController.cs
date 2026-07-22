@@ -89,21 +89,20 @@ public partial class FpsController : CharacterBody3D
 
 	public void _HandleControllerLookInput(double delta)
 	{
-		Vector2 targetLook = Input.GetVector("look_left", "look_right", "look_down", "look_up").Normalized();
-		CurrentControllerLook = targetLook;
-
-		if (targetLook.Length() < CurrentControllerLook.Length())
-			CurrentControllerLook = targetLook;
-		else
-			CurrentControllerLook = CurrentControllerLook.Lerp(targetLook, 5.0f * (float)delta);
-			
-
-		RotateY(-CurrentControllerLook.X * ControllerLookSensitivity);
-		_camera.RotateX(-CurrentControllerLook.Y * ControllerLookSensitivity);
+		Vector2 targetLook = Input.GetVector("look_left", "look_right", "look_up", "look_down").Normalized();
+		CurrentControllerLook = CurrentControllerLook.Lerp(targetLook, 15.0f * (float)delta);
 		
-		Vector3 cameraRotation = _camera.Rotation;
-		cameraRotation.X = Mathf.Clamp(cameraRotation.X, Mathf.DegToRad(-89f), Mathf.DegToRad(89f));
-		_camera.Rotation = cameraRotation;
+
+		if (CurrentControllerLook.LengthSquared() > 0.001f)
+		{
+			RotateY(-CurrentControllerLook.X * ControllerLookSensitivity);
+
+			_camera.RotateX(-CurrentControllerLook.Y * ControllerLookSensitivity);
+
+			Vector3 cameraRotation = _camera.Rotation;
+			cameraRotation.X = Mathf.Clamp(cameraRotation.X, Mathf.DegToRad(-89f), Mathf.DegToRad(89f));
+			_camera.Rotation = cameraRotation;
+		}
 	}
 
 	public float _GetMoveSpeed()
