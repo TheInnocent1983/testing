@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bw8o0no4p618w"]
+
+[ext_resource type="Script" uid="uid://7eyyor0ux6dk" path="res://Scripts/PlayerMovementStates/FpsController.cs" id="1_3pqbm"]
+[ext_resource type="Script" uid="uid://b3cx3jx4r4lrf" path="res://Scripts/PlayerMovementStates/CameraController.cs" id="2_v3jxq"]
+[ext_resource type="Script" uid="uid://ccjmjg8hpg5m5" path="res://Scripts/PlayerMovementStates/GroundMovementComponent.cs" id="3_044ng"]
+[ext_resource type="Script" uid="uid://cv4o1qn6ctv2e" path="res://Scripts/PlayerMovementStates/AirMovementComponent.cs" id="4_03sdg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1xu1x"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1xu1x"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=2009058340 node_paths=PackedStringArray("CameraComp", "GroundComp", "AirComp")]
+script = ExtResource("1_3pqbm")
+CameraComp = NodePath("MovementComponents/CameraController")
+GroundComp = NodePath("MovementComponents/GroundMovementComponent")
+AirComp = NodePath("MovementComponents/AirMovementComponent")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=336515245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_1xu1x")
+
+[node name="WorldModel" type="Node3D" parent="." unique_id=1053079649]
+unique_name_in_owner = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldModel" unique_id=1445464630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_1xu1x")
+
+[node name="Head" type="Node3D" parent="." unique_id=1510695729]
+unique_name_in_owner = true
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1820696403]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8000001, 0)
+cull_mask = 1048573
+
+[node name="MovementComponents" type="Node3D" parent="." unique_id=1082118319]
+
+[node name="CameraController" type="Node" parent="MovementComponents" unique_id=770861824 node_paths=PackedStringArray("Player", "Camera")]
+script = ExtResource("2_v3jxq")
+Player = NodePath("../..")
+Camera = NodePath("../../Head/Camera3D")
+
+[node name="GroundMovementComponent" type="Node" parent="MovementComponents" unique_id=1472584500]
+script = ExtResource("3_044ng")
+
+[node name="AirMovementComponent" type="Node" parent="MovementComponents" unique_id=800375846]
+script = ExtResource("4_03sdg")
