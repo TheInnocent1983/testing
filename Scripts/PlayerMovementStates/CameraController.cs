@@ -1,3 +1,4 @@
+using System;
 using Godot;
 
 public partial class CameraController : Node
@@ -13,6 +14,10 @@ public partial class CameraController : Node
 	[Export] public float HeadbobMoveAmount { get; set; } = 0.0275f;
 	[Export] public float HeadbobFrequency { get; set; } = 2.4f;
 
+	[ExportGroup("View Settings")]
+	[Export] public Camera3D TargetCamera { get; set; }
+	[Export] public float FieldOfView { get; set; } = 75.0f;
+
 	private Vector2 _currentControllerLook;
 	private float _headbobTime = 0.0f;
 	private float _defaultCameraY;
@@ -21,11 +26,23 @@ public partial class CameraController : Node
 	{
 		if (Camera != null)
 			_defaultCameraY = Camera.Position.Y;
+
+		ApplyFov();
 	}
 
 	public override void _Process(double delta)
 	{
 		HandleControllerLook((float)delta);
+	}
+
+	private void ApplyFov()
+	{
+		Camera3D activeCam = TargetCamera ?? Camera;
+
+		if (GodotObject.IsInstanceValid(activeCam))
+		{
+			activeCam.Fov = FieldOfView;
+		}
 	}
 
 	public void HandleMouseLook(InputEventMouseMotion mouseMotion)
