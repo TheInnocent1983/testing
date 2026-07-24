@@ -13,6 +13,8 @@ public partial class GroundMovementComponent : Node
 	private float _slideTimer;
 	private Vector3 _slideDir = Vector3.Zero;
 
+	private bool _isCrouchToggled = false;
+
 	[ExportGroup("Movement Speed")]
 	[Export] public float WalkSpeed { get; set; } = 7.0f;
 	[Export] public float SprintSpeed { get; set; } = 11.0f;
@@ -63,30 +65,59 @@ public partial class GroundMovementComponent : Node
 
 	private void UpdateStateTransitions(FpsController player)
 	{
-		bool crouchPressed = IsCrouchPressed();
+		bool slideHold = InputMap.HasAction("slide") && Input.IsActionPressed("slide");
+		bool slideJustPressed = InputMap.HasAction("slide") && Input.IsActionJustPressed("slide");
+		bool toggleJustPressed = InputMap.HasAction("crouch_toggle") && Input.IsActionJustPressed("crouch_toggle");
+
+		// Переключение режима Toggle при нажатии 'C'
+		if (toggleJustPressed)
+		{
+			_isCrouchToggled = !_isCrouchToggled;
+		}
+
+		// Если зажат Ctrl ИЛИ активен Toggle приседания через C
+		bool crouchRequested = slideHold || _isCrouchToggled;
 
 		switch (_state)
 		{
 			case PlayerState.Stand:
-				if (crouchPressed)
+				// Если нажали Ctrl или C
+				if (slideJustPressed || toggleJustPressed)
 				{
+					// Проверяем возможность подката (только если бежали и нажали действие)
 					if (ShouldStartSlide(player))
-						EnterSlide(player);
-					else
-						_state = PlayerState.Crouch;
+					{
+						EnterSlide(player); //[cite: 1]
+					}
+					else if (crouchRequested)
+					{
+						_state = PlayerState.Crouch; //[cite: 1]
+					}
 				}
 				break;
+
 			case PlayerState.Crouch:
-				if (!crouchPressed && !IsCeilingBlocked())
-					_state = PlayerState.Stand;
-				break;
-			case PlayerState.Slide:
-				if (_slideTimer <= 0.0f)
+				// Выходим из приседа, только если отжали Ctrl, не взведен Toggle и сверху нет потолка
+				if (!crouchRequested && !IsCeilingBlocked()) //[cite: 1]
 				{
-					if (crouchPressed || IsCeilingBlocked())
-						_state = PlayerState.Crouch;
+					_state = PlayerState.Stand; //[cite: 1]
+					_isCrouchToggled = false;
+				}
+				break;
+
+			case PlayerState.Slide:
+				// Когда подкат закончился по таймеру
+				if (_slideTimer <= 0.0f) //[cite: 1]
+				{
+					if (crouchRequested || IsCeilingBlocked()) //[cite: 1]
+					{
+						_state = PlayerState.Crouch; //[cite: 1]
+					}
 					else
-						_state = PlayerState.Stand;
+					{
+						_state = PlayerState.Stand; //[cite: 1]
+						_isCrouchToggled = false;
+					}
 				}
 				break;
 		}
