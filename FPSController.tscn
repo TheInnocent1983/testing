@@ -43,10 +43,12 @@ enabled = true
 
 [node name="MovementComponents" type="Node3D" parent="." unique_id=1082118319]
 
-[node name="CameraController" type="Node" parent="MovementComponents" unique_id=770861824 node_paths=PackedStringArray("Player", "Camera")]
+[node name="CameraController" type="Node" parent="MovementComponents" unique_id=770861824 node_paths=PackedStringArray("Player", "Camera", "TargetCamera")]
 script = ExtResource("2_v3jxq")
 Player = NodePath("../..")
 Camera = NodePath("../../Head/Camera3D")
+TargetCamera = NodePath("../../Head/Camera3D")
+FieldOfView = 120.0
 
 [node name="GroundMovementComponent" type="Node" parent="MovementComponents" unique_id=1472584500]
 script = ExtResource("3_044ng")
