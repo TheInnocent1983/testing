@@ -90,4 +90,14 @@ public partial class CameraController : Node
 
 		Camera.Transform = camTransform;
 	}
+
+	public void ApplyRoll(float targetRollRadians, float delta, float lerpSpeed = 10.0f)
+	{
+		if (Camera == null) return;
+
+		Vector3 rot = Camera.Rotation;
+		float blend = 1.0f - Mathf.Pow(0.5f, delta * Mathf.Max(1.0f, lerpSpeed));
+		rot.Z = Mathf.Lerp(rot.Z, targetRollRadians, blend);
+		Camera.Rotation = rot;
+	}
 }
