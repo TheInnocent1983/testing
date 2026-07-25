@@ -1,5 +1,7 @@
 using Godot;
 
+namespace Parkour.Movement;
+
 public partial class WallRunComponent : Node
 {
 	[ExportGroup("Wall Detection")]
