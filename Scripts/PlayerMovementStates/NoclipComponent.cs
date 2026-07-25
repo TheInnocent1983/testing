@@ -1,6 +1,8 @@
 using Godot;
 using System;
 
+namespace Parkour.Movement;
+
 public partial class NoclipComponent : Node
 {
 	[ExportGroup("Noclip Settings")]

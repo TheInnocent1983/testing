@@ -1,5 +1,7 @@
 using Godot;
 
+namespace Parkour.Movement;
+
 public partial class AirMovementComponent : Node
 {
 	[ExportGroup("Air Movement")]

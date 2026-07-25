@@ -1,5 +1,7 @@
 using Godot;
 
+namespace Parkour.Movement;
+
 public enum PlayerState
 {
 	Stand,

@@ -1,6 +1,8 @@
 using System;
 using Godot;
 
+namespace Parkour.Movement;
+
 public partial class CameraController : Node
 {
 	[Export] public CharacterBody3D Player { get; set; }
