@@ -11,6 +11,7 @@ public partial class GroundMovementComponent : Node
 {
 	private PlayerState _state = PlayerState.Stand;
 	private float _slideTimer;
+	private float _momentum;
 	private Vector3 _slideDir = Vector3.Zero;
 
 	private bool _isCrouchToggled = false;
@@ -30,13 +31,15 @@ public partial class GroundMovementComponent : Node
 	[Export] public float StandCapsuleHeight {private set; get;} = 2.0f;
 
 	[ExportCategory("Slide")]
-	[Export] public float SlideTimerMax {private set; get;} = 0.9f;
-	[Export] public float SlideSpeed {private set; get;} = 10.0f;
-	[Export] public float MinSlideStartSpeed {private set; get;} = 8.0f;
-	[Export] public float SlopeBoost {private set; get;} = 2.0f;
-	[Export] public float UphillPenalty {private set; get;} = 2.0f;
-	[Export] public float SlideCameraTilt {private set; get;} = 0;
-	[Export] public float SlideFriction {private set; get;} = 2.5f;
+	[Export] public float SlideTimerMax {private set; get;} = 0.9f;      // Max slide duration on flat ground
+	[Export] public float SlideSpeed {private set; get;} = 10.0f;        // Baseline boost — a slide is always at least this fast
+	[Export] public float MinSlideSpeed {private set; get;} = 4.0f;      // Momentum floor while sliding
+	[Export] public float MaxSlideSpeed {private set; get;} = 20.0f;     // Momentum ceiling (keeps downhill controllable)
+	[Export] public float MinSlideStartSpeed {private set; get;} = 8.0f; // Speed needed to trigger a slide
+	[Export] public float SlideSlopeAccel {private set; get;} = 10.0f;   // Speed gained per second going downhill
+	[Export] public float UphillPenalty {private set; get;} = 4.0f;      // Extra speed lost per second going uphill
+	[Export] public float SlideFriction {private set; get;} = 4.0f;      // Speed lost per second on flat ground
+	[Export] public float SlideCameraTilt {private set; get;} = 8.0f;    // Camera roll while sliding (feel)
 
 	public PlayerState CurrentState => _state;
 
@@ -167,34 +170,28 @@ public partial class GroundMovementComponent : Node
 		if (floorDir.LengthSquared() < 0.001f)
 			floorDir = _slideDir;
 
-		float timerRatio = SlideTimerMax > 0.0f ? Mathf.Clamp(_slideTimer / SlideTimerMax, 0.0f, 1.0f) : 0.0f;
-		float targetSpeed = Mathf.Max(0.1f, (timerRatio + 0.1f) * SlideSpeed);
-
-		Vector3 horizontal = new Vector3(velocity.X, 0.0f, velocity.Z);
-		horizontal = horizontal.Lerp(floorDir * targetSpeed, 1.0f - Mathf.Pow(0.5f, delta * GroundAcceleration));
-
 		float floorAngle = Mathf.RadToDeg(player.GetFloorAngle());
 		bool runningUpSlope = IsRunningUpSlope(player);
 
+		// --- Momentum model: your speed carries; slopes shape it ---
 		if (floorAngle > 8.0f && !runningUpSlope)
 		{
-			_slideTimer = Mathf.Min(SlideTimerMax, _slideTimer + delta * Mathf.Max(0.0f, SlopeBoost) * 0.1f);
+			// Downhill: build speed and keep the slide alive (long ramp = long slide)
+			_momentum += delta * Mathf.Max(0.0f, SlideSlopeAccel);
+			_slideTimer = Mathf.Min(SlideTimerMax, _slideTimer + delta);
 		}
 		else
 		{
-			float timerDrain = 1.0f + (runningUpSlope ? Mathf.Max(0.0f, UphillPenalty) * 0.1f : 0.0f);
-			_slideTimer -= delta * timerDrain;
+			// Flat/uphill: bleed speed and run down the timer
+			float drop = SlideFriction + (runningUpSlope ? Mathf.Max(0.0f, UphillPenalty) : 0.0f);
+			_momentum -= delta * drop;
+			_slideTimer -= delta;
 		}
 
-		float friction = SlideFriction > 0.0f ? SlideFriction : GroundFriction;
-		float slideDrop = friction * delta;
-		float speed = horizontal.Length();
-		if (speed > 0.0f)
-		{
-			speed = Mathf.Max(0.0f, speed - slideDrop);
-			horizontal = horizontal.Normalized() * speed;
-		}
+		_momentum = Mathf.Clamp(_momentum, MinSlideSpeed, MaxSlideSpeed);
 
+		// Drive velocity from momentum along the floor; gravity (Y) is preserved
+		Vector3 horizontal = floorDir * _momentum;
 		velocity = new Vector3(horizontal.X, y, horizontal.Z);
 		player.Velocity = velocity;
 	}
@@ -246,6 +243,8 @@ public partial class GroundMovementComponent : Node
 		_slideTimer = Mathf.Max(0.1f, SlideTimerMax);
 
 		Vector3 horizontalVel = new Vector3(player.Velocity.X, 0.0f, player.Velocity.Z);
+		float entrySpeed = horizontalVel.Length();
+
 		if (horizontalVel.LengthSquared() > 0.001f)
 		{
 			_slideDir = horizontalVel.Normalized();
@@ -257,6 +256,10 @@ public partial class GroundMovementComponent : Node
 			if (_slideDir.LengthSquared() > 0.001f)
 				_slideDir = _slideDir.Normalized();
 		}
+
+		// Keep the speed you ran in with (always at least SlideSpeed), capped so it stays controllable.
+		// This is what makes "faster run = faster slide" and lets a slide-jump carry your momentum.
+		_momentum = Mathf.Clamp(Mathf.Max(entrySpeed, SlideSpeed), MinSlideSpeed, MaxSlideSpeed);
 	}
 
 	private bool IsCeilingBlocked()
