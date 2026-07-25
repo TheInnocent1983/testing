@@ -6,6 +6,7 @@ public partial class FpsController : CharacterBody3D
 	[Export] public CameraController CameraComp { get; private set; }
 	[Export] public GroundMovementComponent GroundComp { get; private set; }
 	[Export] public AirMovementComponent AirComp { get; private set; }
+	[Export] public NoclipComponent NoclipComp { get; private set; }
 
 	[ExportGroup("Crouch/Slide Setup")]
 	[Export] public CollisionShape3D BodyCollision { get; private set; }
@@ -15,7 +16,11 @@ public partial class FpsController : CharacterBody3D
 	[Export] public float JumpVelocity { get; set; } = 6.0f;
 	[Export] public bool AutoBunnyHop { get; set; } = true;
 
+	[ExportGroup("Noclip")]
+	[Export] public bool AutoNoclip { get; set; } = false;
+
 	public Vector3 WishDir { get; private set; } = Vector3.Zero;
+	public Vector2 InputDir { get; private set; } = Vector2.Zero;
 	public float DefaultCapsuleHeight { get; private set; }
 
 	private float _defaultHeadY;
@@ -71,23 +76,33 @@ public partial class FpsController : CharacterBody3D
 	public override void _PhysicsProcess(double delta)
 	{
 		// Calculate Movement Direction
-		Vector2 inputDir = Input.GetVector("move_left", "move_right", "move_forward", "move_backwards").Normalized();
-		WishDir = GlobalTransform.Basis * new Vector3(inputDir.X, 0.0f, inputDir.Y);
+		InputDir = Input.GetVector("move_left", "move_right", "move_forward", "move_backwards").Normalized();
+		WishDir = GlobalTransform.Basis * new Vector3(InputDir.X, 0.0f, InputDir.Y);
 
-		if (IsOnFloor())
+		bool isNoclipActive = NoclipComp != null && NoclipComp._HandleNoclip(delta);
+
+		if (!isNoclipActive)
 		{
-			GroundComp?.UpdateGroundPhysics(this, (float)delta);
-
-			if (Input.IsActionJustPressed("jump") || (AutoBunnyHop && Input.IsActionPressed("jump")))
+			if (IsOnFloor())
 			{
-				Vector3 vel = Velocity;
-				vel.Y = JumpVelocity;
-				Velocity = vel;
+				GroundComp?.UpdateGroundPhysics(this, (float)delta);
+
+				if (Input.IsActionJustPressed("jump") || (AutoBunnyHop && Input.IsActionPressed("jump")))
+				{
+					Vector3 vel = Velocity;
+					vel.Y = JumpVelocity;
+					Velocity = vel;
+				}
+			}
+			else
+			{
+				AirComp?.UpdateAirPhysics(this, (float)delta);
 			}
 		}
 		else
 		{
-			AirComp?.UpdateAirPhysics(this, (float)delta);
+			// When noclip IS active, kill normal physics velocity
+			Velocity = Vector3.Zero;
 		}
 
 		MoveAndSlide();

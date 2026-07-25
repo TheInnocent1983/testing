@@ -4,16 +4,18 @@
 [ext_resource type="Script" uid="uid://b3cx3jx4r4lrf" path="res://Scripts/PlayerMovementStates/CameraController.cs" id="2_v3jxq"]
 [ext_resource type="Script" uid="uid://ccjmjg8hpg5m5" path="res://Scripts/PlayerMovementStates/GroundMovementComponent.cs" id="3_044ng"]
 [ext_resource type="Script" uid="uid://cv4o1qn6ctv2e" path="res://Scripts/PlayerMovementStates/AirMovementComponent.cs" id="4_03sdg"]
+[ext_resource type="Script" uid="uid://be4lly42n48ts" path="res://Scripts/PlayerMovementStates/NoclipComponent.cs" id="5_044ng"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1xu1x"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_1xu1x"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=2009058340 node_paths=PackedStringArray("CameraComp", "GroundComp", "AirComp")]
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=2009058340 node_paths=PackedStringArray("CameraComp", "GroundComp", "AirComp", "NoclipComp", "BodyCollision", "HeadNode")]
 script = ExtResource("1_3pqbm")
 CameraComp = NodePath("MovementComponents/CameraController")
 GroundComp = NodePath("MovementComponents/GroundMovementComponent")
 AirComp = NodePath("MovementComponents/AirMovementComponent")
+NoclipComp = NodePath("MovementComponents/NoclipComponent")
 BodyCollision = NodePath("CollisionShape3D")
 HeadNode = NodePath("Head")
 
@@ -56,3 +58,7 @@ CeilingCheck = NodePath("../../CeilingCheck")
 
 [node name="AirMovementComponent" type="Node" parent="MovementComponents" unique_id=800375846]
 script = ExtResource("4_03sdg")
+
+[node name="NoclipComponent" type="Node" parent="MovementComponents" unique_id=1440612023]
+script = ExtResource("5_044ng")
+NoclipSpeedMultiplier = 1.5
