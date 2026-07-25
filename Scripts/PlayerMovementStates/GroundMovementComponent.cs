@@ -38,7 +38,7 @@ public partial class GroundMovementComponent : Node
 	[Export] public float MinSlideSpeed {private set; get;} = 4.0f;      // Momentum floor while sliding
 	[Export] public float MaxSlideSpeed {private set; get;} = 20.0f;     // Momentum ceiling (keeps downhill controllable)
 	[Export] public float MinSlideStartSpeed {private set; get;} = 8.0f; // Speed needed to trigger a slide
-	[Export] public float SlideSlopeAccel {private set; get;} = 10.0f;   // Speed gained per second going downhill
+	[Export] public float SlideSlopeAccel {private set; get;} = 12.0f;   // Speed gained per second going downhill
 	[Export] public float UphillPenalty {private set; get;} = 4.0f;      // Extra speed lost per second going uphill
 	[Export] public float SlideFriction {private set; get;} = 4.0f;      // Speed lost per second on flat ground
 	[Export] public float SlideCameraTilt {private set; get;} = 8.0f;    // Camera roll while sliding (feel)

@@ -59,6 +59,13 @@ public partial class FpsController : CharacterBody3D
 
 	public override void _UnhandledInput(InputEvent @event)
 	{
+		// Restart the level
+		if (@event.IsActionPressed("restart"))
+		{
+			GetTree().ReloadCurrentScene();
+			return;
+		}
+
 		// Toggle Mouse Mode
 		if (@event is InputEventMouseButton eventMouseButton && eventMouseButton.Pressed)
 		{

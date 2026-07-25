@@ -30,12 +30,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
 use_collision = true
 size = Vector3(15, 0.1, 55)
 
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1778631902]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8263235, -4.400299)
+use_collision = true
+size = Vector3(15, 0.1, 2.9647827)
+
 [node name="CharacterBody3D" parent="." unique_id=2009058340 instance=ExtResource("1_ti8w2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19546509, 1, -0.05524063)
 AutoBunnyHop = false
 
 [node name="Wall" type="CSGBox3D" parent="." unique_id=1086592479]
-transform = Transform3D(-6.556708e-08, 1.5, -6.556708e-08, 0, -6.556708e-08, -1.5, -1.5, -6.556708e-08, 2.8660283e-15, -2.5349998, 5.861515, -29)
+transform = Transform3D(-6.556708e-08, 1.5, -6.556708e-08, 0, -6.556708e-08, -1.5, -1.5, -6.556708e-08, 2.8660283e-15, -2.5349998, 5.861515, -29.227863)
 use_collision = true
 size = Vector3(15, 0.1, 7.2265625)
 
