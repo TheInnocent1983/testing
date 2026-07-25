@@ -5,16 +5,18 @@
 [ext_resource type="Script" uid="uid://ccjmjg8hpg5m5" path="res://Scripts/PlayerMovementStates/GroundMovementComponent.cs" id="3_044ng"]
 [ext_resource type="Script" uid="uid://cv4o1qn6ctv2e" path="res://Scripts/PlayerMovementStates/AirMovementComponent.cs" id="4_03sdg"]
 [ext_resource type="Script" uid="uid://be4lly42n48ts" path="res://Scripts/PlayerMovementStates/NoclipComponent.cs" id="5_044ng"]
+[ext_resource type="Script" uid="uid://buwu1cybtjvht" path="res://Scripts/PlayerMovementStates/WallRunComponent.cs" id="6_03sdg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1xu1x"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_1xu1x"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=2009058340 node_paths=PackedStringArray("CameraComp", "GroundComp", "AirComp", "NoclipComp")]
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=2009058340 node_paths=PackedStringArray("CameraComp", "GroundComp", "AirComp", "WallRunComp", "NoclipComp")]
 script = ExtResource("1_3pqbm")
 CameraComp = NodePath("MovementComponents/CameraController")
 GroundComp = NodePath("MovementComponents/GroundMovementComponent")
 AirComp = NodePath("MovementComponents/AirMovementComponent")
+WallRunComp = NodePath("MovementComponents/WallRunComponent")
 NoclipComp = NodePath("MovementComponents/NoclipComponent")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=336515245]
@@ -54,3 +56,16 @@ script = ExtResource("4_03sdg")
 [node name="NoclipComponent" type="Node" parent="MovementComponents" unique_id=1440612023]
 script = ExtResource("5_044ng")
 NoclipSpeedMultiplier = 1.5
+
+[node name="WallRunComponent" type="Node" parent="MovementComponents" unique_id=268769286 node_paths=PackedStringArray("WallRayLeft", "WallRayRight")]
+script = ExtResource("6_03sdg")
+WallRayLeft = NodePath("../../WallRayLeft")
+WallRayRight = NodePath("../../WallRayRight")
+
+[node name="WallRayRight" type="RayCast3D" parent="." unique_id=1073028393]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+target_position = Vector3(0.8, 0, 0)
+
+[node name="WallRayLeft" type="RayCast3D" parent="." unique_id=185662099]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+target_position = Vector3(-0.8, 0, 0)
