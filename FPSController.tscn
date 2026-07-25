@@ -10,12 +10,14 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_1xu1x"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=2009058340 node_paths=PackedStringArray("CameraComp", "GroundComp", "AirComp", "NoclipComp")]
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=2009058340 node_paths=PackedStringArray("CameraComp", "GroundComp", "AirComp", "NoclipComp", "BodyCollision", "HeadNode")]
 script = ExtResource("1_3pqbm")
 CameraComp = NodePath("MovementComponents/CameraController")
 GroundComp = NodePath("MovementComponents/GroundMovementComponent")
 AirComp = NodePath("MovementComponents/AirMovementComponent")
 NoclipComp = NodePath("MovementComponents/NoclipComponent")
+BodyCollision = NodePath("CollisionShape3D")
+HeadNode = NodePath("Head")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=336515245]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -36,6 +38,11 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8000001, 0)
 cull_mask = 1048573
 
+[node name="CeilingCheck" type="RayCast3D" parent="." unique_id=1487069921]
+position = Vector3(0, 1.6, 0)
+target_position = Vector3(0, 0.8, 0)
+enabled = true
+
 [node name="MovementComponents" type="Node3D" parent="." unique_id=1082118319]
 
 [node name="CameraController" type="Node" parent="MovementComponents" unique_id=770861824 node_paths=PackedStringArray("Player", "Camera", "TargetCamera")]
@@ -47,6 +54,7 @@ FieldOfView = 120.0
 
 [node name="GroundMovementComponent" type="Node" parent="MovementComponents" unique_id=1472584500]
 script = ExtResource("3_044ng")
+CeilingCheck = NodePath("../../CeilingCheck")
 
 [node name="AirMovementComponent" type="Node" parent="MovementComponents" unique_id=800375846]
 script = ExtResource("4_03sdg")

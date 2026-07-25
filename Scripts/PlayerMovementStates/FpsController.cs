@@ -1,5 +1,7 @@
 using Godot;
 
+namespace Parkour.Movement;
+
 public partial class FpsController : CharacterBody3D
 {
 	[ExportGroup("Components")]
@@ -7,6 +9,10 @@ public partial class FpsController : CharacterBody3D
 	[Export] public GroundMovementComponent GroundComp { get; private set; }
 	[Export] public AirMovementComponent AirComp { get; private set; }
 	[Export] public NoclipComponent NoclipComp { get; private set; }
+
+	[ExportGroup("Crouch/Slide Setup")]
+	[Export] public CollisionShape3D BodyCollision { get; private set; }
+	[Export] public Node3D HeadNode { get; private set; }
 
 	[ExportGroup("Jump")]
 	[Export] public float JumpVelocity { get; set; } = 6.0f;
@@ -16,11 +22,29 @@ public partial class FpsController : CharacterBody3D
 	[Export] public bool AutoNoclip { get; set; } = false;
 
 	public Vector3 WishDir { get; private set; } = Vector3.Zero;
-	
 	public Vector2 InputDir { get; private set; } = Vector2.Zero;
+	public float DefaultCapsuleHeight { get; private set; }
+
+	private float _defaultHeadY;
+	private CapsuleShape3D _capsuleShape;
 
 	public override void _Ready()
 	{
+		if (BodyCollision == null)
+			BodyCollision = GetNodeOrNull<CollisionShape3D>("CollisionShape3D");
+
+		if (HeadNode == null)
+			HeadNode = GetNodeOrNull<Node3D>("%Head");
+
+		if (BodyCollision?.Shape is CapsuleShape3D capsule)
+		{
+			_capsuleShape = capsule;
+			DefaultCapsuleHeight = capsule.Height;
+		}
+
+		if (HeadNode != null)
+			_defaultHeadY = HeadNode.Position.Y;
+
 		// Setup visual layers for body/world model
 		foreach (Node child in GetNode("%WorldModel").FindChildren("*", "VisualInstance3D"))
 		{
@@ -79,10 +103,28 @@ public partial class FpsController : CharacterBody3D
 		}
 		else
 		{
-			// HERE! When noclip IS active, kill normal physics velocity
+			// When noclip IS active, kill normal physics velocity
 			Velocity = Vector3.Zero;
 		}
 
 		MoveAndSlide();
+	}
+
+	public void ApplyStance(float headYOffset, float capsuleHeight, float lerpSpeed, float delta)
+	{
+		float blend = 1.0f - Mathf.Pow(0.5f, delta * Mathf.Max(1.0f, lerpSpeed));
+
+		if (HeadNode != null)
+		{
+			Vector3 headPos = HeadNode.Position;
+			headPos.Y = Mathf.Lerp(headPos.Y, _defaultHeadY + headYOffset, blend);
+			HeadNode.Position = headPos;
+		}
+
+		if (_capsuleShape != null)
+		{
+			float safeHeight = Mathf.Max(0.2f, capsuleHeight);
+			_capsuleShape.Height = Mathf.Lerp(_capsuleShape.Height, safeHeight, blend);
+		}
 	}
 }
