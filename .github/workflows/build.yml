@@ -1,0 +1,59 @@
+name: "Godot C# Multi-Platform CI/CD Build"
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  export-game:
+    name: Export Game (${{ matrix.platform.name }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - name: Windows
+            preset: "Windows Desktop"
+            directory: "windows"
+            output_file: "testing.exe"
+          - name: Linux
+            preset: "Linux"
+            directory: "linux"
+            output_file: "testing.x86_64"
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Setup Godot Engine & Export Templates
+        uses: chickensoft-games/setup-godot@v2
+        with:
+          version: 4.7.1      
+          use-dotnet: true     
+          include-templates: true
+
+      - name: Build C# Solution
+        run: dotnet build
+
+      - name: Prepare Export Directory
+        run: mkdir -p build/${{ matrix.platform.directory }}
+
+      - name: Export Game Executable
+        run: |
+          godot --headless --export-release "${{ matrix.platform.preset }}" build/${{ matrix.platform.directory }}/${{ matrix.platform.output_file }}
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.platform.directory }}-build
+          path: build/${{ matrix.platform.directory }}/*
