@@ -10,9 +10,13 @@ public partial class FpsController : CharacterBody3D
 	[Export] public AirMovementComponent AirComp { get; private set; }
 	[Export] public WallRunComponent WallRunComp { get; private set; }
 	[Export] public NoclipComponent NoclipComp { get; private set; }
+<<<<<<< Updated upstream
 	[Export] public SlideMovementComponent SlideComp { get; private set; }
 	[Export] public RestartLevelComponent RestartComp { get; private set; }
 	[Export] public CrouchComponent CrouchComp { get; private set; }
+=======
+	[Export] public WallClimbComponents WallClimbComp { get; private set; }
+>>>>>>> Stashed changes
 
 	[ExportGroup("Crouch/Slide Setup")]
 	[Export] public CollisionShape3D BodyCollision { get; private set; }
@@ -102,9 +106,10 @@ public partial class FpsController : CharacterBody3D
 			}
 			else
 			{
-				// Wall-run takes priority while airborne; fall back to normal air control.
+				// Wall-run and Wall-Climb takes priority while airborne; fall back to normal air control.
+				bool wallClimbing = WallClimbComp != null && WallClimbComp.TryWallClimb(this, (float)delta);
 				bool wallRunning = WallRunComp != null && WallRunComp.TryWallRun(this, (float)delta);
-				if (!wallRunning)
+				if (!wallClimbing &&!wallRunning)
 					AirComp?.UpdateAirPhysics(this, (float)delta);
 			}
 		}

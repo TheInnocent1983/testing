@@ -6,24 +6,36 @@
 [ext_resource type="Script" uid="uid://cv4o1qn6ctv2e" path="res://Scripts/PlayerMovementStates/AirMovementComponent.cs" id="4_03sdg"]
 [ext_resource type="Script" uid="uid://be4lly42n48ts" path="res://Scripts/PlayerMovementStates/NoclipComponent.cs" id="5_044ng"]
 [ext_resource type="Script" uid="uid://buwu1cybtjvht" path="res://Scripts/PlayerMovementStates/WallRunComponent.cs" id="6_03sdg"]
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://t4obadgi3hpn" path="res://Scripts/PlayerMovementStates/SlideMovementComponent.cs" id="7_22nqf"]
 [ext_resource type="Script" uid="uid://b75nsm17scyc5" path="res://Scripts/PlayerMovementStates/RestartLevelComponent.cs" id="8_tuwtd"]
 [ext_resource type="Script" uid="uid://dosrh6kqapc6i" path="res://Scripts/PlayerMovementStates/CrouchComponent.cs" id="9_tuwtd"]
+=======
+[ext_resource type="Script" uid="uid://bhi3bydeedr28" path="res://Scripts/PlayerMovementStates/WallClimbComponents.cs" id="7_8osn2"]
+>>>>>>> Stashed changes
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1xu1x"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_1xu1x"]
 
+<<<<<<< Updated upstream
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=2009058340 node_paths=PackedStringArray("CameraComp", "GroundComp", "AirComp", "WallRunComp", "NoclipComp", "SlideComp", "RestartComp", "CrouchComp", "BodyCollision", "HeadNode")]
+=======
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=2009058340 node_paths=PackedStringArray("CameraComp", "GroundComp", "AirComp", "WallRunComp", "NoclipComp", "WallClimbComp", "BodyCollision", "HeadNode")]
+>>>>>>> Stashed changes
 script = ExtResource("1_3pqbm")
 CameraComp = NodePath("MovementComponents/CameraController")
 GroundComp = NodePath("MovementComponents/GroundMovementComponent")
 AirComp = NodePath("MovementComponents/AirMovementComponent")
 WallRunComp = NodePath("MovementComponents/WallRunComponent")
 NoclipComp = NodePath("MovementComponents/NoclipComponent")
+<<<<<<< Updated upstream
 SlideComp = NodePath("MovementComponents/SlideMovementComponent")
 RestartComp = NodePath("MovementComponents/RestartLevelComponent")
 CrouchComp = NodePath("MovementComponents/CrouchComponent")
+=======
+WallClimbComp = NodePath("MovementComponents/WallClimbComponent")
+>>>>>>> Stashed changes
 BodyCollision = NodePath("CollisionShape3D")
 HeadNode = NodePath("Head")
 
@@ -74,6 +86,7 @@ script = ExtResource("6_03sdg")
 WallRayLeft = NodePath("../../WallRayLeft")
 WallRayRight = NodePath("../../WallRayRight")
 
+<<<<<<< Updated upstream
 [node name="SlideMovementComponent" type="Node" parent="MovementComponents" unique_id=1807578034]
 script = ExtResource("7_22nqf")
 
@@ -83,6 +96,11 @@ script = ExtResource("8_tuwtd")
 [node name="CrouchComponent" type="Node" parent="MovementComponents" unique_id=1021134955 node_paths=PackedStringArray("CeilingCheck")]
 script = ExtResource("9_tuwtd")
 CeilingCheck = NodePath("../../CeilingCheck")
+=======
+[node name="WallClimbComponent" type="Node" parent="MovementComponents" unique_id=1370580962 node_paths=PackedStringArray("WallRayForward")]
+script = ExtResource("7_8osn2")
+WallRayForward = NodePath("../../WallRayForward")
+>>>>>>> Stashed changes
 
 [node name="WallRayRight" type="RayCast3D" parent="." unique_id=1073028393]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -91,3 +109,6 @@ target_position = Vector3(0.8, 0, 0)
 [node name="WallRayLeft" type="RayCast3D" parent="." unique_id=185662099]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 target_position = Vector3(-0.8, 0, 0)
+
+[node name="WallRayForward" type="RayCast3D" parent="." unique_id=1426229098]
+target_position = Vector3(0, 1.5, -1.5)
