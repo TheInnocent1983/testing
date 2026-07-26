@@ -10,6 +10,9 @@ public partial class FpsController : CharacterBody3D
 	[Export] public AirMovementComponent AirComp { get; private set; }
 	[Export] public WallRunComponent WallRunComp { get; private set; }
 	[Export] public NoclipComponent NoclipComp { get; private set; }
+	[Export] public SlideMovementComponent SlideComp { get; private set; }
+	[Export] public RestartLevelComponent RestartComp { get; private set; }
+	[Export] public CrouchComponent CrouchComp { get; private set; }
 
 	[ExportGroup("Crouch/Slide Setup")]
 	[Export] public CollisionShape3D BodyCollision { get; private set; }
@@ -59,13 +62,6 @@ public partial class FpsController : CharacterBody3D
 
 	public override void _UnhandledInput(InputEvent @event)
 	{
-		// Restart the level
-		if (@event.IsActionPressed("restart"))
-		{
-			GetTree().ReloadCurrentScene();
-			return;
-		}
-
 		// Toggle Mouse Mode
 		if (@event is InputEventMouseButton eventMouseButton && eventMouseButton.Pressed)
 		{
