@@ -69,10 +69,11 @@ script = ExtResource("4_03sdg")
 script = ExtResource("5_044ng")
 NoclipSpeedMultiplier = 1.5
 
-[node name="WallRunComponent" type="Node" parent="MovementComponents" unique_id=268769286 node_paths=PackedStringArray("WallRayLeft", "WallRayRight")]
+[node name="WallRunComponent" type="Node" parent="MovementComponents" unique_id=268769286 node_paths=PackedStringArray("WallRayLeft", "WallRayRight", "CameraCtrl")]
 script = ExtResource("6_03sdg")
 WallRayLeft = NodePath("../../WallRayLeft")
 WallRayRight = NodePath("../../WallRayRight")
+CameraCtrl = NodePath("../CameraController")
 
 [node name="SlideMovementComponent" type="Node" parent="MovementComponents" unique_id=1807578034]
 script = ExtResource("7_22nqf")

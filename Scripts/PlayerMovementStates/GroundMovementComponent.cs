@@ -21,10 +21,6 @@ public partial class GroundMovementComponent : Node
     [Export] public float GroundDeceleration { get; set; } = 10.0f;
     [Export] public float GroundFriction { get; set; } = 6.0f;
 
-	bool slideHold = InputMap.HasAction("slide") && Input.IsActionPressed("slide");
-	bool slideJustPressed = InputMap.HasAction("slide") && Input.IsActionJustPressed("slide");
-	bool toggleJustPressed = InputMap.HasAction("crouch_toggle") && Input.IsActionJustPressed("crouch_toggle");
-
     public PlayerState CurrentState => _state;
 
     public float GetTargetSpeed() => Input.IsActionPressed("sprint") ? SprintSpeed : WalkSpeed;

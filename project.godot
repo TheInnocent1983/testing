@@ -109,6 +109,11 @@ restart={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="SolidEnvironment"
+3d_physics/layer_10="RunnableWall"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
