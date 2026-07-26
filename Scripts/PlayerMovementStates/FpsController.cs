@@ -9,14 +9,11 @@ public partial class FpsController : CharacterBody3D
 	[Export] public GroundMovementComponent GroundComp { get; private set; }
 	[Export] public AirMovementComponent AirComp { get; private set; }
 	[Export] public WallRunComponent WallRunComp { get; private set; }
+	[Export] public WallClimbComponents WallClimbComp { get; private set; }
 	[Export] public NoclipComponent NoclipComp { get; private set; }
-<<<<<<< Updated upstream
 	[Export] public SlideMovementComponent SlideComp { get; private set; }
 	[Export] public RestartLevelComponent RestartComp { get; private set; }
 	[Export] public CrouchComponent CrouchComp { get; private set; }
-=======
-	[Export] public WallClimbComponents WallClimbComp { get; private set; }
->>>>>>> Stashed changes
 
 	[ExportGroup("Crouch/Slide Setup")]
 	[Export] public CollisionShape3D BodyCollision { get; private set; }
