@@ -43,7 +43,7 @@ public partial class WallClimbComponents : Node
 		if (!hasWall && !_wallClimbing)
 			_blockedNormal = Vector3.Zero;
 
-		bool holdingClimb = Input.IsActionPressed("climb");
+		bool holdingClimb = Input.IsActionPressed("move_forward");
 
 		// --- Not climbing yet: decide whether to start ---
 		if (!_wallClimbing)
