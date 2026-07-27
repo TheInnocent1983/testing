@@ -8,6 +8,7 @@ public partial class FpsController : CharacterBody3D
 	[Export] public CameraController CameraComp { get; private set; }
 	[Export] public GroundMovementComponent GroundComp { get; private set; }
 	[Export] public AirMovementComponent AirComp { get; private set; }
+	[Export] public WallClimbComponent WallClimbComp { get; private set; }
 	[Export] public WallRunComponent WallRunComp { get; private set; }
 	[Export] public NoclipComponent NoclipComp { get; private set; }
 	[Export] public SlideMovementComponent SlideComp { get; private set; }
@@ -103,6 +104,7 @@ public partial class FpsController : CharacterBody3D
 			else
 			{
 				// Wall-run takes priority while airborne; fall back to normal air control.
+				bool wallClimbing = WallClimbComp != null && WallClimbComp.TryWallClimb(this,(float)delta);
 				bool wallRunning = WallRunComp != null && WallRunComp.TryWallRun(this, (float)delta);
 				if (!wallRunning)
 					AirComp?.UpdateAirPhysics(this, (float)delta);

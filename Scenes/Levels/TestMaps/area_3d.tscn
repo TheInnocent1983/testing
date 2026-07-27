@@ -42,11 +42,17 @@ AutoBunnyHop = false
 [node name="Wall" type="CSGBox3D" parent="." unique_id=1086592479]
 transform = Transform3D(-6.556708e-08, 1.5, -6.556708e-08, 0, -6.556708e-08, -1.5, -1.5, -6.556708e-08, 2.8660283e-15, -2.5349998, 5.861515, -29.227863)
 use_collision = true
-collision_layer = 512
+collision_layer = 513
 size = Vector3(15, 0.1, 7.2265625)
 
 [node name="Wall2" type="CSGBox3D" parent="." unique_id=1801380006]
 transform = Transform3D(-6.556708e-08, -1.5, 6.556708e-08, 0, -6.556708e-08, -1.5, 1.5, -6.556708e-08, 2.8660283e-15, 3.4650002, 5.861515, -29)
 use_collision = true
-collision_layer = 512
+collision_layer = 513
+size = Vector3(15, 0.1, 7.2265625)
+
+[node name="Wall3" type="CSGBox3D" parent="." unique_id=221777614]
+transform = Transform3D(-1.499978, -0.008122712, 3.5505332e-10, 1.1773164e-15, -6.556707e-08, -1.5, 0.008122712, -1.499978, 6.556612e-08, -1.7915688, -1.9217672, -44.901524)
+use_collision = true
+collision_layer = 513
 size = Vector3(15, 0.1, 7.2265625)
