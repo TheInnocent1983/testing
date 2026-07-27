@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://mvnc63ggt7gc"]
+
+[ext_resource type="Texture2D" uid="uid://bteq7bqnnqr8" path="res://Assets/Materials/PavingStones070_1K-PNG_Color.png" id="1_fij1r"]
+[ext_resource type="Script" uid="uid://crtyanjliscgy" path="res://Scripts/Network/HighLevelMultiplayerSpawner.cs" id="2_auirk"]
+[ext_resource type="PackedScene" uid="uid://bw8o0no4p618w" path="res://Scenes/Entities/Player/FPSController.tscn" id="3_f1hap"]
+[ext_resource type="PackedScene" uid="uid://c4po4fshiarsd" path="res://Scenes/UI/HighLevelUI.tscn" id="4_q618x"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_auirk"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_f1hap"]
+sky_material = SubResource("ProceduralSkyMaterial_auirk")
+
+[sub_resource type="Environment" id="Environment_q618x"]
+background_mode = 2
+background_energy_multiplier = 2.0
+sky = SubResource("Sky_f1hap")
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xcnik"]
+albedo_texture = ExtResource("1_fij1r")
+
+[node name="NetworkTest" type="Node3D" unique_id=308292201]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=118074319]
+environment = SubResource("Environment_q618x")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1209498391]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=691636557]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+use_collision = true
+size = Vector3(55, 0.1, 55)
+material = SubResource("StandardMaterial3D_xcnik")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=453887238]
+_spawnable_scenes = PackedStringArray("uid://bw8o0no4p618w")
+spawn_path = NodePath("..")
+script = ExtResource("2_auirk")
+NetworkPlayer = ExtResource("3_f1hap")
+
+[node name="HighLevelUI" parent="." unique_id=468603377 instance=ExtResource("4_q618x")]
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1896675998]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0565467, 0)

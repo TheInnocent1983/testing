@@ -33,6 +33,16 @@ public partial class FpsController : CharacterBody3D
 	private float _defaultHeadY;
 	private CapsuleShape3D _capsuleShape;
 
+	public override void _EnterTree()
+	{
+		// The spawner names each player node after its peer id, so the node name
+		// is the authority. Names that aren't a peer id (singleplayer maps) parse
+		// to 0 and are left alone, keeping the default authority.
+		int peerId = Name.ToString().ToInt();
+		if (peerId != 0)
+			SetMultiplayerAuthority(peerId);
+	}
+
 	public override void _Ready()
 	{
 		if (BodyCollision == null)
@@ -50,7 +60,16 @@ public partial class FpsController : CharacterBody3D
 		if (HeadNode != null)
 			_defaultHeadY = HeadNode.Position.Y;
 
-		// Setup visual layers for body/world model
+		if (!IsMultiplayerAuthority())
+		{
+			// Remote copies are driven by the synchronizer, never by local input,
+			// and keep their world model on layer 1 so other players can see them.
+			CameraComp?.SetProcess(false);
+			return;
+		}
+
+		// Setup visual layers for body/world model. Our camera's cull mask excludes
+		// layer 2, so this hides only our own body from our own view.
 		foreach (Node child in GetNode("%WorldModel").FindChildren("*", "VisualInstance3D"))
 		{
 			if (child is VisualInstance3D visualChild)
@@ -59,10 +78,15 @@ public partial class FpsController : CharacterBody3D
 				visualChild.SetLayerMaskValue(2, true);
 			}
 		}
+
+		if (CameraComp?.Camera != null)
+			CameraComp.Camera.Current = true;
 	}
 
 	public override void _UnhandledInput(InputEvent @event)
 	{
+		if (!IsMultiplayerAuthority()) return;
+
 		// Toggle Mouse Mode
 		if (@event is InputEventMouseButton eventMouseButton && eventMouseButton.Pressed)
 		{
@@ -82,6 +106,8 @@ public partial class FpsController : CharacterBody3D
 
 	public override void _PhysicsProcess(double delta)
 	{
+		if (!IsMultiplayerAuthority()) return;
+
 		// Calculate Movement Direction
 		InputDir = Input.GetVector("move_left", "move_right", "move_forward", "move_backwards").Normalized();
 		WishDir = GlobalTransform.Basis * new Vector3(InputDir.X, 0.0f, InputDir.Y);
