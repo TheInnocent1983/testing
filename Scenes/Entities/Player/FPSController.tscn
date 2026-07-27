@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://bw8o0no4p618w"]
 
-[ext_resource type="Script" uid="uid://7eyyor0ux6dk" path="res://Scripts/PlayerMovementStates/FpsController.cs" id="1_3pqbm"]
-[ext_resource type="Script" uid="uid://b3cx3jx4r4lrf" path="res://Scripts/PlayerMovementStates/CameraController.cs" id="2_v3jxq"]
-[ext_resource type="Script" uid="uid://ccjmjg8hpg5m5" path="res://Scripts/PlayerMovementStates/GroundMovementComponent.cs" id="3_044ng"]
-[ext_resource type="Script" uid="uid://cv4o1qn6ctv2e" path="res://Scripts/PlayerMovementStates/AirMovementComponent.cs" id="4_03sdg"]
-[ext_resource type="Script" uid="uid://be4lly42n48ts" path="res://Scripts/PlayerMovementStates/NoclipComponent.cs" id="5_044ng"]
-[ext_resource type="Script" uid="uid://buwu1cybtjvht" path="res://Scripts/PlayerMovementStates/WallRunComponent.cs" id="6_03sdg"]
-[ext_resource type="Script" uid="uid://t4obadgi3hpn" path="res://Scripts/PlayerMovementStates/SlideMovementComponent.cs" id="7_22nqf"]
-[ext_resource type="Script" uid="uid://b75nsm17scyc5" path="res://Scripts/PlayerMovementStates/RestartLevelComponent.cs" id="8_tuwtd"]
-[ext_resource type="Script" uid="uid://dosrh6kqapc6i" path="res://Scripts/PlayerMovementStates/CrouchComponent.cs" id="9_tuwtd"]
+[ext_resource type="Script" uid="uid://7eyyor0ux6dk" path="res://Scripts/Player/PlayerMovementStates/FpsController.cs" id="1_3pqbm"]
+[ext_resource type="Script" uid="uid://b3cx3jx4r4lrf" path="res://Scripts/Player/PlayerMovementStates/CameraController.cs" id="2_v3jxq"]
+[ext_resource type="Script" uid="uid://ccjmjg8hpg5m5" path="res://Scripts/Player/PlayerMovementStates/GroundMovementComponent.cs" id="3_044ng"]
+[ext_resource type="Script" uid="uid://cv4o1qn6ctv2e" path="res://Scripts/Player/PlayerMovementStates/AirMovementComponent.cs" id="4_03sdg"]
+[ext_resource type="Script" uid="uid://be4lly42n48ts" path="res://Scripts/Player/PlayerMovementStates/NoclipComponent.cs" id="5_044ng"]
+[ext_resource type="Script" uid="uid://buwu1cybtjvht" path="res://Scripts/Player/PlayerMovementStates/WallRunComponent.cs" id="6_03sdg"]
+[ext_resource type="Script" uid="uid://t4obadgi3hpn" path="res://Scripts/Player/PlayerMovementStates/SlideMovementComponent.cs" id="7_22nqf"]
+[ext_resource type="Script" uid="uid://b75nsm17scyc5" path="res://Scripts/Player/PlayerMovementStates/RestartLevelComponent.cs" id="8_tuwtd"]
+[ext_resource type="Script" uid="uid://dosrh6kqapc6i" path="res://Scripts/Player/PlayerMovementStates/CrouchComponent.cs" id="9_tuwtd"]
+[ext_resource type="PackedScene" uid="uid://dtlagd82evue8" path="res://Scenes/UI/PauseSettingsMenu.tscn" id="10_3nh5q"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1xu1x"]
 
@@ -26,6 +27,9 @@ RestartComp = NodePath("MovementComponents/RestartLevelComponent")
 CrouchComp = NodePath("MovementComponents/CrouchComponent")
 BodyCollision = NodePath("CollisionShape3D")
 HeadNode = NodePath("Head")
+
+[node name="PauseSettingsMenu" parent="." unique_id=1922292828 node_paths=PackedStringArray("WallRunComp") instance=ExtResource("10_3nh5q")]
+WallRunComp = NodePath("../MovementComponents/WallRunComponent")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=336515245]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

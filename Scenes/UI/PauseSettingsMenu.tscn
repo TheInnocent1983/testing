@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://dtlagd82evue8"]
+
+[ext_resource type="Script" uid="uid://yu64mwr66y60" path="res://Scripts/UI/PauseSettingsMenu.cs" id="1_u1pt5"]
+
+[node name="PauseSettingsMenu" type="CanvasLayer" unique_id=1922292828 node_paths=PackedStringArray("SpeedSlider", "GravitySlider", "ResumeButton", "MainMenuButton")]
+process_mode = 2
+script = ExtResource("1_u1pt5")
+SpeedSlider = NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SpeedSlider")
+GravitySlider = NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/GravitySlider")
+ResumeButton = NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ResumeButton")
+MainMenuButton = NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/MainMenuButton")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1369460714]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=657380082]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=1816244569]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=1113886840]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=1320672835]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1674844065]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "PAUSED"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=520692979]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1621396019]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Wall Run Speed:"
+horizontal_alignment = 1
+
+[node name="SpeedSlider" type="HSlider" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1276465249]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1223662580]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1066042144]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Wall Run Gravity:"
+horizontal_alignment = 1
+
+[node name="GravitySlider" type="HSlider" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2057669467]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="ResumeButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=782154542]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Resume"
+
+[node name="MainMenuButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2061726752]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Main Menu"

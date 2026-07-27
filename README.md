@@ -1,61 +1,26 @@
-# testing
+# 3D Parkour & FPS Controller (Godot 4 + C#)
 
-A simple Godot 4.7 + C# 3D test project featuring a first-person controller.
+A high-performance 3D First-Person Controller with dynamic movement and parkour mechanics built in **Godot 4 (.NET / C#)** using **Jolt Physics**.
+
+---
 
 ## Features
 
-- First-person movement (walk / sprint)
-- Mouse look and controller look
-- Jumping with optional auto-bunnyhop
-- Basic headbob effect while moving
-- Input actions configured for keyboard and gamepad
-- Uses Jolt Physics (3D)
+- **Parkour & Movement:** Dynamic Wall Running with camera tilt, Wall Jumping, Bunnyhopping, Walking, and Sprinting.
+- **FPS Controller:** Smooth mouse look, headbobbing, and gamepad support.
+- **Physics Engine:** Powered by Godot Jolt 3D.
 
-## Project Structure
-
-- project.godot — Godot project configuration
-- testing.sln / testing.csproj — .NET/C# project files
-- FPSController/
-  - FpsController.cs — core first-person movement and look script
-  - FPSController.tscn — scene for the FPS controller
-- area_3d.tscn — main scene entry
-
-## Requirements
-
-- [Godot Engine 4.7](https://godotengine.org/) with .NET support
-- .NET SDK compatible with your Godot .NET setup
+---
 
 ## Getting Started
 
-1. Clone the repository:
+### Prerequisites
+- [Godot Engine 4.x (.NET version)](https://godotengine.org/download)
+- [.NET SDK 8.0+](https://dotnet.microsoft.com/)
+
+### Installation & Run
+
+1. **Clone the repository:**
    ```bash
-   git clone https://github.com/TheInnocent1983/testing.git
+   git clone [https://github.com/TheInnocent1983/testing.git](https://github.com/TheInnocent1983/testing.git)
    cd testing
-   ```
-
-2. Open the project in Godot:
-   - Launch Godot (with .NET support)
-   - Import/open this folder
-
-3. Run the project:
-   - Press Play in the editor  
-   - Main scene is configured in project.godot
-
-## Default Controls
-
-### Movement
-- Move Forward / Back / Left / Right
-- Jump
-- Sprint
-
-### Look
-- Mouse look when cursor is captured
-- Controller right stick for look input
-
-### Mouse Mode
-- Click inside the game window to capture the cursor
-- Press Esc to release the cursor
-
-## License
-
-No license is currently specified.
