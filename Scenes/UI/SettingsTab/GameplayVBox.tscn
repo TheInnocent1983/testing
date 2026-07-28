@@ -1,0 +1,1405 @@
+[gd_scene format=3 uid="uid://d3ayo3eli11e3"]
+
+[ext_resource type="StyleBox" uid="uid://654rrvhktqa2" path="res://Scenes/UI/SettingsPanelContainer/SettingsPanelContainer.tres" id="1_nhnjh"]
+
+[node name="GameplayVBox" type="VBoxContainer" unique_id=1348531777]
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="BasicMovementSection" type="VBoxContainer" parent="." unique_id=434485328]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="BasicHeader" type="Label" parent="BasicMovementSection" unique_id=2087131566]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "GROUND MOVEMENT COMPONENT"
+
+[node name="HSeparator" type="HSeparator" parent="BasicMovementSection" unique_id=360510415]
+layout_mode = 2
+
+[node name="WalkSpeedPanelContainer" type="PanelContainer" parent="BasicMovementSection" unique_id=829505344]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="WalkSpeedRow" type="HBoxContainer" parent="BasicMovementSection/WalkSpeedPanelContainer" unique_id=1348314297]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="BasicMovementSection/WalkSpeedPanelContainer/WalkSpeedRow" unique_id=1836706212]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Walk Speed"
+
+[node name="WalkSpeedSlider" type="HSlider" parent="BasicMovementSection/WalkSpeedPanelContainer/WalkSpeedRow" unique_id=501175663]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 7.0
+
+[node name="WalkSpinBox" type="SpinBox" parent="BasicMovementSection/WalkSpeedPanelContainer/WalkSpeedRow" unique_id=678371069]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 7.0
+
+[node name="SprintSpeedPanelContainer" type="PanelContainer" parent="BasicMovementSection" unique_id=1691963528]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="SprintSpeedRow" type="HBoxContainer" parent="BasicMovementSection/SprintSpeedPanelContainer" unique_id=559015241]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="BasicMovementSection/SprintSpeedPanelContainer/SprintSpeedRow" unique_id=1197463221]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Sprint Speed"
+
+[node name="SprintSpeedSlider" type="HSlider" parent="BasicMovementSection/SprintSpeedPanelContainer/SprintSpeedRow" unique_id=14317557]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 11.0
+
+[node name="SprintSpinBox" type="SpinBox" parent="BasicMovementSection/SprintSpeedPanelContainer/SprintSpeedRow" unique_id=347196473]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 11.0
+
+[node name="GroundAccelerationPanelContainer" type="PanelContainer" parent="BasicMovementSection" unique_id=327600197]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="GroundAccelerationRow" type="HBoxContainer" parent="BasicMovementSection/GroundAccelerationPanelContainer" unique_id=50217875]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="BasicMovementSection/GroundAccelerationPanelContainer/GroundAccelerationRow" unique_id=408518780]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Ground Acceleration"
+
+[node name="GroundAccelerationSlider" type="HSlider" parent="BasicMovementSection/GroundAccelerationPanelContainer/GroundAccelerationRow" unique_id=31259539]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 14.0
+
+[node name="GroundAccelerationSpinBox" type="SpinBox" parent="BasicMovementSection/GroundAccelerationPanelContainer/GroundAccelerationRow" unique_id=2079260388]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 14.0
+
+[node name="GroundDecelerationPanelContainer" type="PanelContainer" parent="BasicMovementSection" unique_id=100578503]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="GroundDecelerationRow" type="HBoxContainer" parent="BasicMovementSection/GroundDecelerationPanelContainer" unique_id=478945557]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="BasicMovementSection/GroundDecelerationPanelContainer/GroundDecelerationRow" unique_id=1256606304]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Ground Acceleration"
+
+[node name="GroundDecelerationSlider" type="HSlider" parent="BasicMovementSection/GroundDecelerationPanelContainer/GroundDecelerationRow" unique_id=1102263951]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 10.0
+
+[node name="GroundDecelerationRowSpinBox" type="SpinBox" parent="BasicMovementSection/GroundDecelerationPanelContainer/GroundDecelerationRow" unique_id=259047633]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 10.0
+
+[node name="GroundFrictionPanelContainer" type="PanelContainer" parent="BasicMovementSection" unique_id=155823376]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="GroundFrictionRow" type="HBoxContainer" parent="BasicMovementSection/GroundFrictionPanelContainer" unique_id=1262875130]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="BasicMovementSection/GroundFrictionPanelContainer/GroundFrictionRow" unique_id=309722555]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Ground Acceleration"
+
+[node name="GroundFrictionSlider" type="HSlider" parent="BasicMovementSection/GroundFrictionPanelContainer/GroundFrictionRow" unique_id=39420542]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 6.0
+
+[node name="GroundFrictionSpinBox" type="SpinBox" parent="BasicMovementSection/GroundFrictionPanelContainer/GroundFrictionRow" unique_id=991962860]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 6.0
+
+[node name="Spacing" type="Control" parent="BasicMovementSection" unique_id=728617760]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="CrouchSection" type="VBoxContainer" parent="." unique_id=1898083850]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="CrouchHeader" type="Label" parent="CrouchSection" unique_id=1276957344]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CROUCH COMPONENT"
+
+[node name="HSeparator" type="HSeparator" parent="CrouchSection" unique_id=117656018]
+layout_mode = 2
+
+[node name="CrouchSpeedPanelContainer" type="PanelContainer" parent="CrouchSection" unique_id=1036027870]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="CrouchSpeedRow" type="HBoxContainer" parent="CrouchSection/CrouchSpeedPanelContainer" unique_id=649156570]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="CrouchSection/CrouchSpeedPanelContainer/CrouchSpeedRow" unique_id=1076170092]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Crouch Speed"
+
+[node name="CrouchSpeedSlider" type="HSlider" parent="CrouchSection/CrouchSpeedPanelContainer/CrouchSpeedRow" unique_id=911222537]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 3.0
+
+[node name="CrouchSpeedSpinBox" type="SpinBox" parent="CrouchSection/CrouchSpeedPanelContainer/CrouchSpeedRow" unique_id=1897068736]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 3.0
+
+[node name="CrouchDepthPanelContainer" type="PanelContainer" parent="CrouchSection" unique_id=1333219865]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="CrouchDepthRow" type="HBoxContainer" parent="CrouchSection/CrouchDepthPanelContainer" unique_id=61874461]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="CrouchSection/CrouchDepthPanelContainer/CrouchDepthRow" unique_id=1313058479]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Crouch Depth"
+
+[node name="CrouchDepthSlider" type="HSlider" parent="CrouchSection/CrouchDepthPanelContainer/CrouchDepthRow" unique_id=362820475]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 0.5
+
+[node name="CrouchDepthSpinBox" type="SpinBox" parent="CrouchSection/CrouchDepthPanelContainer/CrouchDepthRow" unique_id=1630569097]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.01
+value = 0.45
+
+[node name="CrouchLerpSpeedPanelContainer" type="PanelContainer" parent="CrouchSection" unique_id=2112143975]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="CrouchLerpSpeedRow" type="HBoxContainer" parent="CrouchSection/CrouchLerpSpeedPanelContainer" unique_id=25893797]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="CrouchSection/CrouchLerpSpeedPanelContainer/CrouchLerpSpeedRow" unique_id=278370467]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Crouch Lerp Speed"
+
+[node name="CrouchLerpSpeedSlider" type="HSlider" parent="CrouchSection/CrouchLerpSpeedPanelContainer/CrouchLerpSpeedRow" unique_id=101260926]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 10.0
+
+[node name="CrouchLerpSpeedSpinBox" type="SpinBox" parent="CrouchSection/CrouchLerpSpeedPanelContainer/CrouchLerpSpeedRow" unique_id=1951546495]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.01
+value = 10.0
+
+[node name="StandCapsuleHeightPanelContainer" type="PanelContainer" parent="CrouchSection" unique_id=182093040]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="StandCapsuleHeightRow" type="HBoxContainer" parent="CrouchSection/StandCapsuleHeightPanelContainer" unique_id=50925173]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="CrouchSection/StandCapsuleHeightPanelContainer/StandCapsuleHeightRow" unique_id=1776210205]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Stand Capsule Height"
+
+[node name="StandCapsuleHeightSlider" type="HSlider" parent="CrouchSection/StandCapsuleHeightPanelContainer/StandCapsuleHeightRow" unique_id=807571305]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 2.0
+
+[node name="StandCapsuleHeightSpinBox" type="SpinBox" parent="CrouchSection/StandCapsuleHeightPanelContainer/StandCapsuleHeightRow" unique_id=839657897]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.01
+value = 2.0
+
+[node name="Spacing" type="Control" parent="CrouchSection" unique_id=583742653]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="SlideSection" type="VBoxContainer" parent="." unique_id=747076502]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="SlideHeader" type="Label" parent="SlideSection" unique_id=1925778960]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "SLIDE MOVEMENT COMPONENT"
+
+[node name="HSeparator" type="HSeparator" parent="SlideSection" unique_id=290426076]
+layout_mode = 2
+
+[node name="SlideTtimerMaxPanelContainer" type="PanelContainer" parent="SlideSection" unique_id=2076440102]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="SlideTimerMaxRow" type="HBoxContainer" parent="SlideSection/SlideTtimerMaxPanelContainer" unique_id=1828699819]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="SlideSection/SlideTtimerMaxPanelContainer/SlideTimerMaxRow" unique_id=147888342]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Slide Timer Max"
+
+[node name="SlideTimerMaxSlider" type="HSlider" parent="SlideSection/SlideTtimerMaxPanelContainer/SlideTimerMaxRow" unique_id=1289497831]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 0.9
+
+[node name="SlideTimerMaxSpinBox" type="SpinBox" parent="SlideSection/SlideTtimerMaxPanelContainer/SlideTimerMaxRow" unique_id=96673637]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 0.9
+
+[node name="SlideSpeedPanelContainer" type="PanelContainer" parent="SlideSection" unique_id=664415061]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="SlideSpeedRow" type="HBoxContainer" parent="SlideSection/SlideSpeedPanelContainer" unique_id=3613533]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="SlideSection/SlideSpeedPanelContainer/SlideSpeedRow" unique_id=367036102]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Slide Speed"
+
+[node name="SlideSpeedSlider" type="HSlider" parent="SlideSection/SlideSpeedPanelContainer/SlideSpeedRow" unique_id=961592901]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 10.0
+
+[node name="SlideSpeedSpinBox" type="SpinBox" parent="SlideSection/SlideSpeedPanelContainer/SlideSpeedRow" unique_id=364940743]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.01
+value = 10.0
+
+[node name="MinSlideSpeedPanelContainer" type="PanelContainer" parent="SlideSection" unique_id=1946147993]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="MinSlideSpeedRow" type="HBoxContainer" parent="SlideSection/MinSlideSpeedPanelContainer" unique_id=1913568778]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="SlideSection/MinSlideSpeedPanelContainer/MinSlideSpeedRow" unique_id=1778534129]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Minimum Slide Speed"
+
+[node name="MinSlideSpeedSlider" type="HSlider" parent="SlideSection/MinSlideSpeedPanelContainer/MinSlideSpeedRow" unique_id=925535193]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 4.0
+
+[node name="MinSlideSpeedSpinBox" type="SpinBox" parent="SlideSection/MinSlideSpeedPanelContainer/MinSlideSpeedRow" unique_id=1918951388]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.01
+value = 4.0
+
+[node name="MaxSlideSpeedPanelContainer" type="PanelContainer" parent="SlideSection" unique_id=910737224]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="MaxSlideSpeedRow" type="HBoxContainer" parent="SlideSection/MaxSlideSpeedPanelContainer" unique_id=584906910]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="SlideSection/MaxSlideSpeedPanelContainer/MaxSlideSpeedRow" unique_id=1752721152]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Maximum Slide Speed"
+
+[node name="MaxSlideSpeedSlider" type="HSlider" parent="SlideSection/MaxSlideSpeedPanelContainer/MaxSlideSpeedRow" unique_id=734174181]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 20.0
+
+[node name="MaxSlideSpeedSpinBox" type="SpinBox" parent="SlideSection/MaxSlideSpeedPanelContainer/MaxSlideSpeedRow" unique_id=2096564174]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.01
+value = 20.0
+
+[node name="MinSlideStartSpeedPanelContainer" type="PanelContainer" parent="SlideSection" unique_id=2049387463]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="MinSlideStartSpeedRow" type="HBoxContainer" parent="SlideSection/MinSlideStartSpeedPanelContainer" unique_id=538418301]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="SlideSection/MinSlideStartSpeedPanelContainer/MinSlideStartSpeedRow" unique_id=1977483993]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Minimum Slide Start Speed"
+
+[node name="MinSlideStartSpeedSlider" type="HSlider" parent="SlideSection/MinSlideStartSpeedPanelContainer/MinSlideStartSpeedRow" unique_id=252085594]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 8.0
+
+[node name="MinSlideStartSpeedSpinBox" type="SpinBox" parent="SlideSection/MinSlideStartSpeedPanelContainer/MinSlideStartSpeedRow" unique_id=1420492256]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.01
+value = 8.0
+
+[node name="SlideSlopeAccelerationPanelContainer" type="PanelContainer" parent="SlideSection" unique_id=1479507059]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="SlideSlopeAccelerationRow" type="HBoxContainer" parent="SlideSection/SlideSlopeAccelerationPanelContainer" unique_id=1604469836]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="SlideSection/SlideSlopeAccelerationPanelContainer/SlideSlopeAccelerationRow" unique_id=1283998904]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Slide Slope Acceleration"
+
+[node name="SlideSlopeAccelerationSlider" type="HSlider" parent="SlideSection/SlideSlopeAccelerationPanelContainer/SlideSlopeAccelerationRow" unique_id=2052065687]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 12.0
+
+[node name="SlideSlopeAccelerationSpinBox" type="SpinBox" parent="SlideSection/SlideSlopeAccelerationPanelContainer/SlideSlopeAccelerationRow" unique_id=890066148]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.01
+value = 12.0
+
+[node name="UphillPenaltyPanelContainer" type="PanelContainer" parent="SlideSection" unique_id=1125615396]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="UphillPenaltyRow" type="HBoxContainer" parent="SlideSection/UphillPenaltyPanelContainer" unique_id=425046368]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="SlideSection/UphillPenaltyPanelContainer/UphillPenaltyRow" unique_id=1177346555]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Uphill Penalty"
+
+[node name="UphillPenaltySlider" type="HSlider" parent="SlideSection/UphillPenaltyPanelContainer/UphillPenaltyRow" unique_id=1113453478]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 4.0
+
+[node name="UphillPenaltySpinBox" type="SpinBox" parent="SlideSection/UphillPenaltyPanelContainer/UphillPenaltyRow" unique_id=1837326873]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.01
+value = 4.0
+
+[node name="SlideFrictionPanelContainer" type="PanelContainer" parent="SlideSection" unique_id=2028895414]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="SlideFrictionRow" type="HBoxContainer" parent="SlideSection/SlideFrictionPanelContainer" unique_id=1245797672]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="SlideSection/SlideFrictionPanelContainer/SlideFrictionRow" unique_id=323355269]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Slide Friction"
+
+[node name="SlideFrictionSlider" type="HSlider" parent="SlideSection/SlideFrictionPanelContainer/SlideFrictionRow" unique_id=1105699408]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 4.0
+
+[node name="SlideFrictionSpinBox" type="SpinBox" parent="SlideSection/SlideFrictionPanelContainer/SlideFrictionRow" unique_id=277433934]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.01
+value = 4.0
+
+[node name="SlideCameraTilePanelContainer" type="PanelContainer" parent="SlideSection" unique_id=1745968029]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="SlideCameraTiltRow" type="HBoxContainer" parent="SlideSection/SlideCameraTilePanelContainer" unique_id=1914013492]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="SlideSection/SlideCameraTilePanelContainer/SlideCameraTiltRow" unique_id=769095330]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Slide Camera Tilt"
+
+[node name="SlideCameraTiltSlider" type="HSlider" parent="SlideSection/SlideCameraTilePanelContainer/SlideCameraTiltRow" unique_id=642077412]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 8.0
+
+[node name="SlideCameraTiltSpinBox" type="SpinBox" parent="SlideSection/SlideCameraTilePanelContainer/SlideCameraTiltRow" unique_id=1736725263]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.01
+value = 8.0
+
+[node name="Spacing" type="Control" parent="SlideSection" unique_id=356635202]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="JumpSection" type="VBoxContainer" parent="." unique_id=948391589]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="JumpHeader" type="Label" parent="JumpSection" unique_id=1504752447]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "JUMP COMPONENT"
+
+[node name="HSeparator" type="HSeparator" parent="JumpSection" unique_id=1880618225]
+layout_mode = 2
+
+[node name="JumpVelocityPanelContainer" type="PanelContainer" parent="JumpSection" unique_id=1694006121]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="JumpVelocityRow" type="HBoxContainer" parent="JumpSection/JumpVelocityPanelContainer" unique_id=475290215]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="JumpSection/JumpVelocityPanelContainer/JumpVelocityRow" unique_id=215564272]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Jump Velocity"
+
+[node name="JumpVelocitySlider" type="HSlider" parent="JumpSection/JumpVelocityPanelContainer/JumpVelocityRow" unique_id=1319342958]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 6.0
+
+[node name="JumpVelocitySpinBox" type="SpinBox" parent="JumpSection/JumpVelocityPanelContainer/JumpVelocityRow" unique_id=2104954989]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 6.0
+
+[node name="AutoBunnyHopPanelContainer" type="PanelContainer" parent="JumpSection" unique_id=1900050390]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="AutoBunnyHopRow" type="HBoxContainer" parent="JumpSection/AutoBunnyHopPanelContainer" unique_id=1508258064]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="JumpSection/AutoBunnyHopPanelContainer/AutoBunnyHopRow" unique_id=950476540]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Auto Bunny Hop"
+
+[node name="AutoBunnyHopCheckBox" type="CheckBox" parent="JumpSection/AutoBunnyHopPanelContainer/AutoBunnyHopRow" unique_id=867410245]
+layout_mode = 2
+
+[node name="Spacing" type="Control" parent="JumpSection" unique_id=1367723048]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="AirMovementSection" type="VBoxContainer" parent="." unique_id=280192203]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="AirMovementHeader" type="Label" parent="AirMovementSection" unique_id=1942074200]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "AIR MOVEMENT COMPONENT"
+
+[node name="HSeparator" type="HSeparator" parent="AirMovementSection" unique_id=1537277781]
+layout_mode = 2
+
+[node name="AirCapPanelContainer" type="PanelContainer" parent="AirMovementSection" unique_id=656363119]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="AirCapRow" type="HBoxContainer" parent="AirMovementSection/AirCapPanelContainer" unique_id=666296656]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="AirMovementSection/AirCapPanelContainer/AirCapRow" unique_id=2025075227]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Air Cap"
+
+[node name="AirCapSlider" type="HSlider" parent="AirMovementSection/AirCapPanelContainer/AirCapRow" unique_id=785558734]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 1.0
+
+[node name="AirCapSpinBox" type="SpinBox" parent="AirMovementSection/AirCapPanelContainer/AirCapRow" unique_id=1208304072]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 1.0
+
+[node name="AirAccelerationPanelContainer" type="PanelContainer" parent="AirMovementSection" unique_id=898728100]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="AirAccelerationRow" type="HBoxContainer" parent="AirMovementSection/AirAccelerationPanelContainer" unique_id=867181890]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="AirMovementSection/AirAccelerationPanelContainer/AirAccelerationRow" unique_id=798129280]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Air Acceleration"
+
+[node name="AirAccelerationSlider" type="HSlider" parent="AirMovementSection/AirAccelerationPanelContainer/AirAccelerationRow" unique_id=3163676]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 500.0
+step = 0.1
+value = 150.0
+
+[node name="AirAccelerationSpinBox" type="SpinBox" parent="AirMovementSection/AirAccelerationPanelContainer/AirAccelerationRow" unique_id=1992617745]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 500.0
+step = 0.1
+value = 150.0
+
+[node name="Spacing" type="Control" parent="AirMovementSection" unique_id=289771804]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="WallJumpSection" type="VBoxContainer" parent="." unique_id=1548220344]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="WallJumpHeader" type="Label" parent="WallJumpSection" unique_id=553028966]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "WALL JUMP"
+
+[node name="HSeparator" type="HSeparator" parent="WallJumpSection" unique_id=1939039604]
+layout_mode = 2
+
+[node name="WallJumpPushPanelContainer" type="PanelContainer" parent="WallJumpSection" unique_id=817016431]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="WallJumpPushRow" type="HBoxContainer" parent="WallJumpSection/WallJumpPushPanelContainer" unique_id=783384111]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="WallJumpSection/WallJumpPushPanelContainer/WallJumpPushRow" unique_id=209692609]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Wall Jump Push"
+
+[node name="WallJumpPushSlider" type="HSlider" parent="WallJumpSection/WallJumpPushPanelContainer/WallJumpPushRow" unique_id=860584238]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 7.0
+
+[node name="WallJumpPushSpinBox" type="SpinBox" parent="WallJumpSection/WallJumpPushPanelContainer/WallJumpPushRow" unique_id=2036190127]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 7.0
+
+[node name="WallJumpUpPanelContainer" type="PanelContainer" parent="WallJumpSection" unique_id=1695044956]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="WallJumpUpRow" type="HBoxContainer" parent="WallJumpSection/WallJumpUpPanelContainer" unique_id=1682947538]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="WallJumpSection/WallJumpUpPanelContainer/WallJumpUpRow" unique_id=1532834152]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Wall Jump Up"
+
+[node name="WallJumpUpSlider" type="HSlider" parent="WallJumpSection/WallJumpUpPanelContainer/WallJumpUpRow" unique_id=2066335247]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 7.0
+
+[node name="WallJumpUpSpinBox" type="SpinBox" parent="WallJumpSection/WallJumpUpPanelContainer/WallJumpUpRow" unique_id=2043211771]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 7.0
+
+[node name="ReattachCooldownPanelContainer" type="PanelContainer" parent="WallJumpSection" unique_id=1758590014]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="ReattachCooldownRow" type="HBoxContainer" parent="WallJumpSection/ReattachCooldownPanelContainer" unique_id=1348050548]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="WallJumpSection/ReattachCooldownPanelContainer/ReattachCooldownRow" unique_id=793917882]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Reattach Cooldown"
+
+[node name="ReattachCooldownSlider" type="HSlider" parent="WallJumpSection/ReattachCooldownPanelContainer/ReattachCooldownRow" unique_id=1025172965]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.01
+value = 0.25
+
+[node name="ReattachCooldownSpinBox" type="SpinBox" parent="WallJumpSection/ReattachCooldownPanelContainer/ReattachCooldownRow" unique_id=890992447]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 0.3
+
+[node name="Spacing" type="Control" parent="WallJumpSection" unique_id=2038814741]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="WallClimbSection" type="VBoxContainer" parent="." unique_id=2041781938]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="WallClimbHeader" type="Label" parent="WallClimbSection" unique_id=335255992]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "WALL CLIMB COMPONENT"
+
+[node name="HSeparator" type="HSeparator" parent="WallClimbSection" unique_id=536864646]
+layout_mode = 2
+
+[node name="ClimbTimePanelContainer" type="PanelContainer" parent="WallClimbSection" unique_id=534845605]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="ClimbTimeRow" type="HBoxContainer" parent="WallClimbSection/ClimbTimePanelContainer" unique_id=1519967017]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="WallClimbSection/ClimbTimePanelContainer/ClimbTimeRow" unique_id=1211179095]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Climb Time"
+
+[node name="ClimbTimeSlider" type="HSlider" parent="WallClimbSection/ClimbTimePanelContainer/ClimbTimeRow" unique_id=1620419465]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 1.6
+
+[node name="ClimbTimeSpinBox" type="SpinBox" parent="WallClimbSection/ClimbTimePanelContainer/ClimbTimeRow" unique_id=507938539]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 1.6
+
+[node name="ClimbSpeedPanelContainer" type="PanelContainer" parent="WallClimbSection" unique_id=161960869]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="ClimbSpeedRow" type="HBoxContainer" parent="WallClimbSection/ClimbSpeedPanelContainer" unique_id=1376383175]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="WallClimbSection/ClimbSpeedPanelContainer/ClimbSpeedRow" unique_id=1821268333]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Climb Speed"
+
+[node name="ClimbSpeedSlider" type="HSlider" parent="WallClimbSection/ClimbSpeedPanelContainer/ClimbSpeedRow" unique_id=1451329329]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 4.5
+
+[node name="ClimbSpeedSpinBox" type="SpinBox" parent="WallClimbSection/ClimbSpeedPanelContainer/ClimbSpeedRow" unique_id=1933115972]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 4.5
+
+[node name="MaxClimbSpeedPanelContainer" type="PanelContainer" parent="WallClimbSection" unique_id=1389514110]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="MaxClimbSpeedRow" type="HBoxContainer" parent="WallClimbSection/MaxClimbSpeedPanelContainer" unique_id=1377412796]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="WallClimbSection/MaxClimbSpeedPanelContainer/MaxClimbSpeedRow" unique_id=1497547873]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Maximum Climb Speed"
+
+[node name="MaxClimbSpeedSlider" type="HSlider" parent="WallClimbSection/MaxClimbSpeedPanelContainer/MaxClimbSpeedRow" unique_id=222874209]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 6.0
+
+[node name="MaxClimbSpeedSpinBox" type="SpinBox" parent="WallClimbSection/MaxClimbSpeedPanelContainer/MaxClimbSpeedRow" unique_id=523929184]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 6.0
+
+[node name="StrafeSpeedPanelContainer" type="PanelContainer" parent="WallClimbSection" unique_id=1608647291]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="StrafeSpeedRow" type="HBoxContainer" parent="WallClimbSection/StrafeSpeedPanelContainer" unique_id=978407514]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="WallClimbSection/StrafeSpeedPanelContainer/StrafeSpeedRow" unique_id=107899370]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Strafe Speed"
+
+[node name="StrafeSpeedSlider" type="HSlider" parent="WallClimbSection/StrafeSpeedPanelContainer/StrafeSpeedRow" unique_id=698531463]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 3.0
+
+[node name="StrafeSpeedSpinBox" type="SpinBox" parent="WallClimbSection/StrafeSpeedPanelContainer/StrafeSpeedRow" unique_id=1793882097]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 3.0
+
+[node name="ClimbGravityPanelContainer" type="PanelContainer" parent="WallClimbSection" unique_id=1336936216]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="ClimbGravityRow" type="HBoxContainer" parent="WallClimbSection/ClimbGravityPanelContainer" unique_id=578771997]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="WallClimbSection/ClimbGravityPanelContainer/ClimbGravityRow" unique_id=440986508]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Climb Gravity"
+
+[node name="ClimbGravitySlider" type="HSlider" parent="WallClimbSection/ClimbGravityPanelContainer/ClimbGravityRow" unique_id=1559500375]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 1.0
+
+[node name="ClimbGravitySpinBox" type="SpinBox" parent="WallClimbSection/ClimbGravityPanelContainer/ClimbGravityRow" unique_id=459078542]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 1.0
+
+[node name="WallStickForcePanelContainer" type="PanelContainer" parent="WallClimbSection" unique_id=208986210]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="WallStickForceRow" type="HBoxContainer" parent="WallClimbSection/WallStickForcePanelContainer" unique_id=510367378]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="WallClimbSection/WallStickForcePanelContainer/WallStickForceRow" unique_id=567025400]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Wall Stick Force"
+
+[node name="WallStickForceSlider" type="HSlider" parent="WallClimbSection/WallStickForcePanelContainer/WallStickForceRow" unique_id=769583460]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 3.0
+
+[node name="WallStickForceSpinBox" type="SpinBox" parent="WallClimbSection/WallStickForcePanelContainer/WallStickForceRow" unique_id=1553351217]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 3.0
+
+[node name="MinApproachAnglePanelContainer" type="PanelContainer" parent="WallClimbSection" unique_id=1716714000]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="MinApproachAngleRow" type="HBoxContainer" parent="WallClimbSection/MinApproachAnglePanelContainer" unique_id=457143216]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="WallClimbSection/MinApproachAnglePanelContainer/MinApproachAngleRow" unique_id=834010432]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Minimum Approach Angle"
+
+[node name="MinApproachAngleSlider" type="HSlider" parent="WallClimbSection/MinApproachAnglePanelContainer/MinApproachAngleRow" unique_id=381095821]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 0.5
+
+[node name="MinApproachAngleSpinBox" type="SpinBox" parent="WallClimbSection/MinApproachAnglePanelContainer/MinApproachAngleRow" unique_id=674985493]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 0.5
+
+[node name="Spacing" type="Control" parent="WallClimbSection" unique_id=1518561194]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="WallRunSection" type="VBoxContainer" parent="." unique_id=123316313]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="WallRunHeader" type="Label" parent="WallRunSection" unique_id=1715344626]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "WALL RUN COMPONENT"
+
+[node name="HSeparator" type="HSeparator" parent="WallRunSection" unique_id=1854413752]
+layout_mode = 2
+
+[node name="WallRunTimePanelContainer" type="PanelContainer" parent="WallRunSection" unique_id=622769989]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="WallRunTimeRow" type="HBoxContainer" parent="WallRunSection/WallRunTimePanelContainer" unique_id=1350726983]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="WallRunSection/WallRunTimePanelContainer/WallRunTimeRow" unique_id=175500851]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Wall Run Time"
+
+[node name="WallRunTimeSlider" type="HSlider" parent="WallRunSection/WallRunTimePanelContainer/WallRunTimeRow" unique_id=1787698172]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 1.4
+
+[node name="WallRunTimeSpinBox" type="SpinBox" parent="WallRunSection/WallRunTimePanelContainer/WallRunTimeRow" unique_id=430633058]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 1.4
+
+[node name="WallRunSpeedPanelContainer" type="PanelContainer" parent="WallRunSection" unique_id=1782569500]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="WallRunSpeedRow" type="HBoxContainer" parent="WallRunSection/WallRunSpeedPanelContainer" unique_id=1330396725]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="WallRunSection/WallRunSpeedPanelContainer/WallRunSpeedRow" unique_id=1129329438]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Wall Run Speed"
+
+[node name="WallRunSpeedSlider" type="HSlider" parent="WallRunSection/WallRunSpeedPanelContainer/WallRunSpeedRow" unique_id=1795086340]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 11.0
+
+[node name="WallRunSpeedSpinBox" type="SpinBox" parent="WallRunSection/WallRunSpeedPanelContainer/WallRunSpeedRow" unique_id=777408441]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 11.0
+
+[node name="MaxWallRunSpeedPanelContainer" type="PanelContainer" parent="WallRunSection" unique_id=397506193]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="MaxWallRunSpeedRow" type="HBoxContainer" parent="WallRunSection/MaxWallRunSpeedPanelContainer" unique_id=1503112213]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="WallRunSection/MaxWallRunSpeedPanelContainer/MaxWallRunSpeedRow" unique_id=435336379]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Maximum Wall Run Speed"
+
+[node name="MaxWallRunSpeedSlider" type="HSlider" parent="WallRunSection/MaxWallRunSpeedPanelContainer/MaxWallRunSpeedRow" unique_id=1022344432]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 50.0
+step = 0.1
+value = 16.0
+
+[node name="MaxWallRunSpeedSpinBox" type="SpinBox" parent="WallRunSection/MaxWallRunSpeedPanelContainer/MaxWallRunSpeedRow" unique_id=1831192211]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 50.0
+step = 0.1
+value = 16.0
+
+[node name="MinWallRunSpeedPanelContainer" type="PanelContainer" parent="WallRunSection" unique_id=1157805343]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="MinWallRunSpeedRow" type="HBoxContainer" parent="WallRunSection/MinWallRunSpeedPanelContainer" unique_id=687809672]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="WallRunSection/MinWallRunSpeedPanelContainer/MinWallRunSpeedRow" unique_id=1122413302]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Minimum Wall Run Speed"
+
+[node name="MinWallRunSpeedSlider" type="HSlider" parent="WallRunSection/MinWallRunSpeedPanelContainer/MinWallRunSpeedRow" unique_id=1377162465]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 3.0
+
+[node name="MinWallRunSpeedSpinBox" type="SpinBox" parent="WallRunSection/MinWallRunSpeedPanelContainer/MinWallRunSpeedRow" unique_id=2004232455]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 3.0
+
+[node name="WallRunGravityPanelContainer" type="PanelContainer" parent="WallRunSection" unique_id=1594478066]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="WallRunGravityRow" type="HBoxContainer" parent="WallRunSection/WallRunGravityPanelContainer" unique_id=77234303]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="WallRunSection/WallRunGravityPanelContainer/WallRunGravityRow" unique_id=1739844405]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Wall Run Gravity"
+
+[node name="WallRunGravitySlider" type="HSlider" parent="WallRunSection/WallRunGravityPanelContainer/WallRunGravityRow" unique_id=1122862174]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 2.5
+
+[node name="WallRunGravitySpinBox" type="SpinBox" parent="WallRunSection/WallRunGravityPanelContainer/WallRunGravityRow" unique_id=684622876]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 2.5
+
+[node name="WallStickForcePanelContainer" type="PanelContainer" parent="WallRunSection" unique_id=630664718]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="WallStickForceRow" type="HBoxContainer" parent="WallRunSection/WallStickForcePanelContainer" unique_id=424820964]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="WallRunSection/WallStickForcePanelContainer/WallStickForceRow" unique_id=976519176]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Wall Stick Force"
+
+[node name="WallStickForceSlider" type="HSlider" parent="WallRunSection/WallStickForcePanelContainer/WallStickForceRow" unique_id=1755701652]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 3.0
+
+[node name="WallStickForceSpinBox" type="SpinBox" parent="WallRunSection/WallStickForcePanelContainer/WallStickForceRow" unique_id=186770056]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 3.0
+
+[node name="WallRunTiltDegeesPanelContainer" type="PanelContainer" parent="WallRunSection" unique_id=183561564]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="WallRunTiltDegreesRow" type="HBoxContainer" parent="WallRunSection/WallRunTiltDegeesPanelContainer" unique_id=2067059651]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="WallRunSection/WallRunTiltDegeesPanelContainer/WallRunTiltDegreesRow" unique_id=161888784]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Wall Run Tilt Degrees"
+
+[node name="WallRunTiltDegreesSlider" type="HSlider" parent="WallRunSection/WallRunTiltDegeesPanelContainer/WallRunTiltDegreesRow" unique_id=600276112]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+step = 0.1
+value = 15.0
+
+[node name="WallRunTileDegreesSpinBox" type="SpinBox" parent="WallRunSection/WallRunTiltDegeesPanelContainer/WallRunTiltDegreesRow" unique_id=1047679688]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+step = 0.1
+value = 15.0
+
+[node name="Spacing" type="Control" parent="WallRunSection" unique_id=534203232]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[connection signal="value_changed" from="BasicMovementSection/WalkSpeedPanelContainer/WalkSpeedRow/WalkSpeedSlider" to="BasicMovementSection/WalkSpeedPanelContainer/WalkSpeedRow/WalkSpinBox" method="set_value"]
+[connection signal="value_changed" from="BasicMovementSection/WalkSpeedPanelContainer/WalkSpeedRow/WalkSpinBox" to="BasicMovementSection/WalkSpeedPanelContainer/WalkSpeedRow/WalkSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="BasicMovementSection/SprintSpeedPanelContainer/SprintSpeedRow/SprintSpeedSlider" to="BasicMovementSection/SprintSpeedPanelContainer/SprintSpeedRow/SprintSpinBox" method="set_value"]
+[connection signal="value_changed" from="BasicMovementSection/SprintSpeedPanelContainer/SprintSpeedRow/SprintSpinBox" to="BasicMovementSection/SprintSpeedPanelContainer/SprintSpeedRow/SprintSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="BasicMovementSection/GroundAccelerationPanelContainer/GroundAccelerationRow/GroundAccelerationSlider" to="BasicMovementSection/GroundAccelerationPanelContainer/GroundAccelerationRow/GroundAccelerationSpinBox" method="set_value"]
+[connection signal="value_changed" from="BasicMovementSection/GroundAccelerationPanelContainer/GroundAccelerationRow/GroundAccelerationSpinBox" to="BasicMovementSection/GroundAccelerationPanelContainer/GroundAccelerationRow/GroundAccelerationSlider" method="set_value"]
+[connection signal="value_changed" from="BasicMovementSection/GroundDecelerationPanelContainer/GroundDecelerationRow/GroundDecelerationSlider" to="BasicMovementSection/GroundDecelerationPanelContainer/GroundDecelerationRow/GroundDecelerationRowSpinBox" method="set_value"]
+[connection signal="value_changed" from="BasicMovementSection/GroundDecelerationPanelContainer/GroundDecelerationRow/GroundDecelerationRowSpinBox" to="BasicMovementSection/GroundDecelerationPanelContainer/GroundDecelerationRow/GroundDecelerationSlider" method="set_value"]
+[connection signal="value_changed" from="BasicMovementSection/GroundFrictionPanelContainer/GroundFrictionRow/GroundFrictionSlider" to="BasicMovementSection/GroundFrictionPanelContainer/GroundFrictionRow/GroundFrictionSpinBox" method="set_value"]
+[connection signal="value_changed" from="BasicMovementSection/GroundFrictionPanelContainer/GroundFrictionRow/GroundFrictionSpinBox" to="BasicMovementSection/GroundFrictionPanelContainer/GroundFrictionRow/GroundFrictionSlider" method="set_value"]
+[connection signal="value_changed" from="CrouchSection/CrouchSpeedPanelContainer/CrouchSpeedRow/CrouchSpeedSlider" to="CrouchSection/CrouchSpeedPanelContainer/CrouchSpeedRow/CrouchSpeedSpinBox" method="set_value"]
+[connection signal="value_changed" from="CrouchSection/CrouchSpeedPanelContainer/CrouchSpeedRow/CrouchSpeedSpinBox" to="CrouchSection/CrouchSpeedPanelContainer/CrouchSpeedRow/CrouchSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="CrouchSection/CrouchDepthPanelContainer/CrouchDepthRow/CrouchDepthSlider" to="CrouchSection/CrouchDepthPanelContainer/CrouchDepthRow/CrouchDepthSpinBox" method="set_value"]
+[connection signal="value_changed" from="CrouchSection/CrouchDepthPanelContainer/CrouchDepthRow/CrouchDepthSpinBox" to="CrouchSection/CrouchDepthPanelContainer/CrouchDepthRow/CrouchDepthSlider" method="set_value"]
+[connection signal="value_changed" from="CrouchSection/CrouchLerpSpeedPanelContainer/CrouchLerpSpeedRow/CrouchLerpSpeedSlider" to="CrouchSection/CrouchLerpSpeedPanelContainer/CrouchLerpSpeedRow/CrouchLerpSpeedSpinBox" method="set_value"]
+[connection signal="value_changed" from="CrouchSection/CrouchLerpSpeedPanelContainer/CrouchLerpSpeedRow/CrouchLerpSpeedSpinBox" to="CrouchSection/CrouchLerpSpeedPanelContainer/CrouchLerpSpeedRow/CrouchLerpSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="CrouchSection/StandCapsuleHeightPanelContainer/StandCapsuleHeightRow/StandCapsuleHeightSlider" to="CrouchSection/StandCapsuleHeightPanelContainer/StandCapsuleHeightRow/StandCapsuleHeightSpinBox" method="set_value"]
+[connection signal="value_changed" from="CrouchSection/StandCapsuleHeightPanelContainer/StandCapsuleHeightRow/StandCapsuleHeightSpinBox" to="CrouchSection/StandCapsuleHeightPanelContainer/StandCapsuleHeightRow/StandCapsuleHeightSlider" method="set_value"]
+[connection signal="value_changed" from="SlideSection/SlideTtimerMaxPanelContainer/SlideTimerMaxRow/SlideTimerMaxSlider" to="SlideSection/SlideTtimerMaxPanelContainer/SlideTimerMaxRow/SlideTimerMaxSpinBox" method="set_value"]
+[connection signal="value_changed" from="SlideSection/SlideTtimerMaxPanelContainer/SlideTimerMaxRow/SlideTimerMaxSpinBox" to="SlideSection/SlideTtimerMaxPanelContainer/SlideTimerMaxRow/SlideTimerMaxSlider" method="set_value"]
+[connection signal="value_changed" from="SlideSection/SlideSpeedPanelContainer/SlideSpeedRow/SlideSpeedSlider" to="SlideSection/SlideSpeedPanelContainer/SlideSpeedRow/SlideSpeedSpinBox" method="set_value"]
+[connection signal="value_changed" from="SlideSection/SlideSpeedPanelContainer/SlideSpeedRow/SlideSpeedSpinBox" to="SlideSection/SlideSpeedPanelContainer/SlideSpeedRow/SlideSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="SlideSection/MinSlideSpeedPanelContainer/MinSlideSpeedRow/MinSlideSpeedSlider" to="SlideSection/MinSlideSpeedPanelContainer/MinSlideSpeedRow/MinSlideSpeedSpinBox" method="set_value"]
+[connection signal="value_changed" from="SlideSection/MinSlideSpeedPanelContainer/MinSlideSpeedRow/MinSlideSpeedSpinBox" to="SlideSection/MinSlideSpeedPanelContainer/MinSlideSpeedRow/MinSlideSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="SlideSection/MaxSlideSpeedPanelContainer/MaxSlideSpeedRow/MaxSlideSpeedSlider" to="SlideSection/MaxSlideSpeedPanelContainer/MaxSlideSpeedRow/MaxSlideSpeedSpinBox" method="set_value"]
+[connection signal="value_changed" from="SlideSection/MaxSlideSpeedPanelContainer/MaxSlideSpeedRow/MaxSlideSpeedSpinBox" to="SlideSection/MaxSlideSpeedPanelContainer/MaxSlideSpeedRow/MaxSlideSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="SlideSection/MinSlideStartSpeedPanelContainer/MinSlideStartSpeedRow/MinSlideStartSpeedSlider" to="SlideSection/MinSlideStartSpeedPanelContainer/MinSlideStartSpeedRow/MinSlideStartSpeedSpinBox" method="set_value"]
+[connection signal="value_changed" from="SlideSection/MinSlideStartSpeedPanelContainer/MinSlideStartSpeedRow/MinSlideStartSpeedSpinBox" to="SlideSection/MinSlideStartSpeedPanelContainer/MinSlideStartSpeedRow/MinSlideStartSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="SlideSection/SlideSlopeAccelerationPanelContainer/SlideSlopeAccelerationRow/SlideSlopeAccelerationSlider" to="SlideSection/SlideSlopeAccelerationPanelContainer/SlideSlopeAccelerationRow/SlideSlopeAccelerationSpinBox" method="set_value"]
+[connection signal="value_changed" from="SlideSection/SlideSlopeAccelerationPanelContainer/SlideSlopeAccelerationRow/SlideSlopeAccelerationSpinBox" to="SlideSection/SlideSlopeAccelerationPanelContainer/SlideSlopeAccelerationRow/SlideSlopeAccelerationSlider" method="set_value"]
+[connection signal="value_changed" from="SlideSection/UphillPenaltyPanelContainer/UphillPenaltyRow/UphillPenaltySlider" to="SlideSection/UphillPenaltyPanelContainer/UphillPenaltyRow/UphillPenaltySpinBox" method="set_value"]
+[connection signal="value_changed" from="SlideSection/UphillPenaltyPanelContainer/UphillPenaltyRow/UphillPenaltySpinBox" to="SlideSection/UphillPenaltyPanelContainer/UphillPenaltyRow/UphillPenaltySlider" method="set_value"]
+[connection signal="value_changed" from="SlideSection/SlideFrictionPanelContainer/SlideFrictionRow/SlideFrictionSlider" to="SlideSection/SlideFrictionPanelContainer/SlideFrictionRow/SlideFrictionSpinBox" method="set_value"]
+[connection signal="value_changed" from="SlideSection/SlideFrictionPanelContainer/SlideFrictionRow/SlideFrictionSpinBox" to="SlideSection/SlideFrictionPanelContainer/SlideFrictionRow/SlideFrictionSlider" method="set_value"]
+[connection signal="value_changed" from="SlideSection/SlideCameraTilePanelContainer/SlideCameraTiltRow/SlideCameraTiltSlider" to="SlideSection/SlideCameraTilePanelContainer/SlideCameraTiltRow/SlideCameraTiltSpinBox" method="set_value"]
+[connection signal="value_changed" from="SlideSection/SlideCameraTilePanelContainer/SlideCameraTiltRow/SlideCameraTiltSpinBox" to="SlideSection/SlideCameraTilePanelContainer/SlideCameraTiltRow/SlideCameraTiltSlider" method="set_value"]
+[connection signal="value_changed" from="JumpSection/JumpVelocityPanelContainer/JumpVelocityRow/JumpVelocitySlider" to="JumpSection/JumpVelocityPanelContainer/JumpVelocityRow/JumpVelocitySpinBox" method="set_value"]
+[connection signal="value_changed" from="JumpSection/JumpVelocityPanelContainer/JumpVelocityRow/JumpVelocitySpinBox" to="JumpSection/JumpVelocityPanelContainer/JumpVelocityRow/JumpVelocitySlider" method="set_value"]
+[connection signal="value_changed" from="AirMovementSection/AirCapPanelContainer/AirCapRow/AirCapSlider" to="AirMovementSection/AirCapPanelContainer/AirCapRow/AirCapSpinBox" method="set_value"]
+[connection signal="value_changed" from="AirMovementSection/AirCapPanelContainer/AirCapRow/AirCapSpinBox" to="AirMovementSection/AirCapPanelContainer/AirCapRow/AirCapSlider" method="set_value"]
+[connection signal="value_changed" from="AirMovementSection/AirAccelerationPanelContainer/AirAccelerationRow/AirAccelerationSlider" to="AirMovementSection/AirAccelerationPanelContainer/AirAccelerationRow/AirAccelerationSpinBox" method="set_value"]
+[connection signal="value_changed" from="AirMovementSection/AirAccelerationPanelContainer/AirAccelerationRow/AirAccelerationSpinBox" to="AirMovementSection/AirAccelerationPanelContainer/AirAccelerationRow/AirAccelerationSlider" method="set_value"]
+[connection signal="value_changed" from="WallJumpSection/WallJumpPushPanelContainer/WallJumpPushRow/WallJumpPushSlider" to="WallJumpSection/WallJumpPushPanelContainer/WallJumpPushRow/WallJumpPushSpinBox" method="set_value"]
+[connection signal="value_changed" from="WallJumpSection/WallJumpPushPanelContainer/WallJumpPushRow/WallJumpPushSpinBox" to="WallJumpSection/WallJumpPushPanelContainer/WallJumpPushRow/WallJumpPushSlider" method="set_value"]
+[connection signal="value_changed" from="WallJumpSection/WallJumpUpPanelContainer/WallJumpUpRow/WallJumpUpSlider" to="WallJumpSection/WallJumpUpPanelContainer/WallJumpUpRow/WallJumpUpSpinBox" method="set_value"]
+[connection signal="value_changed" from="WallJumpSection/WallJumpUpPanelContainer/WallJumpUpRow/WallJumpUpSpinBox" to="WallJumpSection/WallJumpUpPanelContainer/WallJumpUpRow/WallJumpUpSlider" method="set_value"]
+[connection signal="value_changed" from="WallJumpSection/ReattachCooldownPanelContainer/ReattachCooldownRow/ReattachCooldownSlider" to="WallJumpSection/ReattachCooldownPanelContainer/ReattachCooldownRow/ReattachCooldownSpinBox" method="set_value"]
+[connection signal="value_changed" from="WallJumpSection/ReattachCooldownPanelContainer/ReattachCooldownRow/ReattachCooldownSpinBox" to="WallJumpSection/ReattachCooldownPanelContainer/ReattachCooldownRow/ReattachCooldownSlider" method="set_value"]
+[connection signal="value_changed" from="WallClimbSection/ClimbTimePanelContainer/ClimbTimeRow/ClimbTimeSlider" to="WallClimbSection/ClimbTimePanelContainer/ClimbTimeRow/ClimbTimeSpinBox" method="set_value"]
+[connection signal="value_changed" from="WallClimbSection/ClimbTimePanelContainer/ClimbTimeRow/ClimbTimeSpinBox" to="WallClimbSection/ClimbTimePanelContainer/ClimbTimeRow/ClimbTimeSlider" method="set_value"]
+[connection signal="value_changed" from="WallClimbSection/ClimbSpeedPanelContainer/ClimbSpeedRow/ClimbSpeedSlider" to="WallClimbSection/ClimbSpeedPanelContainer/ClimbSpeedRow/ClimbSpeedSpinBox" method="set_value"]
+[connection signal="value_changed" from="WallClimbSection/ClimbSpeedPanelContainer/ClimbSpeedRow/ClimbSpeedSpinBox" to="WallClimbSection/ClimbSpeedPanelContainer/ClimbSpeedRow/ClimbSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="WallClimbSection/MaxClimbSpeedPanelContainer/MaxClimbSpeedRow/MaxClimbSpeedSlider" to="WallClimbSection/MaxClimbSpeedPanelContainer/MaxClimbSpeedRow/MaxClimbSpeedSpinBox" method="set_value"]
+[connection signal="value_changed" from="WallClimbSection/MaxClimbSpeedPanelContainer/MaxClimbSpeedRow/MaxClimbSpeedSpinBox" to="WallClimbSection/MaxClimbSpeedPanelContainer/MaxClimbSpeedRow/MaxClimbSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="WallClimbSection/StrafeSpeedPanelContainer/StrafeSpeedRow/StrafeSpeedSlider" to="WallClimbSection/StrafeSpeedPanelContainer/StrafeSpeedRow/StrafeSpeedSpinBox" method="set_value"]
+[connection signal="value_changed" from="WallClimbSection/StrafeSpeedPanelContainer/StrafeSpeedRow/StrafeSpeedSpinBox" to="WallClimbSection/StrafeSpeedPanelContainer/StrafeSpeedRow/StrafeSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="WallClimbSection/ClimbGravityPanelContainer/ClimbGravityRow/ClimbGravitySlider" to="WallClimbSection/ClimbGravityPanelContainer/ClimbGravityRow/ClimbGravitySpinBox" method="set_value"]
+[connection signal="value_changed" from="WallClimbSection/ClimbGravityPanelContainer/ClimbGravityRow/ClimbGravitySpinBox" to="WallClimbSection/ClimbGravityPanelContainer/ClimbGravityRow/ClimbGravitySlider" method="set_value"]
+[connection signal="value_changed" from="WallClimbSection/WallStickForcePanelContainer/WallStickForceRow/WallStickForceSlider" to="WallClimbSection/WallStickForcePanelContainer/WallStickForceRow/WallStickForceSpinBox" method="set_value"]
+[connection signal="value_changed" from="WallClimbSection/WallStickForcePanelContainer/WallStickForceRow/WallStickForceSpinBox" to="WallClimbSection/WallStickForcePanelContainer/WallStickForceRow/WallStickForceSlider" method="set_value"]
+[connection signal="value_changed" from="WallClimbSection/MinApproachAnglePanelContainer/MinApproachAngleRow/MinApproachAngleSlider" to="WallClimbSection/MinApproachAnglePanelContainer/MinApproachAngleRow/MinApproachAngleSpinBox" method="set_value"]
+[connection signal="value_changed" from="WallClimbSection/MinApproachAnglePanelContainer/MinApproachAngleRow/MinApproachAngleSpinBox" to="WallClimbSection/MinApproachAnglePanelContainer/MinApproachAngleRow/MinApproachAngleSlider" method="set_value"]
+[connection signal="value_changed" from="WallRunSection/WallRunTimePanelContainer/WallRunTimeRow/WallRunTimeSlider" to="WallRunSection/WallRunTimePanelContainer/WallRunTimeRow/WallRunTimeSpinBox" method="set_value"]
+[connection signal="value_changed" from="WallRunSection/WallRunTimePanelContainer/WallRunTimeRow/WallRunTimeSpinBox" to="WallRunSection/WallRunTimePanelContainer/WallRunTimeRow/WallRunTimeSlider" method="set_value"]
+[connection signal="value_changed" from="WallRunSection/WallRunSpeedPanelContainer/WallRunSpeedRow/WallRunSpeedSlider" to="WallRunSection/WallRunSpeedPanelContainer/WallRunSpeedRow/WallRunSpeedSpinBox" method="set_value"]
+[connection signal="value_changed" from="WallRunSection/WallRunSpeedPanelContainer/WallRunSpeedRow/WallRunSpeedSpinBox" to="WallRunSection/WallRunSpeedPanelContainer/WallRunSpeedRow/WallRunSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="WallRunSection/MaxWallRunSpeedPanelContainer/MaxWallRunSpeedRow/MaxWallRunSpeedSlider" to="WallRunSection/MaxWallRunSpeedPanelContainer/MaxWallRunSpeedRow/MaxWallRunSpeedSpinBox" method="set_value"]
+[connection signal="value_changed" from="WallRunSection/MaxWallRunSpeedPanelContainer/MaxWallRunSpeedRow/MaxWallRunSpeedSpinBox" to="WallRunSection/MaxWallRunSpeedPanelContainer/MaxWallRunSpeedRow/MaxWallRunSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="WallRunSection/MinWallRunSpeedPanelContainer/MinWallRunSpeedRow/MinWallRunSpeedSlider" to="WallRunSection/MinWallRunSpeedPanelContainer/MinWallRunSpeedRow/MinWallRunSpeedSpinBox" method="set_value"]
+[connection signal="value_changed" from="WallRunSection/MinWallRunSpeedPanelContainer/MinWallRunSpeedRow/MinWallRunSpeedSpinBox" to="WallRunSection/MinWallRunSpeedPanelContainer/MinWallRunSpeedRow/MinWallRunSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="WallRunSection/WallRunGravityPanelContainer/WallRunGravityRow/WallRunGravitySlider" to="WallRunSection/WallRunGravityPanelContainer/WallRunGravityRow/WallRunGravitySpinBox" method="set_value"]
+[connection signal="value_changed" from="WallRunSection/WallRunGravityPanelContainer/WallRunGravityRow/WallRunGravitySpinBox" to="WallRunSection/WallRunGravityPanelContainer/WallRunGravityRow/WallRunGravitySlider" method="set_value"]
+[connection signal="value_changed" from="WallRunSection/WallStickForcePanelContainer/WallStickForceRow/WallStickForceSlider" to="WallRunSection/WallStickForcePanelContainer/WallStickForceRow/WallStickForceSpinBox" method="set_value"]
+[connection signal="value_changed" from="WallRunSection/WallStickForcePanelContainer/WallStickForceRow/WallStickForceSpinBox" to="WallRunSection/WallStickForcePanelContainer/WallStickForceRow/WallStickForceSlider" method="set_value"]
+[connection signal="value_changed" from="WallRunSection/WallRunTiltDegeesPanelContainer/WallRunTiltDegreesRow/WallRunTiltDegreesSlider" to="WallRunSection/WallRunTiltDegeesPanelContainer/WallRunTiltDegreesRow/WallRunTileDegreesSpinBox" method="set_value"]
+[connection signal="value_changed" from="WallRunSection/WallRunTiltDegeesPanelContainer/WallRunTiltDegreesRow/WallRunTileDegreesSpinBox" to="WallRunSection/WallRunTiltDegeesPanelContainer/WallRunTiltDegreesRow/WallRunTiltDegreesSlider" method="set_value"]
