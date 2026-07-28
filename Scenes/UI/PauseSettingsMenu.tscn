@@ -2,11 +2,9 @@
 
 [ext_resource type="Script" uid="uid://yu64mwr66y60" path="res://Scripts/UI/PauseSettingsMenu.cs" id="1_u1pt5"]
 
-[node name="PauseSettingsMenu" type="CanvasLayer" unique_id=1922292828 node_paths=PackedStringArray("SpeedSlider", "GravitySlider", "ResumeButton", "MainMenuButton")]
+[node name="PauseSettingsMenu" type="CanvasLayer" unique_id=1922292828 node_paths=PackedStringArray("ResumeButton", "MainMenuButton")]
 process_mode = 2
 script = ExtResource("1_u1pt5")
-SpeedSlider = NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SpeedSlider")
-GravitySlider = NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/GravitySlider")
 ResumeButton = NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ResumeButton")
 MainMenuButton = NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/MainMenuButton")
 
@@ -45,36 +43,15 @@ theme_override_font_sizes/font_size = 48
 text = "PAUSED"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=520692979]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1621396019]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Wall Run Speed:"
-horizontal_alignment = 1
-
-[node name="SpeedSlider" type="HSlider" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1276465249]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1223662580]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1066042144]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Wall Run Gravity:"
-horizontal_alignment = 1
-
-[node name="GravitySlider" type="HSlider" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2057669467]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-
 [node name="ResumeButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=782154542]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Resume"
+
+[node name="SettingsButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=361189310]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Settings"
 
 [node name="MainMenuButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2061726752]
 layout_mode = 2

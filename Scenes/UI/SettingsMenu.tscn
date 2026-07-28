@@ -1,0 +1,1527 @@
+[gd_scene format=3 uid="uid://n5gsrq6nbc4y"]
+
+[ext_resource type="StyleBox" uid="uid://654rrvhktqa2" path="res://Scenes/UI/SettingsPanelContainer/SettingsPanelContainer.tres" id="1_gne0f"]
+
+[node name="SettingsMenu" type="CanvasLayer" unique_id=1523625903]
+
+[node name="Background" type="ColorRect" parent="." unique_id=316931637]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="MarginContainer" type="MarginContainer" parent="Background" unique_id=1342340344]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuAspectFrame" type="AspectRatioContainer" parent="Background/MarginContainer" unique_id=1352285625]
+layout_mode = 2
+ratio = 1.7778
+
+[node name="PanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame" unique_id=1686538366]
+layout_mode = 2
+
+[node name="OuterMarginContainer" type="MarginContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer" unique_id=1657302015]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="MainVBox" type="VBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer" unique_id=1511434822]
+layout_mode = 2
+
+[node name="TabHeaderHBox" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox" unique_id=987816683]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="GameplayButton" type="Button" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/TabHeaderHBox" unique_id=1154473546]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "Gameplay"
+
+[node name="MouseKBButton" type="Button" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/TabHeaderHBox" unique_id=1860825822]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "Mouse and Keyboard"
+
+[node name="ControllerButton" type="Button" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/TabHeaderHBox" unique_id=1560743832]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "Controller"
+
+[node name="VideoButton" type="Button" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/TabHeaderHBox" unique_id=185718962]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "VideoButton"
+
+[node name="AudioButton" type="Button" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/TabHeaderHBox" unique_id=2079240098]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "Audio"
+
+[node name="ContentHBox" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox" unique_id=602647878]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 24
+
+[node name="ContentTabContainer" type="TabContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox" unique_id=708601908]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+current_tab = 0
+tabs_visible = false
+
+[node name="GameplayTab" type="ScrollContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer" unique_id=740998885]
+layout_mode = 2
+horizontal_scroll_mode = 0
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab" unique_id=1118201667]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="GameplayVBox" type="VBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer" unique_id=1278720855]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="BasicMovementSection" type="VBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox" unique_id=1461063481]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="BasicHeader" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection" unique_id=1909794492]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "GROUND MOVEMENT COMPONENT"
+
+[node name="HSeparator" type="HSeparator" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection" unique_id=347507137]
+layout_mode = 2
+
+[node name="WalkSpeedPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection" unique_id=1826877809]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="WalkSpeedRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/WalkSpeedPanelContainer" unique_id=1807073946]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/WalkSpeedPanelContainer/WalkSpeedRow" unique_id=688979450]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Walk Speed"
+
+[node name="WalkSpeedSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/WalkSpeedPanelContainer/WalkSpeedRow" unique_id=1474392010]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 7.0
+
+[node name="WalkSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/WalkSpeedPanelContainer/WalkSpeedRow" unique_id=1848824701]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 7.0
+
+[node name="SprintSpeedPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection" unique_id=1647073642]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="SprintSpeedRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/SprintSpeedPanelContainer" unique_id=1311484668]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/SprintSpeedPanelContainer/SprintSpeedRow" unique_id=671084160]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Sprint Speed"
+
+[node name="SprintSpeedSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/SprintSpeedPanelContainer/SprintSpeedRow" unique_id=1806948237]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 11.0
+
+[node name="SprintSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/SprintSpeedPanelContainer/SprintSpeedRow" unique_id=556627805]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 11.0
+
+[node name="GroundAccelerationPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection" unique_id=1510231619]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="GroundAccelerationRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/GroundAccelerationPanelContainer" unique_id=1205814975]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/GroundAccelerationPanelContainer/GroundAccelerationRow" unique_id=220668172]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Ground Acceleration"
+
+[node name="GroundAccelerationSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/GroundAccelerationPanelContainer/GroundAccelerationRow" unique_id=1855458930]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 14.0
+
+[node name="GroundAccelerationSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/GroundAccelerationPanelContainer/GroundAccelerationRow" unique_id=1720810630]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 14.0
+
+[node name="GroundDecelerationPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection" unique_id=402691145]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="GroundDecelerationRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/GroundDecelerationPanelContainer" unique_id=1863870215]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/GroundDecelerationPanelContainer/GroundDecelerationRow" unique_id=1120414933]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Ground Acceleration"
+
+[node name="GroundDecelerationSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/GroundDecelerationPanelContainer/GroundDecelerationRow" unique_id=2136405746]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 10.0
+
+[node name="GroundDecelerationRowSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/GroundDecelerationPanelContainer/GroundDecelerationRow" unique_id=801266620]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 10.0
+
+[node name="GroundFrictionPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection" unique_id=339273409]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="GroundFrictionRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/GroundFrictionPanelContainer" unique_id=1761058857]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/GroundFrictionPanelContainer/GroundFrictionRow" unique_id=1590115471]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Ground Acceleration"
+
+[node name="GroundFrictionSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/GroundFrictionPanelContainer/GroundFrictionRow" unique_id=1881656285]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 6.0
+
+[node name="GroundFrictionSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/GroundFrictionPanelContainer/GroundFrictionRow" unique_id=611983161]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 6.0
+
+[node name="Spacing" type="Control" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection" unique_id=1930185493]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="CrouchSection" type="VBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox" unique_id=1304958306]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="CrouchHeader" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection" unique_id=12584568]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CROUCH COMPONENT"
+
+[node name="HSeparator" type="HSeparator" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection" unique_id=1885523526]
+layout_mode = 2
+
+[node name="CrouchSpeedPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection" unique_id=128547253]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="CrouchSpeedRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/CrouchSpeedPanelContainer" unique_id=2032742661]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/CrouchSpeedPanelContainer/CrouchSpeedRow" unique_id=595338523]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Crouch Speed"
+
+[node name="CrouchSpeedSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/CrouchSpeedPanelContainer/CrouchSpeedRow" unique_id=756731170]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 3.0
+
+[node name="CrouchSpeedSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/CrouchSpeedPanelContainer/CrouchSpeedRow" unique_id=1268965067]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 3.0
+
+[node name="CrouchDepthPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection" unique_id=911690660]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="CrouchDepthRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/CrouchDepthPanelContainer" unique_id=1416732219]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/CrouchDepthPanelContainer/CrouchDepthRow" unique_id=105613282]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Crouch Depth"
+
+[node name="CrouchDepthSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/CrouchDepthPanelContainer/CrouchDepthRow" unique_id=2050783068]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 0.5
+
+[node name="CrouchDepthSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/CrouchDepthPanelContainer/CrouchDepthRow" unique_id=1567667589]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.01
+value = 0.45
+
+[node name="CrouchLerpSpeedPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection" unique_id=1648701724]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="CrouchLerpSpeedRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/CrouchLerpSpeedPanelContainer" unique_id=522074167]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/CrouchLerpSpeedPanelContainer/CrouchLerpSpeedRow" unique_id=1352339190]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Crouch Lerp Speed"
+
+[node name="CrouchLerpSpeedSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/CrouchLerpSpeedPanelContainer/CrouchLerpSpeedRow" unique_id=402387178]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 10.0
+
+[node name="CrouchLerpSpeedSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/CrouchLerpSpeedPanelContainer/CrouchLerpSpeedRow" unique_id=605917983]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.01
+value = 10.0
+
+[node name="StandCapsuleHeightPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection" unique_id=1628985627]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="StandCapsuleHeightRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/StandCapsuleHeightPanelContainer" unique_id=221459843]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/StandCapsuleHeightPanelContainer/StandCapsuleHeightRow" unique_id=726197983]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Stand Capsule Height"
+
+[node name="StandCapsuleHeightSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/StandCapsuleHeightPanelContainer/StandCapsuleHeightRow" unique_id=391888027]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 2.0
+
+[node name="StandCapsuleHeightSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/StandCapsuleHeightPanelContainer/StandCapsuleHeightRow" unique_id=950492284]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.01
+value = 2.0
+
+[node name="Spacing" type="Control" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection" unique_id=1156647055]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="SlideSection" type="VBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox" unique_id=1095618763]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="SlideHeader" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection" unique_id=1499851101]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "SLIDE MOVEMENT COMPONENT"
+
+[node name="HSeparator" type="HSeparator" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection" unique_id=305370241]
+layout_mode = 2
+
+[node name="SlideTtimerMaxPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection" unique_id=1555250556]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="SlideTimerMaxRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideTtimerMaxPanelContainer" unique_id=1717888280]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideTtimerMaxPanelContainer/SlideTimerMaxRow" unique_id=1086144548]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Slide Timer Max"
+
+[node name="SlideTimerMaxSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideTtimerMaxPanelContainer/SlideTimerMaxRow" unique_id=1258829103]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 0.9
+
+[node name="SlideTimerMaxSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideTtimerMaxPanelContainer/SlideTimerMaxRow" unique_id=1427373161]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 0.9
+
+[node name="SlideSpeedPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection" unique_id=881079873]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="SlideSpeedRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideSpeedPanelContainer" unique_id=1480294738]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideSpeedPanelContainer/SlideSpeedRow" unique_id=385420329]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Slide Speed"
+
+[node name="SlideSpeedSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideSpeedPanelContainer/SlideSpeedRow" unique_id=656873376]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 10.0
+
+[node name="SlideSpeedSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideSpeedPanelContainer/SlideSpeedRow" unique_id=671157190]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.01
+value = 10.0
+
+[node name="MinSlideSpeedPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection" unique_id=1681058933]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="MinSlideSpeedRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/MinSlideSpeedPanelContainer" unique_id=1402647504]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/MinSlideSpeedPanelContainer/MinSlideSpeedRow" unique_id=1359586330]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Minimum Slide Speed"
+
+[node name="MinSlideSpeedSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/MinSlideSpeedPanelContainer/MinSlideSpeedRow" unique_id=155427939]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 4.0
+
+[node name="MinSlideSpeedSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/MinSlideSpeedPanelContainer/MinSlideSpeedRow" unique_id=1558239168]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.01
+value = 4.0
+
+[node name="MaxSlideSpeedPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection" unique_id=1727711079]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="MaxSlideSpeedRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/MaxSlideSpeedPanelContainer" unique_id=200096663]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/MaxSlideSpeedPanelContainer/MaxSlideSpeedRow" unique_id=374252690]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Maximum Slide Speed"
+
+[node name="MaxSlideSpeedSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/MaxSlideSpeedPanelContainer/MaxSlideSpeedRow" unique_id=574233274]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 20.0
+
+[node name="MaxSlideSpeedSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/MaxSlideSpeedPanelContainer/MaxSlideSpeedRow" unique_id=200843365]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.01
+value = 20.0
+
+[node name="MinSlideStartSpeedPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection" unique_id=2076752719]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="MinSlideStartSpeedRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/MinSlideStartSpeedPanelContainer" unique_id=284453435]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/MinSlideStartSpeedPanelContainer/MinSlideStartSpeedRow" unique_id=726363547]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Minimum Slide Start Speed"
+
+[node name="MinSlideStartSpeedSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/MinSlideStartSpeedPanelContainer/MinSlideStartSpeedRow" unique_id=1808133486]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 8.0
+
+[node name="MinSlideStartSpeedSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/MinSlideStartSpeedPanelContainer/MinSlideStartSpeedRow" unique_id=1905855235]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.01
+value = 8.0
+
+[node name="SlideSlopeAccelerationPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection" unique_id=1101045360]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="SlideSlopeAccelerationRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideSlopeAccelerationPanelContainer" unique_id=1466820838]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideSlopeAccelerationPanelContainer/SlideSlopeAccelerationRow" unique_id=1686257248]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Slide Slope Acceleration"
+
+[node name="SlideSlopeAccelerationSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideSlopeAccelerationPanelContainer/SlideSlopeAccelerationRow" unique_id=1840937597]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 12.0
+
+[node name="SlideSlopeAccelerationSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideSlopeAccelerationPanelContainer/SlideSlopeAccelerationRow" unique_id=1542284925]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.01
+value = 12.0
+
+[node name="UphillPenaltyPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection" unique_id=1344292964]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="UphillPenaltyRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/UphillPenaltyPanelContainer" unique_id=328032106]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/UphillPenaltyPanelContainer/UphillPenaltyRow" unique_id=1655122716]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Uphill Penalty"
+
+[node name="UphillPenaltySlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/UphillPenaltyPanelContainer/UphillPenaltyRow" unique_id=1359771477]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 4.0
+
+[node name="UphillPenaltySpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/UphillPenaltyPanelContainer/UphillPenaltyRow" unique_id=823396644]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.01
+value = 4.0
+
+[node name="SlideFrictionPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection" unique_id=1100886585]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="SlideFrictionRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideFrictionPanelContainer" unique_id=1345193165]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideFrictionPanelContainer/SlideFrictionRow" unique_id=1616192339]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Slide Friction"
+
+[node name="SlideFrictionSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideFrictionPanelContainer/SlideFrictionRow" unique_id=1723722477]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 4.0
+
+[node name="SlideFrictionSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideFrictionPanelContainer/SlideFrictionRow" unique_id=741647383]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.01
+value = 4.0
+
+[node name="SlideCameraTilePanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection" unique_id=354660807]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="SlideCameraTiltRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideCameraTilePanelContainer" unique_id=1528127712]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideCameraTilePanelContainer/SlideCameraTiltRow" unique_id=1105338809]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Slide Camera Tilt"
+
+[node name="SlideCameraTiltSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideCameraTilePanelContainer/SlideCameraTiltRow" unique_id=388953501]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 8.0
+
+[node name="SlideCameraTiltSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideCameraTilePanelContainer/SlideCameraTiltRow" unique_id=1753633282]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.01
+value = 8.0
+
+[node name="Spacing" type="Control" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection" unique_id=1013313404]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="JumpSection" type="VBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox" unique_id=1174480651]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="JumpHeader" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/JumpSection" unique_id=1898801754]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "JUMP COMPONENT"
+
+[node name="HSeparator" type="HSeparator" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/JumpSection" unique_id=621251445]
+layout_mode = 2
+
+[node name="JumpVelocityPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/JumpSection" unique_id=1173968630]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="JumpVelocityRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/JumpSection/JumpVelocityPanelContainer" unique_id=1757458242]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/JumpSection/JumpVelocityPanelContainer/JumpVelocityRow" unique_id=1640446378]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Jump Velocity"
+
+[node name="JumpVelocitySlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/JumpSection/JumpVelocityPanelContainer/JumpVelocityRow" unique_id=607420888]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 6.0
+
+[node name="JumpVelocitySpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/JumpSection/JumpVelocityPanelContainer/JumpVelocityRow" unique_id=2063251050]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 6.0
+
+[node name="AutoBunnyHopPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/JumpSection" unique_id=186603198]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="AutoBunnyHopRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/JumpSection/AutoBunnyHopPanelContainer" unique_id=39294197]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/JumpSection/AutoBunnyHopPanelContainer/AutoBunnyHopRow" unique_id=2013080262]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Auto Bunny Hop"
+
+[node name="AutoBunnyHopCheckBox" type="CheckBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/JumpSection/AutoBunnyHopPanelContainer/AutoBunnyHopRow" unique_id=1076041051]
+layout_mode = 2
+
+[node name="Spacing" type="Control" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/JumpSection" unique_id=1419302319]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="AirMovementSection" type="VBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox" unique_id=515428601]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="AirMovementHeader" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/AirMovementSection" unique_id=1224000696]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "AIR MOVEMENT COMPONENT"
+
+[node name="HSeparator" type="HSeparator" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/AirMovementSection" unique_id=821403694]
+layout_mode = 2
+
+[node name="AirCapPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/AirMovementSection" unique_id=2073917703]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="AirCapRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/AirMovementSection/AirCapPanelContainer" unique_id=1108792943]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/AirMovementSection/AirCapPanelContainer/AirCapRow" unique_id=1685728793]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Air Cap"
+
+[node name="AirCapSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/AirMovementSection/AirCapPanelContainer/AirCapRow" unique_id=1666859617]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 1.0
+
+[node name="AirCapSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/AirMovementSection/AirCapPanelContainer/AirCapRow" unique_id=1628425671]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 1.0
+
+[node name="AirAccelerationPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/AirMovementSection" unique_id=1023134235]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="AirAccelerationRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/AirMovementSection/AirAccelerationPanelContainer" unique_id=628899797]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/AirMovementSection/AirAccelerationPanelContainer/AirAccelerationRow" unique_id=762795670]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Air Acceleration"
+
+[node name="AirAccelerationSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/AirMovementSection/AirAccelerationPanelContainer/AirAccelerationRow" unique_id=808765346]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 500.0
+step = 0.1
+value = 150.0
+
+[node name="AirAccelerationSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/AirMovementSection/AirAccelerationPanelContainer/AirAccelerationRow" unique_id=1348154269]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 500.0
+step = 0.1
+value = 150.0
+
+[node name="Spacing" type="Control" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/AirMovementSection" unique_id=1905777063]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="WallJumpSection" type="VBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox" unique_id=1915363192]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="WallJumpHeader" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection" unique_id=1710563532]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "WALL JUMP"
+
+[node name="HSeparator" type="HSeparator" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection" unique_id=377479683]
+layout_mode = 2
+
+[node name="WallJumpPushPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection" unique_id=1840755149]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="WallJumpPushRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection/WallJumpPushPanelContainer" unique_id=1928968488]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection/WallJumpPushPanelContainer/WallJumpPushRow" unique_id=172597679]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Wall Jump Push"
+
+[node name="WallJumpPushSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection/WallJumpPushPanelContainer/WallJumpPushRow" unique_id=1781599830]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 7.0
+
+[node name="WallJumpPushSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection/WallJumpPushPanelContainer/WallJumpPushRow" unique_id=1559203311]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 7.0
+
+[node name="WallJumpUpPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection" unique_id=979257339]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="WallJumpUpRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection/WallJumpUpPanelContainer" unique_id=196627591]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection/WallJumpUpPanelContainer/WallJumpUpRow" unique_id=718551037]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Wall Jump Up"
+
+[node name="WallJumpUpSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection/WallJumpUpPanelContainer/WallJumpUpRow" unique_id=958232080]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 7.0
+
+[node name="WallJumpUpSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection/WallJumpUpPanelContainer/WallJumpUpRow" unique_id=1650980065]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 7.0
+
+[node name="ReattachCooldownPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection" unique_id=13257628]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="ReattachCooldownRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection/ReattachCooldownPanelContainer" unique_id=1436228015]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection/ReattachCooldownPanelContainer/ReattachCooldownRow" unique_id=255859144]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Reattach Cooldown"
+
+[node name="ReattachCooldownSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection/ReattachCooldownPanelContainer/ReattachCooldownRow" unique_id=1251181931]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.01
+value = 0.25
+
+[node name="ReattachCooldownSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection/ReattachCooldownPanelContainer/ReattachCooldownRow" unique_id=607116878]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 0.3
+
+[node name="Spacing" type="Control" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection" unique_id=973611218]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="WallClimbSection" type="VBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox" unique_id=167591459]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="WallClimbHeader" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection" unique_id=1002215598]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "WALL CLIMB COMPONENT"
+
+[node name="HSeparator" type="HSeparator" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection" unique_id=1649523089]
+layout_mode = 2
+
+[node name="ClimbTimePanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection" unique_id=1076887892]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="ClimbTimeRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/ClimbTimePanelContainer" unique_id=1800569304]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/ClimbTimePanelContainer/ClimbTimeRow" unique_id=1877509552]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Climb Time"
+
+[node name="ClimbTimeSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/ClimbTimePanelContainer/ClimbTimeRow" unique_id=1190714626]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 1.6
+
+[node name="ClimbTimeSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/ClimbTimePanelContainer/ClimbTimeRow" unique_id=91173034]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 1.6
+
+[node name="ClimbSpeedPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection" unique_id=1351363156]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="ClimbSpeedRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/ClimbSpeedPanelContainer" unique_id=1919615084]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/ClimbSpeedPanelContainer/ClimbSpeedRow" unique_id=896608656]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Climb Speed"
+
+[node name="ClimbSpeedSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/ClimbSpeedPanelContainer/ClimbSpeedRow" unique_id=588363163]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 4.5
+
+[node name="ClimbSpeedSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/ClimbSpeedPanelContainer/ClimbSpeedRow" unique_id=5702973]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 4.5
+
+[node name="MaxClimbSpeedPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection" unique_id=1770826068]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="MaxClimbSpeedRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/MaxClimbSpeedPanelContainer" unique_id=827098490]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/MaxClimbSpeedPanelContainer/MaxClimbSpeedRow" unique_id=1602435368]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Maximum Climb Speed"
+
+[node name="MaxClimbSpeedSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/MaxClimbSpeedPanelContainer/MaxClimbSpeedRow" unique_id=1719903394]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 6.0
+
+[node name="MaxClimbSpeedSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/MaxClimbSpeedPanelContainer/MaxClimbSpeedRow" unique_id=1533389733]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 6.0
+
+[node name="StrafeSpeedPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection" unique_id=37072538]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="StrafeSpeedRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/StrafeSpeedPanelContainer" unique_id=1557302074]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/StrafeSpeedPanelContainer/StrafeSpeedRow" unique_id=455083581]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Strafe Speed"
+
+[node name="StrafeSpeedSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/StrafeSpeedPanelContainer/StrafeSpeedRow" unique_id=1145724843]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 3.0
+
+[node name="StrafeSpeedSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/StrafeSpeedPanelContainer/StrafeSpeedRow" unique_id=255436985]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 3.0
+
+[node name="ClimbGravityPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection" unique_id=2015557445]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="ClimbGravityRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/ClimbGravityPanelContainer" unique_id=433321168]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/ClimbGravityPanelContainer/ClimbGravityRow" unique_id=663931290]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Climb Gravity"
+
+[node name="ClimbGravitySlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/ClimbGravityPanelContainer/ClimbGravityRow" unique_id=192391598]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 1.0
+
+[node name="ClimbGravitySpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/ClimbGravityPanelContainer/ClimbGravityRow" unique_id=1585116688]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 1.0
+
+[node name="WallStickForcePanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection" unique_id=1989460754]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="WallStickForceRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/WallStickForcePanelContainer" unique_id=938432154]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/WallStickForcePanelContainer/WallStickForceRow" unique_id=1708856040]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Wall Stick Force"
+
+[node name="WallStickForceSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/WallStickForcePanelContainer/WallStickForceRow" unique_id=2116523671]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 3.0
+
+[node name="WallStickForceSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/WallStickForcePanelContainer/WallStickForceRow" unique_id=1049777050]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 3.0
+
+[node name="MinApproachAnglePanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection" unique_id=1900195453]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="MinApproachAngleRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/MinApproachAnglePanelContainer" unique_id=1960259591]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/MinApproachAnglePanelContainer/MinApproachAngleRow" unique_id=1601812400]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Minimum Approach Angle"
+
+[node name="MinApproachAngleSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/MinApproachAnglePanelContainer/MinApproachAngleRow" unique_id=944534109]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 0.5
+
+[node name="MinApproachAngleSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/MinApproachAnglePanelContainer/MinApproachAngleRow" unique_id=99070256]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 0.5
+
+[node name="Spacing" type="Control" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection" unique_id=668952086]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="WallRunSection" type="VBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox" unique_id=1479931367]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="WallRunHeader" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection" unique_id=1861145590]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "WALL RUN COMPONENT"
+
+[node name="HSeparator" type="HSeparator" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection" unique_id=971415261]
+layout_mode = 2
+
+[node name="WallRunTimePanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection" unique_id=19180695]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="WallRunTimeRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunTimePanelContainer" unique_id=528796738]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunTimePanelContainer/WallRunTimeRow" unique_id=2069817292]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Wall Run Time"
+
+[node name="WallRunTimeSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunTimePanelContainer/WallRunTimeRow" unique_id=453826510]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 1.4
+
+[node name="WallRunTimeSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunTimePanelContainer/WallRunTimeRow" unique_id=599997337]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 1.4
+
+[node name="WallRunSpeedPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection" unique_id=1175568698]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="WallRunSpeedRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunSpeedPanelContainer" unique_id=1148708261]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunSpeedPanelContainer/WallRunSpeedRow" unique_id=1996206441]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Wall Run Speed"
+
+[node name="WallRunSpeedSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunSpeedPanelContainer/WallRunSpeedRow" unique_id=853619069]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 11.0
+
+[node name="WallRunSpeedSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunSpeedPanelContainer/WallRunSpeedRow" unique_id=1231959404]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 11.0
+
+[node name="MaxWallRunSpeedPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection" unique_id=326144755]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="MaxWallRunSpeedRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/MaxWallRunSpeedPanelContainer" unique_id=1175719987]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/MaxWallRunSpeedPanelContainer/MaxWallRunSpeedRow" unique_id=1655462510]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Maximum Wall Run Speed"
+
+[node name="MaxWallRunSpeedSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/MaxWallRunSpeedPanelContainer/MaxWallRunSpeedRow" unique_id=1913997756]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 50.0
+step = 0.1
+value = 16.0
+
+[node name="MaxWallRunSpeedSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/MaxWallRunSpeedPanelContainer/MaxWallRunSpeedRow" unique_id=1577033463]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 50.0
+step = 0.1
+value = 16.0
+
+[node name="MinWallRunSpeedPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection" unique_id=1582516356]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="MinWallRunSpeedRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/MinWallRunSpeedPanelContainer" unique_id=1217117778]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/MinWallRunSpeedPanelContainer/MinWallRunSpeedRow" unique_id=170891108]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Minimum Wall Run Speed"
+
+[node name="MinWallRunSpeedSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/MinWallRunSpeedPanelContainer/MinWallRunSpeedRow" unique_id=1502808691]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 3.0
+
+[node name="MinWallRunSpeedSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/MinWallRunSpeedPanelContainer/MinWallRunSpeedRow" unique_id=2145398894]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 3.0
+
+[node name="WallRunGravityPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection" unique_id=1790821056]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="WallRunGravityRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunGravityPanelContainer" unique_id=887163102]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunGravityPanelContainer/WallRunGravityRow" unique_id=1748170543]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Wall Run Gravity"
+
+[node name="WallRunGravitySlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunGravityPanelContainer/WallRunGravityRow" unique_id=1813427002]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 2.5
+
+[node name="WallRunGravitySpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunGravityPanelContainer/WallRunGravityRow" unique_id=1251048770]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 2.5
+
+[node name="WallStickForcePanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection" unique_id=1647286168]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="WallStickForceRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallStickForcePanelContainer" unique_id=1716229149]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallStickForcePanelContainer/WallStickForceRow" unique_id=727114306]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Wall Stick Force"
+
+[node name="WallStickForceSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallStickForcePanelContainer/WallStickForceRow" unique_id=304979893]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 20.0
+step = 0.1
+value = 3.0
+
+[node name="WallStickForceSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallStickForcePanelContainer/WallStickForceRow" unique_id=1468691790]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+value = 3.0
+
+[node name="WallRunTiltDegeesPanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection" unique_id=812034748]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gne0f")
+
+[node name="WallRunTiltDegreesRow" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunTiltDegeesPanelContainer" unique_id=270616963]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunTiltDegeesPanelContainer/WallRunTiltDegreesRow" unique_id=827227823]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Wall Run Tilt Degrees"
+
+[node name="WallRunTiltDegreesSlider" type="HSlider" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunTiltDegeesPanelContainer/WallRunTiltDegreesRow" unique_id=679272721]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+step = 0.1
+value = 15.0
+
+[node name="WallRunTileDegreesSpinBox" type="SpinBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunTiltDegeesPanelContainer/WallRunTiltDegreesRow" unique_id=1427309590]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+step = 0.1
+value = 15.0
+
+[node name="Spacing" type="Control" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection" unique_id=1563652497]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="DescriptionPanel" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox" unique_id=1974657218]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/DescriptionPanel" unique_id=1697649993]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="DescriptionVBox" type="VBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/DescriptionPanel/MarginContainer" unique_id=1700011154]
+layout_mode = 2
+
+[node name="DescriptionTitle" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/DescriptionPanel/MarginContainer/DescriptionVBox" unique_id=837753741]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 18
+text = "DescriptionTitle"
+
+[node name="DescriptionBody" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/DescriptionPanel/MarginContainer/DescriptionVBox" unique_id=1616446871]
+layout_mode = 2
+size_flags_vertical = 3
+text = "DescriptionBody"
+autowrap_mode = 3
+
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/WalkSpeedPanelContainer/WalkSpeedRow/WalkSpeedSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/WalkSpeedPanelContainer/WalkSpeedRow/WalkSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/WalkSpeedPanelContainer/WalkSpeedRow/WalkSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/WalkSpeedPanelContainer/WalkSpeedRow/WalkSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/SprintSpeedPanelContainer/SprintSpeedRow/SprintSpeedSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/SprintSpeedPanelContainer/SprintSpeedRow/SprintSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/SprintSpeedPanelContainer/SprintSpeedRow/SprintSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/SprintSpeedPanelContainer/SprintSpeedRow/SprintSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/GroundAccelerationPanelContainer/GroundAccelerationRow/GroundAccelerationSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/GroundAccelerationPanelContainer/GroundAccelerationRow/GroundAccelerationSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/GroundAccelerationPanelContainer/GroundAccelerationRow/GroundAccelerationSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/GroundAccelerationPanelContainer/GroundAccelerationRow/GroundAccelerationSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/GroundDecelerationPanelContainer/GroundDecelerationRow/GroundDecelerationSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/GroundDecelerationPanelContainer/GroundDecelerationRow/GroundDecelerationRowSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/GroundDecelerationPanelContainer/GroundDecelerationRow/GroundDecelerationRowSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/GroundDecelerationPanelContainer/GroundDecelerationRow/GroundDecelerationSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/GroundFrictionPanelContainer/GroundFrictionRow/GroundFrictionSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/GroundFrictionPanelContainer/GroundFrictionRow/GroundFrictionSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/GroundFrictionPanelContainer/GroundFrictionRow/GroundFrictionSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/BasicMovementSection/GroundFrictionPanelContainer/GroundFrictionRow/GroundFrictionSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/CrouchSpeedPanelContainer/CrouchSpeedRow/CrouchSpeedSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/CrouchSpeedPanelContainer/CrouchSpeedRow/CrouchSpeedSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/CrouchSpeedPanelContainer/CrouchSpeedRow/CrouchSpeedSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/CrouchSpeedPanelContainer/CrouchSpeedRow/CrouchSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/CrouchDepthPanelContainer/CrouchDepthRow/CrouchDepthSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/CrouchDepthPanelContainer/CrouchDepthRow/CrouchDepthSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/CrouchDepthPanelContainer/CrouchDepthRow/CrouchDepthSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/CrouchDepthPanelContainer/CrouchDepthRow/CrouchDepthSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/CrouchLerpSpeedPanelContainer/CrouchLerpSpeedRow/CrouchLerpSpeedSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/CrouchLerpSpeedPanelContainer/CrouchLerpSpeedRow/CrouchLerpSpeedSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/CrouchLerpSpeedPanelContainer/CrouchLerpSpeedRow/CrouchLerpSpeedSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/CrouchLerpSpeedPanelContainer/CrouchLerpSpeedRow/CrouchLerpSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/StandCapsuleHeightPanelContainer/StandCapsuleHeightRow/StandCapsuleHeightSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/StandCapsuleHeightPanelContainer/StandCapsuleHeightRow/StandCapsuleHeightSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/StandCapsuleHeightPanelContainer/StandCapsuleHeightRow/StandCapsuleHeightSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/CrouchSection/StandCapsuleHeightPanelContainer/StandCapsuleHeightRow/StandCapsuleHeightSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideTtimerMaxPanelContainer/SlideTimerMaxRow/SlideTimerMaxSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideTtimerMaxPanelContainer/SlideTimerMaxRow/SlideTimerMaxSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideTtimerMaxPanelContainer/SlideTimerMaxRow/SlideTimerMaxSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideTtimerMaxPanelContainer/SlideTimerMaxRow/SlideTimerMaxSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideSpeedPanelContainer/SlideSpeedRow/SlideSpeedSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideSpeedPanelContainer/SlideSpeedRow/SlideSpeedSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideSpeedPanelContainer/SlideSpeedRow/SlideSpeedSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideSpeedPanelContainer/SlideSpeedRow/SlideSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/MinSlideSpeedPanelContainer/MinSlideSpeedRow/MinSlideSpeedSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/MinSlideSpeedPanelContainer/MinSlideSpeedRow/MinSlideSpeedSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/MinSlideSpeedPanelContainer/MinSlideSpeedRow/MinSlideSpeedSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/MinSlideSpeedPanelContainer/MinSlideSpeedRow/MinSlideSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/MaxSlideSpeedPanelContainer/MaxSlideSpeedRow/MaxSlideSpeedSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/MaxSlideSpeedPanelContainer/MaxSlideSpeedRow/MaxSlideSpeedSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/MaxSlideSpeedPanelContainer/MaxSlideSpeedRow/MaxSlideSpeedSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/MaxSlideSpeedPanelContainer/MaxSlideSpeedRow/MaxSlideSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/MinSlideStartSpeedPanelContainer/MinSlideStartSpeedRow/MinSlideStartSpeedSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/MinSlideStartSpeedPanelContainer/MinSlideStartSpeedRow/MinSlideStartSpeedSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/MinSlideStartSpeedPanelContainer/MinSlideStartSpeedRow/MinSlideStartSpeedSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/MinSlideStartSpeedPanelContainer/MinSlideStartSpeedRow/MinSlideStartSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideSlopeAccelerationPanelContainer/SlideSlopeAccelerationRow/SlideSlopeAccelerationSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideSlopeAccelerationPanelContainer/SlideSlopeAccelerationRow/SlideSlopeAccelerationSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideSlopeAccelerationPanelContainer/SlideSlopeAccelerationRow/SlideSlopeAccelerationSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideSlopeAccelerationPanelContainer/SlideSlopeAccelerationRow/SlideSlopeAccelerationSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/UphillPenaltyPanelContainer/UphillPenaltyRow/UphillPenaltySlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/UphillPenaltyPanelContainer/UphillPenaltyRow/UphillPenaltySpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/UphillPenaltyPanelContainer/UphillPenaltyRow/UphillPenaltySpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/UphillPenaltyPanelContainer/UphillPenaltyRow/UphillPenaltySlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideFrictionPanelContainer/SlideFrictionRow/SlideFrictionSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideFrictionPanelContainer/SlideFrictionRow/SlideFrictionSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideFrictionPanelContainer/SlideFrictionRow/SlideFrictionSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideFrictionPanelContainer/SlideFrictionRow/SlideFrictionSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideCameraTilePanelContainer/SlideCameraTiltRow/SlideCameraTiltSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideCameraTilePanelContainer/SlideCameraTiltRow/SlideCameraTiltSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideCameraTilePanelContainer/SlideCameraTiltRow/SlideCameraTiltSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/SlideSection/SlideCameraTilePanelContainer/SlideCameraTiltRow/SlideCameraTiltSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/JumpSection/JumpVelocityPanelContainer/JumpVelocityRow/JumpVelocitySlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/JumpSection/JumpVelocityPanelContainer/JumpVelocityRow/JumpVelocitySpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/JumpSection/JumpVelocityPanelContainer/JumpVelocityRow/JumpVelocitySpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/JumpSection/JumpVelocityPanelContainer/JumpVelocityRow/JumpVelocitySlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/AirMovementSection/AirCapPanelContainer/AirCapRow/AirCapSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/AirMovementSection/AirCapPanelContainer/AirCapRow/AirCapSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/AirMovementSection/AirCapPanelContainer/AirCapRow/AirCapSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/AirMovementSection/AirCapPanelContainer/AirCapRow/AirCapSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/AirMovementSection/AirAccelerationPanelContainer/AirAccelerationRow/AirAccelerationSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/AirMovementSection/AirAccelerationPanelContainer/AirAccelerationRow/AirAccelerationSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/AirMovementSection/AirAccelerationPanelContainer/AirAccelerationRow/AirAccelerationSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/AirMovementSection/AirAccelerationPanelContainer/AirAccelerationRow/AirAccelerationSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection/WallJumpPushPanelContainer/WallJumpPushRow/WallJumpPushSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection/WallJumpPushPanelContainer/WallJumpPushRow/WallJumpPushSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection/WallJumpPushPanelContainer/WallJumpPushRow/WallJumpPushSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection/WallJumpPushPanelContainer/WallJumpPushRow/WallJumpPushSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection/WallJumpUpPanelContainer/WallJumpUpRow/WallJumpUpSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection/WallJumpUpPanelContainer/WallJumpUpRow/WallJumpUpSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection/WallJumpUpPanelContainer/WallJumpUpRow/WallJumpUpSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection/WallJumpUpPanelContainer/WallJumpUpRow/WallJumpUpSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection/ReattachCooldownPanelContainer/ReattachCooldownRow/ReattachCooldownSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection/ReattachCooldownPanelContainer/ReattachCooldownRow/ReattachCooldownSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection/ReattachCooldownPanelContainer/ReattachCooldownRow/ReattachCooldownSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallJumpSection/ReattachCooldownPanelContainer/ReattachCooldownRow/ReattachCooldownSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/ClimbTimePanelContainer/ClimbTimeRow/ClimbTimeSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/ClimbTimePanelContainer/ClimbTimeRow/ClimbTimeSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/ClimbTimePanelContainer/ClimbTimeRow/ClimbTimeSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/ClimbTimePanelContainer/ClimbTimeRow/ClimbTimeSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/ClimbSpeedPanelContainer/ClimbSpeedRow/ClimbSpeedSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/ClimbSpeedPanelContainer/ClimbSpeedRow/ClimbSpeedSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/ClimbSpeedPanelContainer/ClimbSpeedRow/ClimbSpeedSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/ClimbSpeedPanelContainer/ClimbSpeedRow/ClimbSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/MaxClimbSpeedPanelContainer/MaxClimbSpeedRow/MaxClimbSpeedSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/MaxClimbSpeedPanelContainer/MaxClimbSpeedRow/MaxClimbSpeedSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/MaxClimbSpeedPanelContainer/MaxClimbSpeedRow/MaxClimbSpeedSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/MaxClimbSpeedPanelContainer/MaxClimbSpeedRow/MaxClimbSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/StrafeSpeedPanelContainer/StrafeSpeedRow/StrafeSpeedSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/StrafeSpeedPanelContainer/StrafeSpeedRow/StrafeSpeedSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/StrafeSpeedPanelContainer/StrafeSpeedRow/StrafeSpeedSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/StrafeSpeedPanelContainer/StrafeSpeedRow/StrafeSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/ClimbGravityPanelContainer/ClimbGravityRow/ClimbGravitySlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/ClimbGravityPanelContainer/ClimbGravityRow/ClimbGravitySpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/ClimbGravityPanelContainer/ClimbGravityRow/ClimbGravitySpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/ClimbGravityPanelContainer/ClimbGravityRow/ClimbGravitySlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/WallStickForcePanelContainer/WallStickForceRow/WallStickForceSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/WallStickForcePanelContainer/WallStickForceRow/WallStickForceSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/WallStickForcePanelContainer/WallStickForceRow/WallStickForceSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/WallStickForcePanelContainer/WallStickForceRow/WallStickForceSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/MinApproachAnglePanelContainer/MinApproachAngleRow/MinApproachAngleSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/MinApproachAnglePanelContainer/MinApproachAngleRow/MinApproachAngleSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/MinApproachAnglePanelContainer/MinApproachAngleRow/MinApproachAngleSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallClimbSection/MinApproachAnglePanelContainer/MinApproachAngleRow/MinApproachAngleSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunTimePanelContainer/WallRunTimeRow/WallRunTimeSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunTimePanelContainer/WallRunTimeRow/WallRunTimeSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunTimePanelContainer/WallRunTimeRow/WallRunTimeSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunTimePanelContainer/WallRunTimeRow/WallRunTimeSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunSpeedPanelContainer/WallRunSpeedRow/WallRunSpeedSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunSpeedPanelContainer/WallRunSpeedRow/WallRunSpeedSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunSpeedPanelContainer/WallRunSpeedRow/WallRunSpeedSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunSpeedPanelContainer/WallRunSpeedRow/WallRunSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/MaxWallRunSpeedPanelContainer/MaxWallRunSpeedRow/MaxWallRunSpeedSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/MaxWallRunSpeedPanelContainer/MaxWallRunSpeedRow/MaxWallRunSpeedSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/MaxWallRunSpeedPanelContainer/MaxWallRunSpeedRow/MaxWallRunSpeedSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/MaxWallRunSpeedPanelContainer/MaxWallRunSpeedRow/MaxWallRunSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/MinWallRunSpeedPanelContainer/MinWallRunSpeedRow/MinWallRunSpeedSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/MinWallRunSpeedPanelContainer/MinWallRunSpeedRow/MinWallRunSpeedSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/MinWallRunSpeedPanelContainer/MinWallRunSpeedRow/MinWallRunSpeedSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/MinWallRunSpeedPanelContainer/MinWallRunSpeedRow/MinWallRunSpeedSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunGravityPanelContainer/WallRunGravityRow/WallRunGravitySlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunGravityPanelContainer/WallRunGravityRow/WallRunGravitySpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunGravityPanelContainer/WallRunGravityRow/WallRunGravitySpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunGravityPanelContainer/WallRunGravityRow/WallRunGravitySlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallStickForcePanelContainer/WallStickForceRow/WallStickForceSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallStickForcePanelContainer/WallStickForceRow/WallStickForceSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallStickForcePanelContainer/WallStickForceRow/WallStickForceSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallStickForcePanelContainer/WallStickForceRow/WallStickForceSlider" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunTiltDegeesPanelContainer/WallRunTiltDegreesRow/WallRunTiltDegreesSlider" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunTiltDegeesPanelContainer/WallRunTiltDegreesRow/WallRunTileDegreesSpinBox" method="set_value"]
+[connection signal="value_changed" from="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunTiltDegeesPanelContainer/WallRunTiltDegreesRow/WallRunTileDegreesSpinBox" to="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GameplayTab/MarginContainer/GameplayVBox/WallRunSection/WallRunTiltDegeesPanelContainer/WallRunTiltDegreesRow/WallRunTiltDegreesSlider" method="set_value"]
