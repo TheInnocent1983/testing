@@ -1,0 +1,256 @@
+[gd_scene format=3 uid="uid://r27nbhkielab"]
+
+[ext_resource type="Script" path="res://Scenes/UI/Keybinds/ControllerKeybindManager.cs" id="1_rjra3"]
+[ext_resource type="PackedScene" uid="uid://c0inuqoct082" path="res://Scenes/UI/Keybinds/ControllerKeybindRow.tscn" id="2_0354i"]
+[ext_resource type="StyleBox" uid="uid://654rrvhktqa2" path="res://Scenes/UI/Resources/SettingsPanelContainer.tres" id="3_rjra3"]
+[ext_resource type="StyleBox" uid="uid://dlyvsxxttt8pk" path="res://Scenes/UI/Resources/SettingsButtonStyleFlat.tres" id="4_0354i"]
+[ext_resource type="ButtonGroup" uid="uid://d2qp5i6ljgfby" path="res://Scenes/UI/Components/ADSButtonGroup.tres" id="5_rjra3"]
+[ext_resource type="Script" path="res://Scenes/UI/Components/IsolatedScrollContainer.cs" id="6_rjra3"]
+
+[node name="ControllerVBox" type="VBoxContainer" unique_id=417684231 node_paths=PackedStringArray("_keybindListContainer", "_restoreDefaultsButton")]
+script = ExtResource("1_rjra3")
+_controllerKeybindRowScene = ExtResource("2_0354i")
+_keybindListContainer = NodePath("ButtonLayoutSection/KeybindScroll/KeybindList")
+_restoreDefaultsButton = NodePath("RestoreDefaultSection/RestoreDefaultPanelContainer/RestoreDefaultRow/RestoreDefaultButton")
+
+[node name="AiminigSection" type="VBoxContainer" parent="." unique_id=209048555]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="AimingHeader" type="Label" parent="AiminigSection" unique_id=1357003090]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "AIMING SETTINGS"
+
+[node name="HSeparator" type="HSeparator" parent="AiminigSection" unique_id=630322128]
+layout_mode = 2
+
+[node name="LookSensitivityPanelContainer" type="PanelContainer" parent="AiminigSection" unique_id=207558257]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_rjra3")
+
+[node name="LookSensitivityRow" type="HBoxContainer" parent="AiminigSection/LookSensitivityPanelContainer" unique_id=412190003]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="AiminigSection/LookSensitivityPanelContainer/LookSensitivityRow" unique_id=448064980]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Look Sensitivity"
+vertical_alignment = 1
+
+[node name="LookSlider" type="HSlider" parent="AiminigSection/LookSensitivityPanelContainer/LookSensitivityRow" unique_id=252307605]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 10.0
+step = 0.01
+value = 0.65
+
+[node name="LookSpinBox" type="SpinBox" parent="AiminigSection/LookSensitivityPanelContainer/LookSensitivityRow" unique_id=1834972881]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 10.0
+step = 0.01
+value = 0.65
+
+[node name="ADSModePanelContainer" type="PanelContainer" parent="AiminigSection" unique_id=2072173581]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_rjra3")
+
+[node name="ADSModeRow" type="HBoxContainer" parent="AiminigSection/ADSModePanelContainer" unique_id=163539621]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="AiminigSection/ADSModePanelContainer/ADSModeRow" unique_id=1373363795]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 20
+text = "ADS Mode Input"
+
+[node name="HoldButton" type="Button" parent="AiminigSection/ADSModePanelContainer/ADSModeRow" unique_id=1515102810]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("4_0354i")
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("5_rjra3")
+text = "Hold"
+
+[node name="ToggleButton" type="Button" parent="AiminigSection/ADSModePanelContainer/ADSModeRow" unique_id=846273359]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("4_0354i")
+toggle_mode = true
+button_group = ExtResource("5_rjra3")
+text = "Toggle"
+
+[node name="SprintModePanelContainer" type="PanelContainer" parent="AiminigSection" unique_id=2016551907]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_rjra3")
+
+[node name="SprintModeRow" type="HBoxContainer" parent="AiminigSection/SprintModePanelContainer" unique_id=1659357942]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="AiminigSection/SprintModePanelContainer/SprintModeRow" unique_id=1293760196]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 20
+text = "Sprint Mode Input"
+
+[node name="HoldButton" type="Button" parent="AiminigSection/SprintModePanelContainer/SprintModeRow" unique_id=303631774]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("4_0354i")
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("5_rjra3")
+text = "Hold"
+
+[node name="ToggleButton" type="Button" parent="AiminigSection/SprintModePanelContainer/SprintModeRow" unique_id=1246919028]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("4_0354i")
+toggle_mode = true
+button_group = ExtResource("5_rjra3")
+text = "Toggle"
+
+[node name="CrouchModePanelContainer" type="PanelContainer" parent="AiminigSection" unique_id=340347419]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_rjra3")
+
+[node name="CrouchModeRow" type="HBoxContainer" parent="AiminigSection/CrouchModePanelContainer" unique_id=2042220929]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="AiminigSection/CrouchModePanelContainer/CrouchModeRow" unique_id=1026517440]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 20
+text = "Crouch Mode Input"
+
+[node name="HoldButton" type="Button" parent="AiminigSection/CrouchModePanelContainer/CrouchModeRow" unique_id=761720774]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("4_0354i")
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("5_rjra3")
+text = "Hold"
+
+[node name="ToggleButton" type="Button" parent="AiminigSection/CrouchModePanelContainer/CrouchModeRow" unique_id=52600924]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("4_0354i")
+toggle_mode = true
+button_group = ExtResource("5_rjra3")
+text = "Toggle"
+
+[node name="Spacing" type="Control" parent="AiminigSection" unique_id=1827714855]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="ButtonLayoutSection" type="VBoxContainer" parent="." unique_id=134500931]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="ButtonLayoutHeader" type="Label" parent="ButtonLayoutSection" unique_id=323658074]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CONTROLLER KEY MAPPING SETTINGS"
+
+[node name="HSeparator" type="HSeparator" parent="ButtonLayoutSection" unique_id=2056321544]
+layout_mode = 2
+
+[node name="ButtonLayoutRow" type="HBoxContainer" parent="ButtonLayoutSection" unique_id=629104317]
+layout_mode = 2
+
+[node name="ActionLabel" type="Label" parent="ButtonLayoutSection/ButtonLayoutRow" unique_id=168340753]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 20
+text = "ACTION"
+vertical_alignment = 1
+
+[node name="PrimaryKeyLabel" type="Label" parent="ButtonLayoutSection/ButtonLayoutRow" unique_id=768973198]
+custom_minimum_size = Vector2(220, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "KEY 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SecondaryKeyLabel" type="Label" parent="ButtonLayoutSection/ButtonLayoutRow" unique_id=1317815913]
+custom_minimum_size = Vector2(270, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "KEY 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeybindScroll" type="ScrollContainer" parent="ButtonLayoutSection" unique_id=601711948]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("6_rjra3")
+
+[node name="KeybindList" type="VBoxContainer" parent="ButtonLayoutSection/KeybindScroll" unique_id=1796664173]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Spacing" type="Control" parent="ButtonLayoutSection" unique_id=1311234894]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="RestoreDefaultSection" type="VBoxContainer" parent="." unique_id=605606788]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="RestorDefaultHeader" type="Label" parent="RestoreDefaultSection" unique_id=179497564]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "DEFAULT SETTINGS"
+
+[node name="HSeparator" type="HSeparator" parent="RestoreDefaultSection" unique_id=1142594890]
+layout_mode = 2
+
+[node name="RestoreDefaultPanelContainer" type="PanelContainer" parent="RestoreDefaultSection" unique_id=53645585]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_rjra3")
+
+[node name="RestoreDefaultRow" type="HBoxContainer" parent="RestoreDefaultSection/RestoreDefaultPanelContainer" unique_id=1434066290]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="RestoreDefaultSection/RestoreDefaultPanelContainer/RestoreDefaultRow" unique_id=2038429824]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+theme_override_font_sizes/font_size = 20
+text = "Restore by default"
+
+[node name="RestoreDefaultButton" type="Button" parent="RestoreDefaultSection/RestoreDefaultPanelContainer/RestoreDefaultRow" unique_id=30601175]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("4_0354i")
+text = "Restore Default"
+
+[connection signal="value_changed" from="AiminigSection/LookSensitivityPanelContainer/LookSensitivityRow/LookSlider" to="AiminigSection/LookSensitivityPanelContainer/LookSensitivityRow/LookSpinBox" method="set_value"]
+[connection signal="value_changed" from="AiminigSection/LookSensitivityPanelContainer/LookSensitivityRow/LookSpinBox" to="AiminigSection/LookSensitivityPanelContainer/LookSensitivityRow/LookSlider" method="set_value"]

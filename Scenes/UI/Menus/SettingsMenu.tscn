@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://n5gsrq6nbc4y"]
+
+[ext_resource type="PackedScene" uid="uid://d3ayo3eli11e3" path="res://Scenes/UI/Settings/Tabs/GameplayVBox.tscn" id="1_8fkpw"]
+[ext_resource type="PackedScene" uid="uid://5c7lm1nu0f03" path="res://Scenes/UI/Settings/Tabs/MouseKeyboardVBox.tscn" id="2_bg6lj"]
+[ext_resource type="PackedScene" uid="uid://r27nbhkielab" path="res://Scenes/UI/Settings/Tabs/ControllerVBox.tscn" id="3_k530t"]
+
+[node name="SettingsMenu" type="CanvasLayer" unique_id=1523625903]
+
+[node name="Background" type="ColorRect" parent="." unique_id=316931637]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="MarginContainer" type="MarginContainer" parent="Background" unique_id=1342340344]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuAspectFrame" type="AspectRatioContainer" parent="Background/MarginContainer" unique_id=1352285625]
+layout_mode = 2
+ratio = 1.7778
+
+[node name="PanelContainer" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame" unique_id=1686538366]
+layout_mode = 2
+
+[node name="OuterMarginContainer" type="MarginContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer" unique_id=1657302015]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="MainVBox" type="VBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer" unique_id=1511434822]
+layout_mode = 2
+
+[node name="TabHeaderHBox" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox" unique_id=987816683]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="GameplayButton" type="Button" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/TabHeaderHBox" unique_id=1154473546]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "Gameplay"
+
+[node name="MouseKBButton" type="Button" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/TabHeaderHBox" unique_id=1860825822]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "Mouse and Keyboard"
+
+[node name="ControllerButton" type="Button" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/TabHeaderHBox" unique_id=1560743832]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "Controller"
+
+[node name="VideoButton" type="Button" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/TabHeaderHBox" unique_id=185718962]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "VideoButton"
+
+[node name="AudioButton" type="Button" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/TabHeaderHBox" unique_id=2079240098]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "Audio"
+
+[node name="ContentHBox" type="HBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox" unique_id=602647878]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 24
+
+[node name="ContentTabContainer" type="TabContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox" unique_id=708601908]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+current_tab = 0
+tabs_visible = false
+
+[node name="GamplayMouseControllerVideoAudioTab" type="ScrollContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer" unique_id=740998885]
+layout_mode = 2
+horizontal_scroll_mode = 0
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GamplayMouseControllerVideoAudioTab" unique_id=1118201667]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ControllerVBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GamplayMouseControllerVideoAudioTab/MarginContainer" unique_id=417684231 instance=ExtResource("3_k530t")]
+visible = false
+layout_mode = 2
+
+[node name="GameplayVBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GamplayMouseControllerVideoAudioTab/MarginContainer" unique_id=1348531777 instance=ExtResource("1_8fkpw")]
+visible = false
+layout_mode = 2
+
+[node name="MouseKeyboardVBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GamplayMouseControllerVideoAudioTab/MarginContainer" unique_id=1940568945 instance=ExtResource("2_bg6lj")]
+layout_mode = 2
+
+[node name="DescriptionPanel" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox" unique_id=1974657218]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/DescriptionPanel" unique_id=1697649993]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="DescriptionVBox" type="VBoxContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/DescriptionPanel/MarginContainer" unique_id=1700011154]
+layout_mode = 2
+
+[node name="DescriptionTitle" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/DescriptionPanel/MarginContainer/DescriptionVBox" unique_id=837753741]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 18
+text = "DescriptionTitle"
+
+[node name="DescriptionBody" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/DescriptionPanel/MarginContainer/DescriptionVBox" unique_id=1616446871]
+layout_mode = 2
+size_flags_vertical = 3
+text = "DescriptionBody"
+autowrap_mode = 3

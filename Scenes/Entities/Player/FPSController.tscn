@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://t4obadgi3hpn" path="res://Scripts/Player/PlayerMovementStates/SlideMovementComponent.cs" id="7_22nqf"]
 [ext_resource type="Script" uid="uid://b75nsm17scyc5" path="res://Scripts/Player/PlayerMovementStates/RestartLevelComponent.cs" id="8_tuwtd"]
 [ext_resource type="Script" uid="uid://dosrh6kqapc6i" path="res://Scripts/Player/PlayerMovementStates/CrouchComponent.cs" id="9_tuwtd"]
-[ext_resource type="PackedScene" uid="uid://dtlagd82evue8" path="res://Scenes/UI/PauseSettingsMenu.tscn" id="10_3nh5q"]
+[ext_resource type="PackedScene" uid="uid://dtlagd82evue8" path="res://Scenes/UI/Menus/PauseSettingsMenu.tscn" id="10_3nh5q"]
 [ext_resource type="Script" uid="uid://bu7h2j3bvi6dx" path="res://Scripts/Player/PlayerMovementStates/WallClimbComponent.cs" id="11_n6ecr"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1xu1x"]
