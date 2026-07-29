@@ -33,16 +33,27 @@ public partial class KeybindRow : PanelContainer
 
     private List<InputEvent> GetKbmEvents()
     {
-        var allEvents = InputMap.ActionGetEvents(_actionName);
-        return allEvents.Where(e => e is InputEventKey || e is InputEventMouseButton).ToList();
+        var rawEvents = InputMap.ActionGetEvents(_actionName)
+            .Where(e => e is InputEventKey || e is InputEventMouseButton)
+            .ToList();
+
+        // Always keep a fixed size of 2 slots [Key 1, Key 2] initialized with null
+        var fixedEvents = new List<InputEvent> { null, null };
+
+        for (int i = 0; i < rawEvents.Count && i < 2; i++)
+        {
+            fixedEvents[i] = rawEvents[i];
+        }
+
+        return fixedEvents;
     }
 
     public void UpdateUI()
     {
         var kbmEvents = GetKbmEvents();
 
-        _primaryButton.Text = kbmEvents.Count > 0 ? FormatInputEvent(kbmEvents[0]) : "[ Unbound ]";
-        _secondaryButton.Text = kbmEvents.Count > 1 ? FormatInputEvent(kbmEvents[1]) : "[ Unbound ]";
+        _primaryButton.Text = kbmEvents[0] != null ? FormatInputEvent(kbmEvents[0]) : "[ Unbound ]";
+        _secondaryButton.Text = kbmEvents[1] != null ? FormatInputEvent(kbmEvents[1]) : "[ Unbound ]";
     }
 
     private void StartListening(int index)
@@ -123,29 +134,68 @@ public partial class KeybindRow : PanelContainer
     {
         var kbmEvents = GetKbmEvents();
 
-        // Preserve Joypad inputs untouched
+        // 1. INTRA-ACTION SLOT SWAP:
+        // If the input already exists in the OTHER slot of this same action, remove it from that slot first.
+        int otherIndex = index == 0 ? 1 : 0;
+        if (otherIndex < kbmEvents.Count && IsSameInput(kbmEvents[otherIndex], newEvent))
+        {
+            kbmEvents.RemoveAt(otherIndex);
+            
+            // Adjust target index if removing from the start shifted the list
+            if (otherIndex == 0 && index == 1)
+            {
+                index = 0;
+            }
+        }
+
+        // Preserve controller inputs untouched
         var controllerEvents = InputMap.ActionGetEvents(_actionName)
             .Where(e => !(e is InputEventKey || e is InputEventMouseButton))
             .ToList();
 
-        if (index < kbmEvents.Count)
-            kbmEvents[index] = newEvent;
-        else
-            kbmEvents.Add(newEvent);
+        // 2. Set the new binding at the target slot
+        while (kbmEvents.Count <= index)
+            {
+                kbmEvents.Add(null);
+            }
+
+        kbmEvents[index] = newEvent;
 
         if (kbmEvents.Count > 2)
             kbmEvents = kbmEvents.Take(2).ToList();
 
+        // 3. Re-populate Godot's InputMap for this action
         InputMap.ActionEraseEvents(_actionName);
 
         foreach (var evt in kbmEvents)
-            InputMap.ActionAddEvent(_actionName, evt);
+        {
+            if (evt != null) // Don't add null placeholders to Godot
+                InputMap.ActionAddEvent(_actionName, evt);
+        }
 
         foreach (var evt in controllerEvents)
             InputMap.ActionAddEvent(_actionName, evt);
 
         UpdateUI();
         EmitSignal(SignalName.BindingChanged, _actionName, newEvent, index);
+    }
+
+    // Helper method to compare inputs (add this right under ApplyNewBinding in KeybindRow.cs)
+    private bool IsSameInput(InputEvent e1, InputEvent e2)
+    {
+        if (e1 is InputEventKey k1 && e2 is InputEventKey k2)
+        {
+            var key1 = k1.PhysicalKeycode != Key.None ? k1.PhysicalKeycode : k1.Keycode;
+            var key2 = k2.PhysicalKeycode != Key.None ? k2.PhysicalKeycode : k2.Keycode;
+            return key1 == key2;
+        }
+
+        if (e1 is InputEventMouseButton m1 && e2 is InputEventMouseButton m2)
+        {
+            return m1.ButtonIndex == m2.ButtonIndex;
+        }
+
+        return false;
     }
 
     private void ClearBinding(int index)

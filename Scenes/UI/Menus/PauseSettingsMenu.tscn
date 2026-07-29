@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dtlagd82evue8"]
 
-[ext_resource type="Script" uid="uid://yu64mwr66y60" path="res://Scripts/UI/PauseSettingsMenu.cs" id="1_u1pt5"]
+[ext_resource type="Script" uid="uid://yu64mwr66y60" path="res://Scenes/UI/Menus/PauseSettingsMenu.cs" id="1_8tyhy"]
 
 [node name="PauseSettingsMenu" type="CanvasLayer" unique_id=1922292828 node_paths=PackedStringArray("ResumeButton", "MainMenuButton")]
 process_mode = 2
-script = ExtResource("1_u1pt5")
+script = ExtResource("1_8tyhy")
 ResumeButton = NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ResumeButton")
 MainMenuButton = NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/MainMenuButton")
 

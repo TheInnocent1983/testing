@@ -14,7 +14,7 @@ public partial class PauseSettingsMenu : CanvasLayer
 	[Export] public Button MainMenuButton { get; set; }
 
 	[Export(PropertyHint.File, "*.tscn")] 
-	public string MainMenuPath { get; set; } = "res://Scenes/UI/MainMenu.tscn";
+	public string MainMenuPath { get; set; } = "res://Scenes/UI/Menus/MainMenu.tscn";
 
 	private bool _isPaused;
 

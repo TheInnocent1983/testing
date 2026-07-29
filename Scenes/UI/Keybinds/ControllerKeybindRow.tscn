@@ -1,14 +1,14 @@
-[gd_scene format=3 uid="uid://cvjo7kquvv01o"]
+[gd_scene format=3 uid="uid://c0inuqoct082"]
 
-[ext_resource type="StyleBox" uid="uid://654rrvhktqa2" path="res://Scenes/UI/SettingsPanelContainer/SettingsPanelContainer.tres" id="1_352dq"]
-[ext_resource type="Script" uid="uid://by448gppafy0v" path="res://Scripts/UI/KeybindRow.cs" id="2_i8q58"]
+[ext_resource type="StyleBox" uid="uid://654rrvhktqa2" path="res://Scenes/UI/Resources/SettingsPanelContainer.tres" id="1_dnkrs"]
+[ext_resource type="Script" path="res://Scenes/UI/Keybinds/ControllerKeybindRow.cs" id="2_lntoj"]
 
 [node name="KeybindRow" type="PanelContainer" unique_id=789756460 node_paths=PackedStringArray("_actionLabel", "_primaryButton", "_secondaryButton")]
 offset_right = 40.0
 offset_bottom = 40.0
 size_flags_horizontal = 3
-theme_override_styles/panel = ExtResource("1_352dq")
-script = ExtResource("2_i8q58")
+theme_override_styles/panel = ExtResource("1_dnkrs")
+script = ExtResource("2_lntoj")
 _actionLabel = NodePath("MarginContainer/KeybindHBox/ActionLabel")
 _primaryButton = NodePath("MarginContainer/KeybindHBox/PrimaryButton")
 _secondaryButton = NodePath("MarginContainer/KeybindHBox/SecondaryButton")

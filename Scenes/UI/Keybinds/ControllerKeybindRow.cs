@@ -131,8 +131,21 @@ public partial class ControllerKeybindRow : PanelContainer
     }
 
     private void ApplyNewBinding(InputEvent newEvent, int index)
-    {
+{
         var controllerEvents = GetControllerEvents();
+
+        // 1. INTRA-ACTION SLOT SWAP:
+        int otherIndex = index == 0 ? 1 : 0;
+        if (otherIndex < controllerEvents.Count && IsSameControllerInput(controllerEvents[otherIndex], newEvent))
+        {
+            controllerEvents.RemoveAt(otherIndex);
+
+            // FIX: If we removed index 0 while targeting index 1, target index shifted to 0!
+            if (otherIndex == 0 && index == 1)
+            {
+                index = 0;
+            }
+        }
 
         // Preserve all KBM events intact
         var kbmEvents = InputMap.ActionGetEvents(_actionName)
@@ -160,6 +173,21 @@ public partial class ControllerKeybindRow : PanelContainer
         EmitSignal(SignalName.BindingChanged, _actionName, newEvent, index);
     }
 
+    private bool IsSameControllerInput(InputEvent e1, InputEvent e2)
+    {
+        if (e1 is InputEventJoypadButton b1 && e2 is InputEventJoypadButton b2)
+        {
+            return b1.ButtonIndex == b2.ButtonIndex;
+        }
+
+        if (e1 is InputEventJoypadMotion m1 && e2 is InputEventJoypadMotion m2)
+        {
+            return m1.Axis == m2.Axis && Mathf.Sign(m1.AxisValue) == Mathf.Sign(m2.AxisValue);
+        }
+
+        return false;
+    }
+
     private void ClearBinding(int index)
     {
         var controllerEvents = GetControllerEvents();
@@ -177,21 +205,21 @@ public partial class ControllerKeybindRow : PanelContainer
         {
             return joyBtn.ButtonIndex switch
             {
-                JoyButton.A => "Button A (Cross)",
-                JoyButton.B => "Button B (Circle)",
-                JoyButton.X => "Button X (Square)",
-                JoyButton.Y => "Button Y (Triangle)",
+                JoyButton.A => "A / Cross",
+                JoyButton.B => "B / Circle",
+                JoyButton.X => "X / Square",
+                JoyButton.Y => "Y / Triangle",
                 JoyButton.LeftShoulder => "LB / L1",
                 JoyButton.RightShoulder => "RB / R1",
-                JoyButton.LeftStick => "LS Click",
-                JoyButton.RightStick => "RS Click",
-                JoyButton.Back => "Select / View",
-                JoyButton.Start => "Start / Options",
+                JoyButton.LeftStick => "Left Stick Click (L3)",
+                JoyButton.RightStick => "Right Stick Click (R3)",
+                JoyButton.Back => "View / Select",
+                JoyButton.Start => "Menu / Options",
                 JoyButton.DpadUp => "D-Pad Up",
                 JoyButton.DpadDown => "D-Pad Down",
                 JoyButton.DpadLeft => "D-Pad Left",
                 JoyButton.DpadRight => "D-Pad Right",
-                _ => $"Joy Button {joyBtn.ButtonIndex}"
+                _ => $"Button {joyBtn.ButtonIndex}"
             };
         }
 
@@ -201,10 +229,10 @@ public partial class ControllerKeybindRow : PanelContainer
 
             return joyMotion.Axis switch
             {
-                JoyAxis.LeftX => isPositive ? "L-Stick Right" : "L-Stick Left",
-                JoyAxis.LeftY => isPositive ? "L-Stick Down" : "L-Stick Up",      // Negative Y is Up in Godot!
-                JoyAxis.RightX => isPositive ? "R-Stick Right" : "R-Stick Left",
-                JoyAxis.RightY => isPositive ? "R-Stick Down" : "R-Stick Up",
+                JoyAxis.LeftX => isPositive ? "Left Stick Right" : "Left Stick Left",
+                JoyAxis.LeftY => isPositive ? "Left Stick Down" : "Left Stick Up", // Godot -Y is Up
+                JoyAxis.RightX => isPositive ? "Right Stick Right" : "Right Stick Left",
+                JoyAxis.RightY => isPositive ? "Right Stick Down" : "Right Stick Up",
                 JoyAxis.TriggerLeft => "LT / L2 Trigger",
                 JoyAxis.TriggerRight => "RT / R2 Trigger",
                 _ => $"Axis {joyMotion.Axis}"

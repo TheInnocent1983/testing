@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://n5gsrq6nbc4y"]
 
-[ext_resource type="PackedScene" uid="uid://d3ayo3eli11e3" path="res://Scenes/UI/SettingsTab/GameplayVBox.tscn" id="1_q4b8a"]
-[ext_resource type="PackedScene" uid="uid://5c7lm1nu0f03" path="res://Scenes/UI/SettingsTab/MouseKeyboardVBox.tscn" id="2_q4b8a"]
-[ext_resource type="PackedScene" uid="uid://r27nbhkielab" path="res://Scenes/UI/SettingsTab/ControllerVBox.tscn" id="3_mw62m"]
+[ext_resource type="PackedScene" uid="uid://d3ayo3eli11e3" path="res://Scenes/UI/Settings/Tabs/GameplayVBox.tscn" id="1_8fkpw"]
+[ext_resource type="PackedScene" uid="uid://5c7lm1nu0f03" path="res://Scenes/UI/Settings/Tabs/MouseKeyboardVBox.tscn" id="2_bg6lj"]
+[ext_resource type="PackedScene" uid="uid://r27nbhkielab" path="res://Scenes/UI/Settings/Tabs/ControllerVBox.tscn" id="3_k530t"]
 
 [node name="SettingsMenu" type="CanvasLayer" unique_id=1523625903]
 
@@ -99,15 +99,15 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="GameplayVBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GamplayMouseControllerVideoAudioTab/MarginContainer" unique_id=1348531777 instance=ExtResource("1_q4b8a")]
+[node name="ControllerVBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GamplayMouseControllerVideoAudioTab/MarginContainer" unique_id=417684231 instance=ExtResource("3_k530t")]
 visible = false
 layout_mode = 2
 
-[node name="MouseKeyboardVBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GamplayMouseControllerVideoAudioTab/MarginContainer" unique_id=417684231 instance=ExtResource("2_q4b8a")]
+[node name="GameplayVBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GamplayMouseControllerVideoAudioTab/MarginContainer" unique_id=1348531777 instance=ExtResource("1_8fkpw")]
+visible = false
 layout_mode = 2
 
-[node name="ControllerVBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GamplayMouseControllerVideoAudioTab/MarginContainer" unique_id=848223575 instance=ExtResource("3_mw62m")]
-visible = false
+[node name="MouseKeyboardVBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GamplayMouseControllerVideoAudioTab/MarginContainer" unique_id=1940568945 instance=ExtResource("2_bg6lj")]
 layout_mode = 2
 
 [node name="DescriptionPanel" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox" unique_id=1974657218]
