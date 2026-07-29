@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c0inuqoct082"]
+
+[ext_resource type="StyleBox" uid="uid://654rrvhktqa2" path="res://Scenes/UI/SettingsPanelContainer/SettingsPanelContainer.tres" id="1_a4t0h"]
+[ext_resource type="Script" path="res://Scripts/UI/ControllerKeybindRow.cs" id="2_a4t0h"]
+
+[node name="KeybindRow" type="PanelContainer" unique_id=789756460 node_paths=PackedStringArray("_actionLabel", "_primaryButton", "_secondaryButton")]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("1_a4t0h")
+script = ExtResource("2_a4t0h")
+_actionLabel = NodePath("MarginContainer/KeybindHBox/ActionLabel")
+_primaryButton = NodePath("MarginContainer/KeybindHBox/PrimaryButton")
+_secondaryButton = NodePath("MarginContainer/KeybindHBox/SecondaryButton")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1248800053]
+layout_mode = 2
+
+[node name="KeybindHBox" type="HBoxContainer" parent="MarginContainer" unique_id=36942434]
+layout_mode = 2
+
+[node name="ActionLabel" type="Label" parent="MarginContainer/KeybindHBox" unique_id=114135441]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Move Forward"
+
+[node name="PrimaryButton" type="Button" parent="MarginContainer/KeybindHBox" unique_id=1839717444]
+custom_minimum_size = Vector2(240, 36)
+layout_mode = 2
+text = "W"
+
+[node name="SecondaryButton" type="Button" parent="MarginContainer/KeybindHBox" unique_id=1332205483]
+custom_minimum_size = Vector2(240, 36)
+layout_mode = 2
+text = "Up"

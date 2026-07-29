@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d3ayo3eli11e3"]
 
 [ext_resource type="StyleBox" uid="uid://654rrvhktqa2" path="res://Scenes/UI/SettingsPanelContainer/SettingsPanelContainer.tres" id="1_nhnjh"]
+[ext_resource type="StyleBox" uid="uid://dlyvsxxttt8pk" path="res://Scenes/UI/SettingsPanelContainer/SettingsButtonStyleFlat.tres" id="2_7mqbr"]
 
 [node name="GameplayVBox" type="VBoxContainer" unique_id=1348531777]
 size_flags_horizontal = 3
@@ -1326,6 +1327,40 @@ value = 15.0
 [node name="Spacing" type="Control" parent="WallRunSection" unique_id=534203232]
 custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
+
+[node name="RestoreDefaultSection" type="VBoxContainer" parent="." unique_id=50139855]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="RestorDefaultHeader" type="Label" parent="RestoreDefaultSection" unique_id=888730988]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "DEFAULT SETTINGS"
+
+[node name="HSeparator" type="HSeparator" parent="RestoreDefaultSection" unique_id=1400102332]
+layout_mode = 2
+
+[node name="RestoreDefaultPanelContainer" type="PanelContainer" parent="RestoreDefaultSection" unique_id=1045129896]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nhnjh")
+
+[node name="RestoreDefaultRow" type="HBoxContainer" parent="RestoreDefaultSection/RestoreDefaultPanelContainer" unique_id=2035421940]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="RestoreDefaultSection/RestoreDefaultPanelContainer/RestoreDefaultRow" unique_id=228186231]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+theme_override_font_sizes/font_size = 20
+text = "Restore by default"
+
+[node name="RestoreDefaultButton" type="Button" parent="RestoreDefaultSection/RestoreDefaultPanelContainer/RestoreDefaultRow" unique_id=631884506]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("2_7mqbr")
+text = "Restore Default"
 
 [connection signal="value_changed" from="BasicMovementSection/WalkSpeedPanelContainer/WalkSpeedRow/WalkSpeedSlider" to="BasicMovementSection/WalkSpeedPanelContainer/WalkSpeedRow/WalkSpinBox" method="set_value"]
 [connection signal="value_changed" from="BasicMovementSection/WalkSpeedPanelContainer/WalkSpeedRow/WalkSpinBox" to="BasicMovementSection/WalkSpeedPanelContainer/WalkSpeedRow/WalkSpeedSlider" method="set_value"]
