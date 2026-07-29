@@ -1,0 +1,191 @@
+[gd_scene format=3 uid="uid://c75bdy6ghtu8s"]
+
+[ext_resource type="Script" path="res://Scenes/UI/Keybinds/ControllerKeybindManager.cs" id="1_maqa2"]
+[ext_resource type="PackedScene" uid="uid://c0inuqoct082" path="res://Scenes/UI/Keybinds/ControllerKeybindRow.tscn" id="2_68rx5"]
+[ext_resource type="StyleBox" uid="uid://654rrvhktqa2" path="res://Scenes/UI/Resources/SettingsPanelContainer.tres" id="3_lrf62"]
+[ext_resource type="StyleBox" uid="uid://dlyvsxxttt8pk" path="res://Scenes/UI/Resources/SettingsButtonStyleFlat.tres" id="4_ppv2a"]
+[ext_resource type="ButtonGroup" uid="uid://d2qp5i6ljgfby" path="res://Scenes/UI/Components/ADSButtonGroup.tres" id="5_0dog0"]
+
+[node name="AudioVBox" type="VBoxContainer" unique_id=417684231 node_paths=PackedStringArray("_keybindListContainer", "_restoreDefaultsButton")]
+script = ExtResource("1_maqa2")
+_controllerKeybindRowScene = ExtResource("2_68rx5")
+_keybindListContainer = NodePath("")
+_restoreDefaultsButton = NodePath("RestoreDefaultSection/RestoreDefaultPanelContainer/RestoreDefaultRow/RestoreDefaultButton")
+
+[node name="AudioSection" type="VBoxContainer" parent="." unique_id=209048555]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="AudioHeader" type="Label" parent="AudioSection" unique_id=1357003090]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "AUDIO SETTINGS"
+
+[node name="HSeparator" type="HSeparator" parent="AudioSection" unique_id=630322128]
+layout_mode = 2
+
+[node name="OverallSoundPanelContainer" type="PanelContainer" parent="AudioSection" unique_id=207558257]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_lrf62")
+
+[node name="OverallSoundRow" type="HBoxContainer" parent="AudioSection/OverallSoundPanelContainer" unique_id=412190003]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="AudioSection/OverallSoundPanelContainer/OverallSoundRow" unique_id=448064980]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Overall Sound"
+vertical_alignment = 1
+
+[node name="OverallSoundSlider" type="HSlider" parent="AudioSection/OverallSoundPanelContainer/OverallSoundRow" unique_id=252307605]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+value = 50.0
+
+[node name="OverallSoundSpinBox" type="SpinBox" parent="AudioSection/OverallSoundPanelContainer/OverallSoundRow" unique_id=1834972881]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+value = 50.0
+
+[node name="MusicSoundPanelContainer" type="PanelContainer" parent="AudioSection" unique_id=186356864]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_lrf62")
+
+[node name="MusicSoundRow" type="HBoxContainer" parent="AudioSection/MusicSoundPanelContainer" unique_id=1889367643]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="AudioSection/MusicSoundPanelContainer/MusicSoundRow" unique_id=1821341142]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Music Sound"
+vertical_alignment = 1
+
+[node name="MusicSoundSlider" type="HSlider" parent="AudioSection/MusicSoundPanelContainer/MusicSoundRow" unique_id=891755031]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+value = 50.0
+
+[node name="MusicSoundSpinBox" type="SpinBox" parent="AudioSection/MusicSoundPanelContainer/MusicSoundRow" unique_id=181166314]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+value = 50.0
+
+[node name="SFXSoundPanelContainer" type="PanelContainer" parent="AudioSection" unique_id=954303482]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_lrf62")
+
+[node name="SFXSoundRow" type="HBoxContainer" parent="AudioSection/SFXSoundPanelContainer" unique_id=1099944811]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="AudioSection/SFXSoundPanelContainer/SFXSoundRow" unique_id=881237290]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "SFX Sound"
+vertical_alignment = 1
+
+[node name="SFXSoundSlider" type="HSlider" parent="AudioSection/SFXSoundPanelContainer/SFXSoundRow" unique_id=634987749]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+value = 50.0
+
+[node name="SFXSoundSpinBox" type="SpinBox" parent="AudioSection/SFXSoundPanelContainer/SFXSoundRow" unique_id=939999800]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+value = 50.0
+
+[node name="MicrophonePanelContainer" type="PanelContainer" parent="AudioSection" unique_id=340347419]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_lrf62")
+
+[node name="MicrophoneRow" type="HBoxContainer" parent="AudioSection/MicrophonePanelContainer" unique_id=2042220929]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="AudioSection/MicrophonePanelContainer/MicrophoneRow" unique_id=1026517440]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 20
+text = "Microphone Activation"
+
+[node name="HoldButton" type="Button" parent="AudioSection/MicrophonePanelContainer/MicrophoneRow" unique_id=761720774]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("4_ppv2a")
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("5_0dog0")
+text = "Hold"
+
+[node name="ToggleButton" type="Button" parent="AudioSection/MicrophonePanelContainer/MicrophoneRow" unique_id=52600924]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("4_ppv2a")
+toggle_mode = true
+button_group = ExtResource("5_0dog0")
+text = "Toggle"
+
+[node name="Spacing" type="Control" parent="AudioSection" unique_id=1827714855]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="RestoreDefaultSection" type="VBoxContainer" parent="." unique_id=605606788]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="RestorDefaultHeader" type="Label" parent="RestoreDefaultSection" unique_id=179497564]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "DEFAULT SETTINGS"
+
+[node name="HSeparator" type="HSeparator" parent="RestoreDefaultSection" unique_id=1142594890]
+layout_mode = 2
+
+[node name="RestoreDefaultPanelContainer" type="PanelContainer" parent="RestoreDefaultSection" unique_id=53645585]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_lrf62")
+
+[node name="RestoreDefaultRow" type="HBoxContainer" parent="RestoreDefaultSection/RestoreDefaultPanelContainer" unique_id=1434066290]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="RestoreDefaultSection/RestoreDefaultPanelContainer/RestoreDefaultRow" unique_id=2038429824]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+theme_override_font_sizes/font_size = 20
+text = "Restore by default"
+
+[node name="RestoreDefaultButton" type="Button" parent="RestoreDefaultSection/RestoreDefaultPanelContainer/RestoreDefaultRow" unique_id=30601175]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("4_ppv2a")
+text = "Restore Default"
+
+[connection signal="value_changed" from="AudioSection/OverallSoundPanelContainer/OverallSoundRow/OverallSoundSlider" to="AudioSection/OverallSoundPanelContainer/OverallSoundRow/OverallSoundSpinBox" method="set_value"]
+[connection signal="value_changed" from="AudioSection/OverallSoundPanelContainer/OverallSoundRow/OverallSoundSpinBox" to="AudioSection/OverallSoundPanelContainer/OverallSoundRow/OverallSoundSlider" method="set_value"]
+[connection signal="value_changed" from="AudioSection/MusicSoundPanelContainer/MusicSoundRow/MusicSoundSlider" to="AudioSection/MusicSoundPanelContainer/MusicSoundRow/MusicSoundSpinBox" method="set_value"]
+[connection signal="value_changed" from="AudioSection/MusicSoundPanelContainer/MusicSoundRow/MusicSoundSpinBox" to="AudioSection/MusicSoundPanelContainer/MusicSoundRow/MusicSoundSlider" method="set_value"]
+[connection signal="value_changed" from="AudioSection/SFXSoundPanelContainer/SFXSoundRow/SFXSoundSlider" to="AudioSection/SFXSoundPanelContainer/SFXSoundRow/SFXSoundSpinBox" method="set_value"]
+[connection signal="value_changed" from="AudioSection/SFXSoundPanelContainer/SFXSoundRow/SFXSoundSpinBox" to="AudioSection/SFXSoundPanelContainer/SFXSoundRow/SFXSoundSlider" method="set_value"]

@@ -1,0 +1,259 @@
+[gd_scene format=3 uid="uid://dxjioqsuwxu15"]
+
+[ext_resource type="StyleBox" uid="uid://654rrvhktqa2" path="res://Scenes/UI/Resources/SettingsPanelContainer.tres" id="1_hi3bu"]
+[ext_resource type="Script" uid="uid://dupnowcc6o6r8" path="res://Scenes/UI/Settings/Tabs/VideoSettings/VideoSettingsTab.cs" id="1_tlf2b"]
+[ext_resource type="StyleBox" uid="uid://dlyvsxxttt8pk" path="res://Scenes/UI/Resources/SettingsButtonStyleFlat.tres" id="2_rag4y"]
+[ext_resource type="Script" uid="uid://cmufko823kqwe" path="res://Scenes/UI/Settings/Tabs/VideoSettings/FOVSlider.cs" id="3_5s0y8"]
+[ext_resource type="Script" uid="uid://cp081420k2cmc" path="res://Scenes/UI/Settings/Tabs/VideoSettings/AspectRatioOptionButton.cs" id="3_tlf2b"]
+[ext_resource type="Script" uid="uid://b878ua1dpnenu" path="res://Scenes/UI/Settings/Tabs/VideoSettings/ResolutionOptionButton.cs" id="4_o6o0e"]
+
+[node name="VideoVBox" type="VBoxContainer" unique_id=417684231 node_paths=PackedStringArray("_fovPanel", "_aspectRatioPanel", "_resolutionPanel", "_unlimitedFpsPanel", "_fpsPanel", "_brightnessPanel", "_restoreDefaultPanel", "_fovSlider", "_brightnessSlider", "_aspectRatioOption", "_restoreDefaultsButton", "_unlimitedFpsCheckBox", "_fpsSlider", "_fpsSpinBox")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_tlf2b")
+_fovPanel = NodePath("VideoSection/FOVPanelContainer")
+_aspectRatioPanel = NodePath("VideoSection/AspectRatioPanelContainer")
+_resolutionPanel = NodePath("VideoSection/ResolutionPanelContainer")
+_unlimitedFpsPanel = NodePath("VideoSection/UnlimitedFPSPanelContainer")
+_fpsPanel = NodePath("VideoSection/FPSPanelContainer")
+_brightnessPanel = NodePath("VideoSection/BrightnessPanelContainer")
+_restoreDefaultPanel = NodePath("RestoreDefaultSection/RestoreDefaultPanelContainer")
+_fovSlider = NodePath("VideoSection/FOVPanelContainer/FOVRow/FOVSlider")
+_brightnessSlider = NodePath("VideoSection/BrightnessPanelContainer/BrightnessRow/BrightnessSlider")
+_aspectRatioOption = NodePath("VideoSection/AspectRatioPanelContainer/AspectRatioRow/AspectRatioOptionButton")
+_restoreDefaultsButton = NodePath("RestoreDefaultSection/RestoreDefaultPanelContainer/RestoreDefaultRow/RestoreDefaultButton")
+_unlimitedFpsCheckBox = NodePath("VideoSection/UnlimitedFPSPanelContainer/UnlimitedFPSRow/UnlimitedFPSCheckBox")
+_fpsSlider = NodePath("VideoSection/FPSPanelContainer/FPSRow/FPSSlider")
+_fpsSpinBox = NodePath("VideoSection/FPSPanelContainer/FPSRow/FPSSpinBox")
+
+[node name="VideoSection" type="VBoxContainer" parent="." unique_id=209048555]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="VideoHeader" type="Label" parent="VideoSection" unique_id=1357003090]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "VIDEO SETTINGS"
+
+[node name="HSeparator" type="HSeparator" parent="VideoSection" unique_id=630322128]
+layout_mode = 2
+
+[node name="FOVPanelContainer" type="PanelContainer" parent="VideoSection" unique_id=207558257]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_hi3bu")
+
+[node name="FOVRow" type="HBoxContainer" parent="VideoSection/FOVPanelContainer" unique_id=412190003]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="VideoSection/FOVPanelContainer/FOVRow" unique_id=448064980]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Field of View"
+vertical_alignment = 1
+
+[node name="FOVSlider" type="HSlider" parent="VideoSection/FOVPanelContainer/FOVRow" unique_id=252307605]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+min_value = 60.0
+max_value = 140.0
+value = 110.0
+script = ExtResource("3_5s0y8")
+
+[node name="FOVSpinBox" type="SpinBox" parent="VideoSection/FOVPanelContainer/FOVRow" unique_id=1834972881]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+min_value = 60.0
+max_value = 140.0
+value = 110.0
+
+[node name="AspectRatioPanelContainer" type="PanelContainer" parent="VideoSection" unique_id=688940358]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_hi3bu")
+
+[node name="AspectRatioRow" type="HBoxContainer" parent="VideoSection/AspectRatioPanelContainer" unique_id=408467072]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="VideoSection/AspectRatioPanelContainer/AspectRatioRow" unique_id=973669018]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 20
+text = "Aspect Ratio"
+vertical_alignment = 1
+
+[node name="AspectRatioOptionButton" type="OptionButton" parent="VideoSection/AspectRatioPanelContainer/AspectRatioRow" unique_id=1758813312 node_paths=PackedStringArray("_resolutionSelector")]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 5
+popup/item_0/text = "4:3"
+popup/item_0/id = 1
+popup/item_1/text = "16:10"
+popup/item_1/id = 1
+popup/item_2/text = "16:9"
+popup/item_2/id = 0
+popup/item_3/text = "21:9"
+popup/item_3/id = 3
+popup/item_4/text = "32:9"
+popup/item_4/id = 4
+script = ExtResource("3_tlf2b")
+_resolutionSelector = NodePath("../../../ResolutionPanelContainer/ResolutionRow/ResolutionOptionButton")
+
+[node name="ResolutionPanelContainer" type="PanelContainer" parent="VideoSection" unique_id=2131223850]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_hi3bu")
+
+[node name="ResolutionRow" type="HBoxContainer" parent="VideoSection/ResolutionPanelContainer" unique_id=733759203]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="VideoSection/ResolutionPanelContainer/ResolutionRow" unique_id=960071280]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 20
+text = "Resolution"
+vertical_alignment = 1
+
+[node name="ResolutionOptionButton" type="OptionButton" parent="VideoSection/ResolutionPanelContainer/ResolutionRow" unique_id=393921340]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("4_o6o0e")
+
+[node name="UnlimitedFPSPanelContainer" type="PanelContainer" parent="VideoSection" unique_id=2072173581]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_hi3bu")
+
+[node name="UnlimitedFPSRow" type="HBoxContainer" parent="VideoSection/UnlimitedFPSPanelContainer" unique_id=163539621]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="VideoSection/UnlimitedFPSPanelContainer/UnlimitedFPSRow" unique_id=1373363795]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 20
+text = "Unlimited Frames per Second"
+
+[node name="UnlimitedFPSCheckBox" type="CheckBox" parent="VideoSection/UnlimitedFPSPanelContainer/UnlimitedFPSRow" unique_id=225528886]
+layout_mode = 2
+
+[node name="FPSPanelContainer" type="PanelContainer" parent="VideoSection" unique_id=2142513267]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_hi3bu")
+
+[node name="FPSRow" type="HBoxContainer" parent="VideoSection/FPSPanelContainer" unique_id=1248141079]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="VideoSection/FPSPanelContainer/FPSRow" unique_id=808577825]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Frames per Second"
+vertical_alignment = 1
+
+[node name="FPSSlider" type="HSlider" parent="VideoSection/FPSPanelContainer/FPSRow" unique_id=743506169]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+max_value = 500.0
+value = 144.0
+
+[node name="FPSSpinBox" type="SpinBox" parent="VideoSection/FPSPanelContainer/FPSRow" unique_id=1168529778]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+max_value = 500.0
+value = 144.0
+
+[node name="BrightnessPanelContainer" type="PanelContainer" parent="VideoSection" unique_id=389684176]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_hi3bu")
+
+[node name="BrightnessRow" type="HBoxContainer" parent="VideoSection/BrightnessPanelContainer" unique_id=2036526965]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="VideoSection/BrightnessPanelContainer/BrightnessRow" unique_id=427044813]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Brightness"
+vertical_alignment = 1
+
+[node name="BrightnessSlider" type="HSlider" parent="VideoSection/BrightnessPanelContainer/BrightnessRow" unique_id=653896014]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+min_value = 1.0
+value = 50.0
+
+[node name="BrightnessSpinBox" type="SpinBox" parent="VideoSection/BrightnessPanelContainer/BrightnessRow" unique_id=86757297]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+min_value = 1.0
+value = 50.0
+
+[node name="Spacing" type="Control" parent="VideoSection" unique_id=1827714855]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="RestoreDefaultSection" type="VBoxContainer" parent="." unique_id=605606788]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="RestorDefaultHeader" type="Label" parent="RestoreDefaultSection" unique_id=179497564]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "DEFAULT SETTINGS"
+
+[node name="HSeparator" type="HSeparator" parent="RestoreDefaultSection" unique_id=1142594890]
+layout_mode = 2
+
+[node name="RestoreDefaultPanelContainer" type="PanelContainer" parent="RestoreDefaultSection" unique_id=53645585]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_hi3bu")
+
+[node name="RestoreDefaultRow" type="HBoxContainer" parent="RestoreDefaultSection/RestoreDefaultPanelContainer" unique_id=1434066290]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="RestoreDefaultSection/RestoreDefaultPanelContainer/RestoreDefaultRow" unique_id=2038429824]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+theme_override_font_sizes/font_size = 20
+text = "Restore by default"
+
+[node name="RestoreDefaultButton" type="Button" parent="RestoreDefaultSection/RestoreDefaultPanelContainer/RestoreDefaultRow" unique_id=30601175]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("2_rag4y")
+text = "Restore Default"
+
+[connection signal="value_changed" from="VideoSection/FOVPanelContainer/FOVRow/FOVSlider" to="VideoSection/FOVPanelContainer/FOVRow/FOVSpinBox" method="set_value"]
+[connection signal="value_changed" from="VideoSection/FOVPanelContainer/FOVRow/FOVSpinBox" to="VideoSection/FOVPanelContainer/FOVRow/FOVSlider" method="set_value"]
+[connection signal="value_changed" from="VideoSection/FPSPanelContainer/FPSRow/FPSSlider" to="VideoSection/FPSPanelContainer/FPSRow/FPSSpinBox" method="set_value"]
+[connection signal="value_changed" from="VideoSection/FPSPanelContainer/FPSRow/FPSSpinBox" to="VideoSection/FPSPanelContainer/FPSRow/FPSSlider" method="set_value"]
+[connection signal="value_changed" from="VideoSection/BrightnessPanelContainer/BrightnessRow/BrightnessSlider" to="VideoSection/BrightnessPanelContainer/BrightnessRow/BrightnessSpinBox" method="set_value"]
+[connection signal="value_changed" from="VideoSection/BrightnessPanelContainer/BrightnessRow/BrightnessSpinBox" to="VideoSection/BrightnessPanelContainer/BrightnessRow/BrightnessSlider" method="set_value"]

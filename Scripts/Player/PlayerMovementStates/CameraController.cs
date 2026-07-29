@@ -18,7 +18,7 @@ public partial class CameraController : Node
 
     [ExportGroup("View Settings")]
     [Export] public Camera3D TargetCamera { get; set; }
-    [Export] public float FieldOfView { get; set; } = 75.0f;
+    [Export] public float FieldOfView { get; set; } = 90.0f;
 
     private Vector2 _currentControllerLook;
     private float _headbobTime = 0.0f;
