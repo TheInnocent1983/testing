@@ -1,124 +1,147 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using Parkour.UI.Settings;
+using Parkour.Movement;
 
 namespace Parkour.UI;
 
 public partial class ControllerKeybindManager : VBoxContainer
 {
-    [Export] private PackedScene _controllerKeybindRowScene; // Drag ControllerKeybindRow.tscn here
-    [Export] private Control _keybindListContainer;          // Drag Controller KeybindList here
-    [Export] private Button _restoreDefaultsButton;
+	[ExportGroup("External Dependencies")]
+	[Export] private DescriptionPanel _descriptionPanel;
+	[Export] private CameraController _cameraController;
 
-    private readonly Dictionary<string, string> _customActions = new()
-    {
-        { "move_forward", "Move Forward" },
-        { "move_backwards", "Move Backwards" },
-        { "move_left", "Move Left" },
-        { "move_right", "Move Right" },
-        { "jump", "Jump" },
-        { "sprint", "Sprint" },
-        { "crouch_toggle", "Crouch" },
-        { "slide", "Slide" },
-        { "noclip", "Noclip"},
-        { "restart", "Restart"},
-    };
+	[ExportGroup("Internal Sections")]
+	[Export] private ControllerSettingsSection _aimingSection;
+	[Export] private PackedScene _controllerKeybindRowScene;
+	[Export] private Control _keybindListContainer;
+	[Export] private Button _restoreDefaultsButton;
 
-    private readonly List<ControllerKeybindRow> _instancedRows = new();
+	private readonly Dictionary<string, string> _customActions = new()
+	{
+		{ "move_forward", "Move Forward" },
+		{ "move_backwards", "Move Backwards" },
+		{ "move_left", "Move Left" },
+		{ "move_right", "Move Right" },
+		{ "jump", "Jump" },
+		{ "sprint", "Sprint" },
+		{ "crouch_toggle", "Crouch" },
+		{ "slide", "Slide" },
+		{ "noclip", "Noclip"},
+		{ "restart", "Restart"},
+	};
 
-    public override void _Ready()
-    {
-        PopulateKeybinds();
+	private readonly List<ControllerKeybindRow> _instancedRows = new();
 
-        if (_restoreDefaultsButton != null)
-        {
-            _restoreDefaultsButton.Pressed += OnRestoreDefaultsPressed;
-        }
-    }
+	public override void _Ready()
+	{
+		PopulateKeybinds();
 
-    private void PopulateKeybinds()
-    {
-        if (_keybindListContainer == null || _controllerKeybindRowScene == null)
-        {
-            GD.PrintErr("ControllerKeybindManager: Missing export references!");
-            return;
-        }
+		// Inject dependencies into ControllerSettingsSection
+		if (_aimingSection != null && _descriptionPanel != null)
+		{
+			_aimingSection.Initialize(_descriptionPanel, _cameraController);
+		}
+		else if (_aimingSection == null)
+		{
+			GD.PrintErr("[ControllerKeybindManager] Missing _aimingSection export reference!");
+		}
 
-        foreach (Node child in _keybindListContainer.GetChildren())
-        {
-            child.QueueFree();
-        }
-        _instancedRows.Clear();
+		if (_restoreDefaultsButton != null)
+		{
+			_restoreDefaultsButton.Pressed += OnRestoreDefaultsPressed;
+		}
+	}
 
-        foreach (var (actionName, displayName) in _customActions)
-        {
-            if (!InputMap.HasAction(actionName)) continue;
+	private void PopulateKeybinds()
+	{
+		if (_keybindListContainer == null || _controllerKeybindRowScene == null)
+		{
+			GD.PrintErr("[ControllerKeybindManager] Missing export references!");
+			return;
+		}
 
-            var rowInstance = _controllerKeybindRowScene.Instantiate<ControllerKeybindRow>();
-            _keybindListContainer.AddChild(rowInstance);
-            rowInstance.Setup(displayName, actionName);
+		foreach (Node child in _keybindListContainer.GetChildren())
+		{
+			child.QueueFree();
+		}
+		_instancedRows.Clear();
 
-            // Connect signal to handle global controller duplicate unbinding
-            rowInstance.BindingChanged += OnBindingChanged;
+		foreach (var (actionName, displayName) in _customActions)
+		{
+			if (!InputMap.HasAction(actionName)) continue;
 
-            _instancedRows.Add(rowInstance);
-        }
-    }
+			var rowInstance = _controllerKeybindRowScene.Instantiate<ControllerKeybindRow>();
+			_keybindListContainer.AddChild(rowInstance);
+			rowInstance.Setup(displayName, actionName);
 
-    private void OnBindingChanged(string changedAction, InputEvent newEvent, int index)
-    {
-        if (newEvent == null) return;
+			// Connect signal to handle global controller duplicate unbinding
+			rowInstance.BindingChanged += OnBindingChanged;
 
-        // 1. Look through all other custom actions
-        foreach (var (actionName, _) in _customActions)
-        {
-            // Skip the action currently being bound
-            if (actionName == changedAction) continue;
+			_instancedRows.Add(rowInstance);
+		}
+	}
 
-            var existingEvents = InputMap.ActionGetEvents(actionName);
-            foreach (var evt in existingEvents)
-            {
-                // 2. Erase from other actions if the same button/trigger/stick axis is already used
-                if (IsSameControllerInput(evt, newEvent))
-                {
-                    InputMap.ActionEraseEvent(actionName, evt);
-                    break;
-                }
-            }
-        }
+	private void OnBindingChanged(string changedAction, InputEvent newEvent, int index)
+	{
+		if (newEvent == null) return;
 
-        // 3. Refresh all controller UI rows
-        foreach (var row in _instancedRows)
-        {
-            row.UpdateUI();
-        }
-    }
+		// 1. Look through all other custom actions
+		foreach (var (actionName, _) in _customActions)
+		{
+			// Skip the action currently being bound
+			if (actionName == changedAction) continue;
 
-    private bool IsSameControllerInput(InputEvent e1, InputEvent e2)
-    {
-        // Joypad Buttons (A, B, X, Y, LB, RB, D-Pad, etc.)
-        if (e1 is InputEventJoypadButton b1 && e2 is InputEventJoypadButton b2)
-        {
-            return b1.ButtonIndex == b2.ButtonIndex;
-        }
+			var existingEvents = InputMap.ActionGetEvents(actionName);
+			foreach (var evt in existingEvents)
+			{
+				// 2. Erase from other actions if the same button/trigger/stick axis is already used
+				if (IsSameControllerInput(evt, newEvent))
+				{
+					InputMap.ActionEraseEvent(actionName, evt);
+					break;
+				}
+			}
+		}
 
-        // Joypad Triggers or Analog Motion (LT, RT, Left Stick Axis, Right Stick Axis)
-        if (e1 is InputEventJoypadMotion m1 && e2 is InputEventJoypadMotion m2)
-        {
-            // Compare axis (e.g. Axis 4 for LT, Axis 5 for RT) and direction (+1 or -1)
-            return m1.Axis == m2.Axis && Mathf.Sign(m1.AxisValue) == Mathf.Sign(m2.AxisValue);
-        }
+		// 3. Refresh all controller UI rows
+		foreach (var row in _instancedRows)
+		{
+			row.UpdateUI();
+		}
+	}
 
-        return false;
-    }
+	private bool IsSameControllerInput(InputEvent e1, InputEvent e2)
+	{
+		// Joypad Buttons (A, B, X, Y, LB, RB, D-Pad, etc.)
+		if (e1 is InputEventJoypadButton b1 && e2 is InputEventJoypadButton b2)
+		{
+			return b1.ButtonIndex == b2.ButtonIndex;
+		}
 
-    private void OnRestoreDefaultsPressed()
-    {
-        InputMap.LoadFromProjectSettings();
+		// Joypad Triggers or Analog Motion (LT, RT, Left Stick Axis, Right Stick Axis)
+		if (e1 is InputEventJoypadMotion m1 && e2 is InputEventJoypadMotion m2)
+		{
+			// Compare axis (e.g. Axis 4 for LT, Axis 5 for RT) and direction (+1 or -1)
+			return m1.Axis == m2.Axis && Mathf.Sign(m1.AxisValue) == Mathf.Sign(m2.AxisValue);
+		}
 
-        foreach (var row in _instancedRows)
-        {
-            row.UpdateUI();
-        }
-    }
-}   
+		return false;
+	}
+
+	private void OnRestoreDefaultsPressed()
+	{
+		InputMap.LoadFromProjectSettings();
+
+		if (_aimingSection != null)
+		{
+			_aimingSection.ResetToDefaults();
+		}
+
+		foreach (var row in _instancedRows)
+		{
+			row.UpdateUI();
+		}
+	}
+}

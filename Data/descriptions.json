@@ -36,6 +36,10 @@
       "title": "Mouse Sensitivity",
       "body": "Adjusts camera turning speed when moving the mouse."
     },
+    "controller_look_sensitivity": {
+      "title": "Look Sensitivity",
+      "body": "Adjusts camera turning speed when moving the controller right stick."
+    },
     "ads_mode": {
       "title": "Aim Down Sights Mode",
       "body": "Choose whether aiming requires holding the button or toggling it on and off."
@@ -43,6 +47,10 @@
     "sprint_mode": {
       "title": "Sprint Mode",
       "body": "Choose whether sprinting requires holding the button or toggling it on and off."
+    },
+    "crouch_mode": {
+      "title": "Crouch Mode",
+      "body": "Choose whether crouching requires holding the button or toggling it on and off."
     }
   },
   "ru": {
@@ -82,6 +90,10 @@
       "title": "Чувствительность мыши",
       "body": "Регулирует скорость вращения камеры при движении мыши."
     },
+    "controller_look_sensitivity": {
+      "title": "Чувствительность обзора",
+      "body": "Регулирует скорость вращения камеры при движении правого стика геймпада."
+    },
     "ads_mode": {
       "title": "Режим прицеливания",
       "body": "Выберите, нужно ли удерживать кнопку для прицеливания или переключать её нажатием."
@@ -89,6 +101,10 @@
     "sprint_mode": {
       "title": "Режим бега",
       "body": "Выберите, нужно ли удерживать кнопку для бега или переключать её нажатием."
+    },
+    "crouch_mode": {
+      "title": "Режим приседания",
+      "body": "Выберите, нужно ли удерживать кнопку для приседания или переключать её нажатием."
     }
   }
 }

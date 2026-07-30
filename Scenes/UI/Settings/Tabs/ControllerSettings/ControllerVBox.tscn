@@ -2,20 +2,44 @@
 
 [ext_resource type="Script" path="res://Scenes/UI/Keybinds/ControllerKeybindManager.cs" id="1_rjra3"]
 [ext_resource type="PackedScene" uid="uid://c0inuqoct082" path="res://Scenes/UI/Keybinds/ControllerKeybindRow.tscn" id="2_0354i"]
+[ext_resource type="Script" uid="uid://cgtrwkty6w2vi" path="res://Scenes/UI/Settings/Tabs/ControllerSettings/ControllerSettingsSection.cs" id="3_ag1hh"]
 [ext_resource type="StyleBox" uid="uid://654rrvhktqa2" path="res://Scenes/UI/Resources/SettingsPanelContainer.tres" id="3_rjra3"]
 [ext_resource type="StyleBox" uid="uid://dlyvsxxttt8pk" path="res://Scenes/UI/Resources/SettingsButtonStyleFlat.tres" id="4_0354i"]
 [ext_resource type="ButtonGroup" uid="uid://d2qp5i6ljgfby" path="res://Scenes/UI/Components/ADSButtonGroup.tres" id="5_rjra3"]
 [ext_resource type="Script" path="res://Scenes/UI/Components/IsolatedScrollContainer.cs" id="6_rjra3"]
 
-[node name="ControllerVBox" type="VBoxContainer" unique_id=417684231 node_paths=PackedStringArray("_keybindListContainer", "_restoreDefaultsButton")]
+[node name="ControllerVBox" type="VBoxContainer" unique_id=417684231 node_paths=PackedStringArray("_aimingSection", "_keybindListContainer", "_restoreDefaultsButton")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_rjra3")
+_aimingSection = NodePath("AiminigSection")
 _controllerKeybindRowScene = ExtResource("2_0354i")
 _keybindListContainer = NodePath("ButtonLayoutSection/KeybindScroll/KeybindList")
 _restoreDefaultsButton = NodePath("RestoreDefaultSection/RestoreDefaultPanelContainer/RestoreDefaultRow/RestoreDefaultButton")
 
-[node name="AiminigSection" type="VBoxContainer" parent="." unique_id=209048555]
+[node name="AiminigSection" type="VBoxContainer" parent="." unique_id=209048555 node_paths=PackedStringArray("_lookSensitivityPanel", "_adsModePanel", "_sprintModePanel", "_crouchModePanel", "_restoreDefaultPanel", "_lookSlider", "_lookSpinBox", "_adsHoldButton", "_adsToggleButton", "_sprintHoldButton", "_sprintToggleButton", "_crouchHoldButton", "_crouchToggleButton", "_restoreDefaultsButton")]
 layout_mode = 2
 theme_override_constants/separation = 14
+script = ExtResource("3_ag1hh")
+_lookSensitivityPanel = NodePath("LookSensitivityPanelContainer")
+_adsModePanel = NodePath("ADSModePanelContainer")
+_sprintModePanel = NodePath("SprintModePanelContainer")
+_crouchModePanel = NodePath("CrouchModePanelContainer")
+_restoreDefaultPanel = NodePath("../RestoreDefaultSection/RestoreDefaultPanelContainer")
+_lookSlider = NodePath("LookSensitivityPanelContainer/LookSensitivityRow/LookSlider")
+_lookSpinBox = NodePath("LookSensitivityPanelContainer/LookSensitivityRow/LookSpinBox")
+_adsHoldButton = NodePath("ADSModePanelContainer/ADSModeRow/HoldButton")
+_adsToggleButton = NodePath("ADSModePanelContainer/ADSModeRow/ToggleButton")
+_sprintHoldButton = NodePath("SprintModePanelContainer/SprintModeRow/HoldButton")
+_sprintToggleButton = NodePath("SprintModePanelContainer/SprintModeRow/ToggleButton")
+_crouchHoldButton = NodePath("CrouchModePanelContainer/CrouchModeRow/HoldButton")
+_crouchToggleButton = NodePath("CrouchModePanelContainer/CrouchModeRow/ToggleButton")
+_restoreDefaultsButton = NodePath("../RestoreDefaultSection/RestoreDefaultPanelContainer/RestoreDefaultRow/RestoreDefaultButton")
 
 [node name="AimingHeader" type="Label" parent="AiminigSection" unique_id=1357003090]
 layout_mode = 2
