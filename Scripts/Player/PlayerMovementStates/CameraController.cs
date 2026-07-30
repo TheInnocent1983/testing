@@ -106,4 +106,15 @@ public partial class CameraController : Node
         rot.Z = Mathf.Lerp(rot.Z, targetRollRadians, blend);
         Camera.Rotation = rot;
     }
+
+    public void SetMouseSensitivityFromUI(float uiValue)
+    {
+        // Converts a UI slider value (e.g. 1.0 to 100.0) down to raw look speed
+        LookSensitivity = uiValue * 0.0001f; 
+    }
+
+    public void SetControllerSensitivityFromUI(float uiValue)
+    {
+        ControllerLookSensitivity = uiValue * 0.001f;
+    }
 }

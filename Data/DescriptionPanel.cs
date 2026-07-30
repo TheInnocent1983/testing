@@ -3,10 +3,15 @@ using System.Collections.Generic;
 
 namespace Parkour.UI.Settings;
 
-public partial class DescriptionPanel : PanelContainer // Or Control / MarginContainer depending on your root type
+public partial class DescriptionPanel : PanelContainer
 {
+    [ExportGroup("UI Components")]
     [Export] private Label _descriptionTitle;
     [Export] private Label _descriptionBody;
+
+    [ExportGroup("Settings")]
+    [Export(PropertyHint.File, "*.json")] 
+    private string _jsonPath = "res://Data/descriptions.json";
 
     private Dictionary<string, Dictionary<string, Dictionary<string, string>>> _descriptionsData;
     
@@ -21,14 +26,13 @@ public partial class DescriptionPanel : PanelContainer // Or Control / MarginCon
 
     private void LoadDescriptionsFromJson()
     {
-        string path = "res://data/descriptions.json"; // Adjust path if needed
-        if (!FileAccess.FileExists(path))
+        if (!FileAccess.FileExists(_jsonPath))
         {
-            GD.PrintErr($"[DescriptionPanel] JSON file not found at: {path}");
+            GD.PrintErr($"[DescriptionPanel] JSON file not found at: {_jsonPath}");
             return;
         }
 
-        using var file = FileAccess.Open(path, FileAccess.ModeFlags.Read);
+        using var file = FileAccess.Open(_jsonPath, FileAccess.ModeFlags.Read);
         var json = new Json();
         
         if (json.Parse(file.GetAsText()) == Error.Ok)
@@ -53,8 +57,20 @@ public partial class DescriptionPanel : PanelContainer // Or Control / MarginCon
 
         if (_descriptionsData.TryGetValue(lang, out var langDict) && langDict.TryGetValue(key, out var entry))
         {
-            if (_descriptionTitle != null) _descriptionTitle.Text = entry["title"];
-            if (_descriptionBody != null) _descriptionBody.Text = entry["body"];
+            string titleText = entry.GetValueOrDefault("title", "");
+            string bodyText = entry.GetValueOrDefault("body", "");
+
+            if (_descriptionTitle != null)
+            {
+                _descriptionTitle.Text = titleText;
+                // Automatically hide title if empty so layout shrinks vertically
+                _descriptionTitle.Visible = !string.IsNullOrWhiteSpace(titleText);
+            }
+
+            if (_descriptionBody != null)
+            {
+                _descriptionBody.Text = bodyText;
+            }
         }
     }
 
@@ -80,8 +96,8 @@ public partial class DescriptionPanel : PanelContainer // Or Control / MarginCon
 
                 result[langStr][itemStr] = new Dictionary<string, string>
                 {
-                    { "title", itemDict["title"].AsString() },
-                    { "body", itemDict["body"].AsString() }
+                    { "title", itemDict.ContainsKey("title") ? itemDict["title"].AsString() : "" },
+                    { "body", itemDict.ContainsKey("body") ? itemDict["body"].AsString() : "" }
                 };
             }
         }

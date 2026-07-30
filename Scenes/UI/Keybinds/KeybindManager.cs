@@ -1,11 +1,18 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using Parkour.UI.Settings;
 
 public partial class KeybindManager : VBoxContainer
 {
+	[ExportGroup("External Dependencies")]
+	[Export] private DescriptionPanel _descriptionPanel;
+	[Export] private Parkour.Movement.CameraController _cameraController;
+
+	[ExportGroup("Internal Sections")]
+	[Export] private MouseSettingsSection _mouseSection;
 	[Export] private PackedScene _keybindRowScene;
-	[Export] private Control _keybindListContainer; // Your KeybindList VBoxContainer
+	[Export] private Control _keybindListContainer;
 	[Export] private Button _restoreDefaultsButton;
 
 	// Map internal InputMap action names -> clean UI display names
@@ -29,6 +36,16 @@ public partial class KeybindManager : VBoxContainer
 	{
 		PopulateKeybinds();
 
+		// Inject dependencies into the MouseSection sub-scene!
+		if (_mouseSection != null && _descriptionPanel != null)
+		{
+			_mouseSection.Initialize(_descriptionPanel, _cameraController);
+		}
+		else if (_mouseSection == null || _descriptionPanel == null)
+		{
+			GD.PrintErr("[KeybindManager] Missing _mouseSection or _descriptionPanel export reference!");
+		}
+
 		if (_restoreDefaultsButton != null)
 		{
 			_restoreDefaultsButton.Pressed += OnRestoreDefaultsPressed;
@@ -37,6 +54,12 @@ public partial class KeybindManager : VBoxContainer
 
 	private void PopulateKeybinds()
 	{
+		if (_keybindListContainer == null || _keybindRowScene == null)
+		{
+			GD.PrintErr("[KeybindManager] _keybindListContainer or _keybindRowScene is null!");
+			return;
+		}
+
 		// Clear any old UI rows
 		foreach (Node child in _keybindListContainer.GetChildren())
 		{
@@ -94,7 +117,6 @@ public partial class KeybindManager : VBoxContainer
 		// Keyboard comparison
 		if (e1 is InputEventKey k1 && e2 is InputEventKey k2)
 		{
-			// Compare physical location first (e.g. WASD), fallback to keycode
 			var key1 = k1.PhysicalKeycode != Key.None ? k1.PhysicalKeycode : k1.Keycode;
 			var key2 = k2.PhysicalKeycode != Key.None ? k2.PhysicalKeycode : k2.Keycode;
 			return key1 == key2;
@@ -113,6 +135,12 @@ public partial class KeybindManager : VBoxContainer
 	{
 		// Load default project settings input map
 		InputMap.LoadFromProjectSettings();
+
+		// Also reset mouse section if attached
+		if (_mouseSection != null)
+		{
+			_mouseSection.ResetToDefaults();
+		}
 
 		// Update all UI rows to reflect restored defaults
 		foreach (var row in _instancedRows)

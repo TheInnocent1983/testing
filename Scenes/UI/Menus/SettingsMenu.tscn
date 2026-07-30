@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://n5gsrq6nbc4y"]
 
 [ext_resource type="PackedScene" uid="uid://d3ayo3eli11e3" path="res://Scenes/UI/Settings/Tabs/GameplayVBox.tscn" id="1_8fkpw"]
-[ext_resource type="PackedScene" uid="uid://5c7lm1nu0f03" path="res://Scenes/UI/Settings/Tabs/MouseKeyboardVBox.tscn" id="2_bg6lj"]
+[ext_resource type="PackedScene" uid="uid://5c7lm1nu0f03" path="res://Scenes/UI/Settings/Tabs/MouseKeyboardSettings/MouseKeyboardVBox.tscn" id="2_bg6lj"]
 [ext_resource type="PackedScene" uid="uid://r27nbhkielab" path="res://Scenes/UI/Settings/Tabs/ControllerVBox.tscn" id="3_k530t"]
 [ext_resource type="PackedScene" uid="uid://dxjioqsuwxu15" path="res://Scenes/UI/Settings/Tabs/VideoSettings/VideoVBox.tscn" id="4_bg6lj"]
 [ext_resource type="Script" uid="uid://b25h8w62jknnf" path="res://Data/DescriptionPanel.cs" id="5_k530t"]
@@ -110,11 +110,12 @@ layout_mode = 2
 visible = false
 layout_mode = 2
 
-[node name="MouseKeyboardVBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GamplayMouseControllerVideoAudioTab/MarginContainer" unique_id=1940568945 instance=ExtResource("2_bg6lj")]
-visible = false
+[node name="MouseKeyboardVBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GamplayMouseControllerVideoAudioTab/MarginContainer" unique_id=1940568945 node_paths=PackedStringArray("_descriptionPanel") instance=ExtResource("2_bg6lj")]
 layout_mode = 2
+_descriptionPanel = NodePath("../../../../DescriptionPanel")
 
 [node name="VideoVBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GamplayMouseControllerVideoAudioTab/MarginContainer" unique_id=890887796 node_paths=PackedStringArray("_descriptionPanel") instance=ExtResource("4_bg6lj")]
+visible = false
 layout_mode = 2
 _descriptionPanel = NodePath("../../../../DescriptionPanel")
 

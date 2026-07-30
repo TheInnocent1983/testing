@@ -30,7 +30,19 @@
     },
     "restore_defaults": {
       "title": "Restore Defaults",
-      "body": "Resets all video settings back to their original default values."
+      "body": "Resets all settings in this tab back to their original default values."
+    },
+    "mouse_sensitivity": {
+      "title": "Mouse Sensitivity",
+      "body": "Adjusts camera turning speed when moving the mouse."
+    },
+    "ads_mode": {
+      "title": "Aim Down Sights Mode",
+      "body": "Choose whether aiming requires holding the button or toggling it on and off."
+    },
+    "sprint_mode": {
+      "title": "Sprint Mode",
+      "body": "Choose whether sprinting requires holding the button or toggling it on and off."
     }
   },
   "ru": {
@@ -64,7 +76,19 @@
     },
     "restore_defaults": {
       "title": "Сброс настроек",
-      "body": "Возвращает все видеонастройки к исходным значениям по умолчанию."
+      "body": "Возвращает все настройки в этой вкладке к исходным значениям по умолчанию."
+    },
+    "mouse_sensitivity": {
+      "title": "Чувствительность мыши",
+      "body": "Регулирует скорость вращения камеры при движении мыши."
+    },
+    "ads_mode": {
+      "title": "Режим прицеливания",
+      "body": "Выберите, нужно ли удерживать кнопку для прицеливания или переключать её нажатием."
+    },
+    "sprint_mode": {
+      "title": "Режим бега",
+      "body": "Выберите, нужно ли удерживать кнопку для бега или переключать её нажатием."
     }
   }
 }
