@@ -16,6 +16,11 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_1xu1x"]
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_n6ecr"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=2009058340 node_paths=PackedStringArray("CameraComp", "GroundComp", "AirComp", "WallClimbComp", "WallRunComp", "NoclipComp", "SlideComp", "RestartComp", "CrouchComp", "BodyCollision", "HeadNode")]
 script = ExtResource("1_3pqbm")
 CameraComp = NodePath("MovementComponents/CameraController")
@@ -105,3 +110,6 @@ target_position = Vector3(-0.8, 0, 0)
 
 [node name="WallRayForward" type="RayCast3D" parent="." unique_id=1614732369]
 target_position = Vector3(0, 1.5, -1.2)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=349745868]
+replication_config = SubResource("SceneReplicationConfig_n6ecr")
