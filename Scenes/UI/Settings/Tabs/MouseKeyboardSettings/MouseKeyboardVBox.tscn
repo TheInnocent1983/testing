@@ -3,19 +3,40 @@
 [ext_resource type="Script" uid="uid://dt38i1ttkqmyb" path="res://Scenes/UI/Keybinds/KeybindManager.cs" id="1_cxqi7"]
 [ext_resource type="PackedScene" uid="uid://cvjo7kquvv01o" path="res://Scenes/UI/Keybinds/KeybindRow.tscn" id="2_yley8"]
 [ext_resource type="StyleBox" uid="uid://654rrvhktqa2" path="res://Scenes/UI/Resources/SettingsPanelContainer.tres" id="3_cxqi7"]
+[ext_resource type="Script" uid="uid://dkt8hjl4jsjqb" path="res://Scenes/UI/Settings/Tabs/MouseKeyboardSettings/MouseSettingsSection.cs" id="3_get3x"]
 [ext_resource type="StyleBox" uid="uid://dlyvsxxttt8pk" path="res://Scenes/UI/Resources/SettingsButtonStyleFlat.tres" id="4_yley8"]
 [ext_resource type="ButtonGroup" uid="uid://d2qp5i6ljgfby" path="res://Scenes/UI/Components/ADSButtonGroup.tres" id="5_cxqi7"]
 [ext_resource type="Script" path="res://Scenes/UI/Components/IsolatedScrollContainer.cs" id="6_cxqi7"]
+[ext_resource type="Script" uid="uid://coic32wj3mvlg" path="res://Scenes/UI/Settings/Tabs/MouseKeyboardSettings/RestoreDefaultsSection.cs" id="8_f12w4"]
 
-[node name="MouseKeyboardVBox" type="VBoxContainer" unique_id=417684231 node_paths=PackedStringArray("_keybindListContainer", "_restoreDefaultsButton")]
+[node name="MouseKeyboardVBox" type="VBoxContainer" unique_id=417684231 node_paths=PackedStringArray("_mouseSection", "_keybindListContainer", "_restoreDefaultsButton")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_cxqi7")
+_mouseSection = NodePath("MouseSection")
 _keybindRowScene = ExtResource("2_yley8")
 _keybindListContainer = NodePath("KeyboardSection/KeybindScroll/KeybindList")
 _restoreDefaultsButton = NodePath("RestoreDefaultSection/RestoreDefaultPanelContainer/RestoreDefaultRow/RestoreDefaultButton")
 
-[node name="MouseSection" type="VBoxContainer" parent="." unique_id=209048555]
+[node name="MouseSection" type="VBoxContainer" parent="." unique_id=209048555 node_paths=PackedStringArray("_restoreDefaultsPanel", "_mouseSensitivityPanel", "_adsModePanel", "_sprintModePanel", "_mouseSlider", "_mouseSpinBox", "_adsHoldButton", "_adsToggleButton", "_sprintHoldButton", "_sprintToggleButton")]
 layout_mode = 2
 theme_override_constants/separation = 14
+script = ExtResource("3_get3x")
+_restoreDefaultsPanel = NodePath("../RestoreDefaultSection/RestoreDefaultPanelContainer")
+_mouseSensitivityPanel = NodePath("MouseSensitivityPanelContainer")
+_adsModePanel = NodePath("ADSModePanelContainer")
+_sprintModePanel = NodePath("SprintModePanelContainer")
+_mouseSlider = NodePath("MouseSensitivityPanelContainer/MouseSensitivityRow/MouseSlider")
+_mouseSpinBox = NodePath("MouseSensitivityPanelContainer/MouseSensitivityRow/MouseSpinBox")
+_adsHoldButton = NodePath("ADSModePanelContainer/ADSModeRow/HoldButton")
+_adsToggleButton = NodePath("ADSModePanelContainer/ADSModeRow/ToggleButton")
+_sprintHoldButton = NodePath("SprintModePanelContainer/SprintModeRow/HoldButton")
+_sprintToggleButton = NodePath("SprintModePanelContainer/SprintModeRow/ToggleButton")
 
 [node name="MouseHeader" type="Label" parent="MouseSection" unique_id=1357003090]
 layout_mode = 2
@@ -31,6 +52,7 @@ theme_override_styles/panel = ExtResource("3_cxqi7")
 
 [node name="MouseSensitivityRow" type="HBoxContainer" parent="MouseSection/MouseSensitivityPanelContainer" unique_id=412190003]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 24
 
 [node name="Label" type="Label" parent="MouseSection/MouseSensitivityPanelContainer/MouseSensitivityRow" unique_id=448064980]
@@ -47,6 +69,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.25
+mouse_filter = 2
 max_value = 10.0
 step = 0.01
 value = 0.65
@@ -54,6 +77,7 @@ value = 0.65
 [node name="MouseSpinBox" type="SpinBox" parent="MouseSection/MouseSensitivityPanelContainer/MouseSensitivityRow" unique_id=1834972881]
 custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
+mouse_filter = 2
 max_value = 10.0
 step = 0.01
 value = 0.65
@@ -184,9 +208,13 @@ size_flags_horizontal = 3
 custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 
-[node name="RestoreDefaultSection" type="VBoxContainer" parent="." unique_id=605606788]
+[node name="RestoreDefaultSection" type="VBoxContainer" parent="." unique_id=605606788 node_paths=PackedStringArray("_mouseSettingsSection", "_restoreDefaultsButton", "_restoreDefaultPanel")]
 layout_mode = 2
 theme_override_constants/separation = 14
+script = ExtResource("8_f12w4")
+_mouseSettingsSection = NodePath("../MouseSection")
+_restoreDefaultsButton = NodePath("RestoreDefaultPanelContainer/RestoreDefaultRow/RestoreDefaultButton")
+_restoreDefaultPanel = NodePath("RestoreDefaultPanelContainer")
 
 [node name="RestorDefaultHeader" type="Label" parent="RestoreDefaultSection" unique_id=179497564]
 layout_mode = 2

@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://n5gsrq6nbc4y"]
 
 [ext_resource type="PackedScene" uid="uid://d3ayo3eli11e3" path="res://Scenes/UI/Settings/Tabs/GameplayVBox.tscn" id="1_8fkpw"]
-[ext_resource type="PackedScene" uid="uid://5c7lm1nu0f03" path="res://Scenes/UI/Settings/Tabs/MouseKeyboardVBox.tscn" id="2_bg6lj"]
-[ext_resource type="PackedScene" uid="uid://r27nbhkielab" path="res://Scenes/UI/Settings/Tabs/ControllerVBox.tscn" id="3_k530t"]
+[ext_resource type="PackedScene" uid="uid://5c7lm1nu0f03" path="res://Scenes/UI/Settings/Tabs/MouseKeyboardSettings/MouseKeyboardVBox.tscn" id="2_bg6lj"]
+[ext_resource type="PackedScene" uid="uid://r27nbhkielab" path="res://Scenes/UI/Settings/Tabs/ControllerSettings/ControllerVBox.tscn" id="3_k530t"]
+[ext_resource type="PackedScene" uid="uid://dxjioqsuwxu15" path="res://Scenes/UI/Settings/Tabs/VideoSettings/VideoVBox.tscn" id="4_bg6lj"]
+[ext_resource type="Script" uid="uid://b25h8w62jknnf" path="res://Data/DescriptionPanel.cs" id="5_k530t"]
+[ext_resource type="PackedScene" uid="uid://c75bdy6ghtu8s" path="res://Scenes/UI/Settings/Tabs/AudioSettings/AudioVBox.tscn" id="5_r2i7v"]
 
 [node name="SettingsMenu" type="CanvasLayer" unique_id=1523625903]
 
@@ -65,7 +68,7 @@ text = "Controller"
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 28
-text = "VideoButton"
+text = "Video"
 
 [node name="AudioButton" type="Button" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/TabHeaderHBox" unique_id=2079240098]
 layout_mode = 2
@@ -99,20 +102,34 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="ControllerVBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GamplayMouseControllerVideoAudioTab/MarginContainer" unique_id=417684231 instance=ExtResource("3_k530t")]
-visible = false
+[node name="ControllerVBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GamplayMouseControllerVideoAudioTab/MarginContainer" unique_id=417684231 node_paths=PackedStringArray("_descriptionPanel") instance=ExtResource("3_k530t")]
 layout_mode = 2
+_descriptionPanel = NodePath("../../../../DescriptionPanel")
 
 [node name="GameplayVBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GamplayMouseControllerVideoAudioTab/MarginContainer" unique_id=1348531777 instance=ExtResource("1_8fkpw")]
 visible = false
 layout_mode = 2
 
-[node name="MouseKeyboardVBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GamplayMouseControllerVideoAudioTab/MarginContainer" unique_id=1940568945 instance=ExtResource("2_bg6lj")]
+[node name="MouseKeyboardVBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GamplayMouseControllerVideoAudioTab/MarginContainer" unique_id=1940568945 node_paths=PackedStringArray("_descriptionPanel") instance=ExtResource("2_bg6lj")]
+visible = false
+layout_mode = 2
+_descriptionPanel = NodePath("../../../../DescriptionPanel")
+
+[node name="VideoVBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GamplayMouseControllerVideoAudioTab/MarginContainer" unique_id=890887796 node_paths=PackedStringArray("_descriptionPanel") instance=ExtResource("4_bg6lj")]
+visible = false
+layout_mode = 2
+_descriptionPanel = NodePath("../../../../DescriptionPanel")
+
+[node name="AudioVBox" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/ContentTabContainer/GamplayMouseControllerVideoAudioTab/MarginContainer" unique_id=1408963366 instance=ExtResource("5_r2i7v")]
+visible = false
 layout_mode = 2
 
-[node name="DescriptionPanel" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox" unique_id=1974657218]
+[node name="DescriptionPanel" type="PanelContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox" unique_id=1974657218 node_paths=PackedStringArray("_descriptionTitle", "_descriptionBody")]
 layout_mode = 2
 size_flags_horizontal = 3
+script = ExtResource("5_k530t")
+_descriptionTitle = NodePath("MarginContainer/DescriptionVBox/DescriptionTitle")
+_descriptionBody = NodePath("MarginContainer/DescriptionVBox/DescriptionBody")
 
 [node name="MarginContainer" type="MarginContainer" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/DescriptionPanel" unique_id=1697649993]
 layout_mode = 2
@@ -127,11 +144,12 @@ layout_mode = 2
 [node name="DescriptionTitle" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/DescriptionPanel/MarginContainer/DescriptionVBox" unique_id=837753741]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 24
 text = "DescriptionTitle"
 
 [node name="DescriptionBody" type="Label" parent="Background/MarginContainer/MenuAspectFrame/PanelContainer/OuterMarginContainer/MainVBox/ContentHBox/DescriptionPanel/MarginContainer/DescriptionVBox" unique_id=1616446871]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 20
 text = "DescriptionBody"
 autowrap_mode = 3

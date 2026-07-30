@@ -18,7 +18,7 @@ public partial class CameraController : Node
 
     [ExportGroup("View Settings")]
     [Export] public Camera3D TargetCamera { get; set; }
-    [Export] public float FieldOfView { get; set; } = 75.0f;
+    [Export] public float FieldOfView { get; set; } = 90.0f;
 
     private Vector2 _currentControllerLook;
     private float _headbobTime = 0.0f;
@@ -105,5 +105,16 @@ public partial class CameraController : Node
         float blend = 1.0f - Mathf.Pow(0.5f, delta * Mathf.Max(1.0f, lerpSpeed));
         rot.Z = Mathf.Lerp(rot.Z, targetRollRadians, blend);
         Camera.Rotation = rot;
+    }
+
+    public void SetMouseSensitivityFromUI(float uiValue)
+    {
+        // Converts a UI slider value (e.g. 1.0 to 100.0) down to raw look speed
+        LookSensitivity = uiValue * 0.0001f; 
+    }
+
+    public void SetControllerSensitivityFromUI(float uiValue)
+    {
+        ControllerLookSensitivity = uiValue * 0.001f;
     }
 }

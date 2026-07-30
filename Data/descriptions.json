@@ -1,0 +1,110 @@
+{
+  "en": {
+    "default_hover": {
+      "title": "",
+      "body": "Hover over a setting to view details."
+    },
+    "fov": {
+      "title": "Field of View",
+      "body": "Adjusts the camera's horizontal view angle in degrees. Higher values provide a wider perspective."
+    },
+    "brightness": {
+      "title": "Brightness",
+      "body": "Controls overall scene lighting exposure without affecting contrast."
+    },
+    "aspect_ratio": {
+      "title": "Aspect Ratio",
+      "body": "Sets the aspect ratio matching your monitor (e.g., 16:9, 21:9)."
+    },
+    "resolution": {
+      "title": "Resolution",
+      "body": "Sets the rendered display resolution for the game window."
+    },
+    "unlimited_fps": {
+      "title": "Unlimited FPS",
+      "body": "Uncaps frame rate limits for maximum performance."
+    },
+    "max_fps": {
+      "title": "Max FPS",
+      "body": "Limits maximum frame rate to reduce GPU load and prevent screen tearing."
+    },
+    "restore_defaults": {
+      "title": "Restore Defaults",
+      "body": "Resets all settings in this tab back to their original default values."
+    },
+    "mouse_sensitivity": {
+      "title": "Mouse Sensitivity",
+      "body": "Adjusts camera turning speed when moving the mouse."
+    },
+    "controller_look_sensitivity": {
+      "title": "Look Sensitivity",
+      "body": "Adjusts camera turning speed when moving the controller right stick."
+    },
+    "ads_mode": {
+      "title": "Aim Down Sights Mode",
+      "body": "Choose whether aiming requires holding the button or toggling it on and off."
+    },
+    "sprint_mode": {
+      "title": "Sprint Mode",
+      "body": "Choose whether sprinting requires holding the button or toggling it on and off."
+    },
+    "crouch_mode": {
+      "title": "Crouch Mode",
+      "body": "Choose whether crouching requires holding the button or toggling it on and off."
+    }
+  },
+  "ru": {
+    "default_hover": {
+      "title": "",
+      "body": "Наведите курсор на настройку, чтобы увидеть описание."
+    },
+    "fov": {
+      "title": "Угол обзора (FOV)",
+      "body": "Настраивает горизонтальный угол обзора камеры в градусах. Высокие значения расширяют видимую область."
+    },
+    "brightness": {
+      "title": "Яркость",
+      "body": "Управляет общей экспозицией освещения сцены без изменения контрастности."
+    },
+    "aspect_ratio": {
+      "title": "Соотношение сторон",
+      "body": "Задает соотношение сторон экрана под ваш монитор (например, 16:9, 21:9)."
+    },
+    "resolution": {
+      "title": "Разрешение",
+      "body": "Устанавливает разрешение отображения игры."
+    },
+    "unlimited_fps": {
+      "title": "Безлимитный FPS",
+      "body": "Снимает ограничение частоты кадров для максимальной производительности."
+    },
+    "max_fps": {
+      "title": "Макс. FPS",
+      "body": "Ограничивает частоту кадров, чтобы снизить нагрузку на видеокарту и убрать разрывы экрана."
+    },
+    "restore_defaults": {
+      "title": "Сброс настроек",
+      "body": "Возвращает все настройки в этой вкладке к исходным значениям по умолчанию."
+    },
+    "mouse_sensitivity": {
+      "title": "Чувствительность мыши",
+      "body": "Регулирует скорость вращения камеры при движении мыши."
+    },
+    "controller_look_sensitivity": {
+      "title": "Чувствительность обзора",
+      "body": "Регулирует скорость вращения камеры при движении правого стика геймпада."
+    },
+    "ads_mode": {
+      "title": "Режим прицеливания",
+      "body": "Выберите, нужно ли удерживать кнопку для прицеливания или переключать её нажатием."
+    },
+    "sprint_mode": {
+      "title": "Режим бега",
+      "body": "Выберите, нужно ли удерживать кнопку для бега или переключать её нажатием."
+    },
+    "crouch_mode": {
+      "title": "Режим приседания",
+      "body": "Выберите, нужно ли удерживать кнопку для приседания или переключать её нажатием."
+    }
+  }
+}
