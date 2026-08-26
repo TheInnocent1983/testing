@@ -14,6 +14,10 @@ config/name="testing"
 run/main_scene="uid://gh5qvt4t6e3k"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 
+[autoload]
+
+HighLevelNetworkHandler="*res://Scripts/Network/HighLevelNetworkHandler.cs"
+
 [display]
 
 window/size/viewport_width=1600
