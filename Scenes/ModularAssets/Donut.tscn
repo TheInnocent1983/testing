@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://2gwe06klbh62"]
+
+[ext_resource type="PackedScene" uid="uid://ddy4sxgquuwrk" path="res://Assets/ModularAssets/Mesh/Donut.glb" id="1_585l3"]
+[ext_resource type="Texture2D" uid="uid://bt47cp7uh6hmg" path="res://Assets/ModularAssets/Textures/Concrete_Diffuse.png" id="2_8iu0w"]
+[ext_resource type="Texture2D" uid="uid://bmupkkh4mspjd" path="res://Assets/ModularAssets/Textures/Concrete_NormalGL.png" id="3_nbd0y"]
+[ext_resource type="Texture2D" uid="uid://m6rucf2wjhm2" path="res://Assets/ModularAssets/Textures/Concrete_Roughness.png" id="4_2dlym"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jsiqr"]
+albedo_texture = ExtResource("2_8iu0w")
+roughness_texture = ExtResource("4_2dlym")
+normal_enabled = true
+normal_texture = ExtResource("3_nbd0y")
+
+[node name="Donut2" unique_id=1852093045 instance=ExtResource("1_585l3")]
+
+[node name="Donut" parent="." index="0" unique_id=1023481970]
+material_override = SubResource("StandardMaterial3D_jsiqr")

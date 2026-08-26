@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://degp5hqn76isd"]
+
+[ext_resource type="PackedScene" uid="uid://c2g0n81m2op7f" path="res://Assets/ModularAssets/Mesh/Column.glb" id="1_m2s3x"]
+[ext_resource type="Texture2D" uid="uid://bt47cp7uh6hmg" path="res://Assets/ModularAssets/Textures/Concrete_Diffuse.png" id="2_n8djn"]
+[ext_resource type="Texture2D" uid="uid://bmupkkh4mspjd" path="res://Assets/ModularAssets/Textures/Concrete_NormalGL.png" id="3_u8la4"]
+[ext_resource type="Texture2D" uid="uid://m6rucf2wjhm2" path="res://Assets/ModularAssets/Textures/Concrete_Roughness.png" id="4_8tfii"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vm0qg"]
+albedo_texture = ExtResource("2_n8djn")
+roughness_texture = ExtResource("4_8tfii")
+normal_enabled = true
+normal_texture = ExtResource("3_u8la4")
+
+[node name="Column2" unique_id=1542896828 instance=ExtResource("1_m2s3x")]
+
+[node name="Column" parent="." index="0" unique_id=379126550]
+material_override = SubResource("StandardMaterial3D_vm0qg")

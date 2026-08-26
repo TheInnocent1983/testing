@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://50f4k6h3kjq1"]
+
+[ext_resource type="PackedScene" uid="uid://c3m6nrjas7ykf" path="res://Assets/ModularAssets/Mesh/Cylinder.glb" id="1_jsiqr"]
+[ext_resource type="Texture2D" uid="uid://bt47cp7uh6hmg" path="res://Assets/ModularAssets/Textures/Concrete_Diffuse.png" id="2_pmoid"]
+[ext_resource type="Texture2D" uid="uid://bmupkkh4mspjd" path="res://Assets/ModularAssets/Textures/Concrete_NormalGL.png" id="3_8t2d3"]
+[ext_resource type="Texture2D" uid="uid://m6rucf2wjhm2" path="res://Assets/ModularAssets/Textures/Concrete_Roughness.png" id="4_apn4t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_odvjy"]
+albedo_texture = ExtResource("2_pmoid")
+roughness_texture = ExtResource("4_apn4t")
+normal_enabled = true
+normal_texture = ExtResource("3_8t2d3")
+
+[node name="Cylinder2" unique_id=1368751725 instance=ExtResource("1_jsiqr")]
+
+[node name="Cylinder" parent="." index="0" unique_id=885378412]
+material_override = SubResource("StandardMaterial3D_odvjy")
