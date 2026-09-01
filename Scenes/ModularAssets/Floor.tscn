@@ -1,28 +1,28 @@
-[gd_scene format=4 uid="uid://bbgnqlfopicgw"]
+[gd_scene format=4 uid="uid://bagtfscv8kpy3"]
 
-[ext_resource type="Texture2D" uid="uid://bt47cp7uh6hmg" path="res://Assets/ModularAssets/Textures/Concrete_Diffuse.png" id="2_txnrl"]
-[ext_resource type="Texture2D" uid="uid://bmupkkh4mspjd" path="res://Assets/ModularAssets/Textures/Concrete_NormalGL.png" id="3_m6i4i"]
-[ext_resource type="Texture2D" uid="uid://m6rucf2wjhm2" path="res://Assets/ModularAssets/Textures/Concrete_Roughness.png" id="4_ddnlw"]
-[ext_resource type="Texture2D" uid="uid://c6owp77ieetvw" path="res://Assets/ModularAssets/Mesh/Wall_Concrete_Diffuse.png" id="4_x78l3"]
-[ext_resource type="Texture2D" uid="uid://dnslepuapxwno" path="res://Assets/ModularAssets/Mesh/Wall_Concrete_Roughness.png" id="5_lv03v"]
-[ext_resource type="Texture2D" uid="uid://ct571k3ptoc8g" path="res://Assets/ModularAssets/Mesh/Wall_Concrete_NormalGL.png" id="6_dnwo5"]
+[ext_resource type="Texture2D" uid="uid://bt47cp7uh6hmg" path="res://Assets/ModularAssets/Textures/Concrete_Diffuse.png" id="1_a2iim"]
+[ext_resource type="Texture2D" uid="uid://bmupkkh4mspjd" path="res://Assets/ModularAssets/Textures/Concrete_NormalGL.png" id="2_cepsm"]
+[ext_resource type="Texture2D" uid="uid://m6rucf2wjhm2" path="res://Assets/ModularAssets/Textures/Concrete_Roughness.png" id="3_g2u14"]
+[ext_resource type="Texture2D" uid="uid://c6owp77ieetvw" path="res://Assets/ModularAssets/Mesh/Wall_Concrete_Diffuse.png" id="4_ce4gx"]
+[ext_resource type="Texture2D" uid="uid://dnslepuapxwno" path="res://Assets/ModularAssets/Mesh/Wall_Concrete_Roughness.png" id="5_kbhhw"]
+[ext_resource type="Texture2D" uid="uid://ct571k3ptoc8g" path="res://Assets/ModularAssets/Mesh/Wall_Concrete_NormalGL.png" id="6_gabkb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r53j8"]
-albedo_texture = ExtResource("2_txnrl")
-roughness_texture = ExtResource("4_ddnlw")
+albedo_texture = ExtResource("1_a2iim")
+roughness_texture = ExtResource("3_g2u14")
 normal_enabled = true
-normal_texture = ExtResource("3_m6i4i")
+normal_texture = ExtResource("2_cepsm")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3jg3e"]
 resource_name = "Concrete"
 cull_mode = 2
-albedo_texture = ExtResource("4_x78l3")
-metallic_texture = ExtResource("5_lv03v")
+albedo_texture = ExtResource("4_ce4gx")
+metallic_texture = ExtResource("5_kbhhw")
 metallic_texture_channel = 2
-roughness_texture = ExtResource("5_lv03v")
+roughness_texture = ExtResource("5_kbhhw")
 roughness_texture_channel = 1
 normal_enabled = true
-normal_texture = ExtResource("6_dnwo5")
+normal_texture = ExtResource("6_gabkb")
 metadata/_gltf_primary_texture_coord = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ir6mv"]
@@ -60,10 +60,9 @@ shadow_mesh = SubResource("ArrayMesh_ir6mv")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6jihl"]
 points = PackedVector3Array(-1, 0, -0.099999964, -1, 0, 0.099999964, -1, 4, -0.099999964, 1, 0, -0.099999964, 1, 0, 0.099999964, -1, 4, 0.099999964, 1, 4, -0.099999964, 1, 4, 0.099999964)
 
-[node name="Wall2" type="Node3D" unique_id=1723916868]
+[node name="Floor" type="Node3D" unique_id=1723916868]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1369965385]
-collision_layer = 3
 
 [node name="Wall" type="MeshInstance3D" parent="StaticBody3D" unique_id=1142765739]
 material_override = SubResource("StandardMaterial3D_r53j8")

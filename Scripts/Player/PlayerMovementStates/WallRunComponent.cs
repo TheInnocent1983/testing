@@ -10,7 +10,7 @@ public partial class WallRunComponent : Node
 
 	// Layer 10 bitvalue is 512 (1 << 9)
     [Export(PropertyHint.Layers3DPhysics)]
-    public uint WallCollisionMask { get; set; } = 512;
+    public uint WallCollisionMask { get; set; } = 2;
 
     [ExportGroup("Wall Run")]
     [Export] public float WallRunTime { get; set; } = 1.4f;      // How long one wall holds you before it lets go
