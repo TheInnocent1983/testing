@@ -15,7 +15,7 @@ sky_material = SubResource("ProceduralSkyMaterial_ti8w2")
 
 [sub_resource type="Environment" id="Environment_rj7n6"]
 background_mode = 2
-background_energy_multiplier = 1.5
+background_energy_multiplier = 3.0
 sky = SubResource("Sky_t1ekm")
 glow_enabled = true
 glow_intensity = 0.5
@@ -76,6 +76,12 @@ transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 4,
 [node name="Wall9" parent="." unique_id=390363661 instance=ExtResource("2_6l41j")]
 transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 4, 0.25917903, -33)
 
+[node name="Wall10" parent="." unique_id=1037825327 instance=ExtResource("2_6l41j")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 4, 0.25917903, -91)
+
+[node name="Wall11" parent="." unique_id=618751539 instance=ExtResource("2_6l41j")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2, 0.25917903, -91)
+
 [node name="Floor" parent="." unique_id=1196575077 instance=ExtResource("3_dfntc")]
 transform = Transform3D(12, 0, 0, 0, -5.2453663e-07, 12, 0, -12, -5.2453663e-07, 1, -0.95000005, 8)
 
@@ -84,6 +90,9 @@ transform = Transform3D(12, 0, 0, 0, -5.2453663e-07, 12, 0, -12, -5.2453663e-07,
 
 [node name="Floor2" parent="." unique_id=1871966685 instance=ExtResource("3_dfntc")]
 transform = Transform3D(12, 0, 0, 0, -5.2453663e-07, 12, 0, -12, -5.2453663e-07, 1, -0.95000005, -40)
+
+[node name="Floor4" parent="." unique_id=1060478415 instance=ExtResource("3_dfntc")]
+transform = Transform3D(12, 0, 0, 0, -5.2453663e-07, 12, 0, -12, -5.2453663e-07, 1, -0.95000005, -88)
 
 [node name="CurvedWall2" parent="." unique_id=396637125 instance=ExtResource("4_h378h")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.2249999, 0.25, -50)
