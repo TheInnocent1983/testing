@@ -1,0 +1,59 @@
+{
+  "$id": "1",
+  "Resolution": 1024,
+  "NodeCount": 8,
+  "Result": "AlreadyBuilt",
+  "StartTime": "2026-09-08T03:41:06.0882748-07:00",
+  "EndTime": "2026-09-08T03:41:17.1356644-07:00",
+  "Duration": "00:00:11.0473896",
+  "SecondsTaken": {
+    "$id": "2",
+    "$values": [
+      {
+        "$id": "3",
+        "Item1": "MountainRange",
+        "Item2": "00:00:01.6790000"
+      },
+      {
+        "$id": "4",
+        "Item1": "SatMap",
+        "Item2": "00:00:00.0700000"
+      },
+      {
+        "$id": "5",
+        "Item1": "Thermal",
+        "Item2": "00:00:00.7550000"
+      },
+      {
+        "$id": "6",
+        "Item1": "Mesher"
+      },
+      {
+        "$id": "7",
+        "Item1": "Slope",
+        "Item2": "00:00:00.0770000"
+      },
+      {
+        "$id": "8",
+        "Item1": "Adjust",
+        "Item2": "00:00:00.0020000"
+      },
+      {
+        "$id": "9",
+        "Item1": "Occlusion",
+        "Item2": "00:00:00.0440000"
+      },
+      {
+        "$id": "10",
+        "Item1": "Normals",
+        "Item2": "00:00:00.0740000"
+      }
+    ]
+  },
+  "FastestNode": {
+    "$ref": "6"
+  },
+  "SlowestNode": {
+    "$ref": "3"
+  }
+}

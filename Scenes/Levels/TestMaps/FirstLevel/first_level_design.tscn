@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://citu4suqg8da4"]
+
+[ext_resource type="PackedScene" uid="uid://djvuxf7x1kfxe" path="res://Scenes/Levels/TestMaps/FirstLevelDesign.glb" id="1_vcax3"]
+[ext_resource type="Texture2D" uid="uid://cua4lr6q6aubc" path="res://Scenes/Levels/TestMaps/Terrain/BaseColor.png" id="2_5l6mt"]
+[ext_resource type="Texture2D" uid="uid://bhb1vjvkmxhpd" path="res://Scenes/Levels/TestMaps/Terrain/AmbientOcclusion.png" id="3_oepxu"]
+[ext_resource type="Texture2D" uid="uid://chvhu2fttpbvm" path="res://Scenes/Levels/TestMaps/Terrain/NormalMap.png" id="4_vtutw"]
+[ext_resource type="Texture2D" uid="uid://xj258duhv4b4" path="res://Scenes/Levels/TestMaps/Terrain/Roughness_Bottom.png" id="5_fixv2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tkeqv"]
+albedo_texture = ExtResource("2_5l6mt")
+roughness_texture = ExtResource("5_fixv2")
+normal_enabled = true
+normal_texture = ExtResource("4_vtutw")
+ao_enabled = true
+ao_texture = ExtResource("3_oepxu")
+
+[node name="FirstLevelDesign" unique_id=255581637 instance=ExtResource("1_vcax3")]
+
+[node name="MountainTerrain" parent="." index="13" unique_id=417156217]
+material_override = SubResource("StandardMaterial3D_tkeqv")

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://qq8b2jd3dqd1"]
+
+[ext_resource type="PackedScene" uid="uid://citu4suqg8da4" path="res://Scenes/Levels/TestMaps/FirstLevel/first_level_design.tscn" id="1_7lccg"]
+[ext_resource type="PackedScene" uid="uid://bw8o0no4p618w" path="res://Scenes/Entities/Player/FPSController.tscn" id="2_qu7cd"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7lccg"]
+sky_horizon_color = Color(0.6404854, 0.68019927, 0.6920289, 1)
+ground_bottom_color = Color(0.10741966, 0.19727507, 0.14859328, 1)
+ground_horizon_color = Color(0.6404854, 0.68019927, 0.6920289, 1)
+
+[sub_resource type="Sky" id="Sky_qu7cd"]
+sky_material = SubResource("ProceduralSkyMaterial_7lccg")
+
+[sub_resource type="Environment" id="Environment_d5b22"]
+background_mode = 2
+sky = SubResource("Sky_qu7cd")
+glow_enabled = true
+
+[node name="Node3D" type="Node3D" unique_id=1438343826]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=552404890]
+environment = SubResource("Environment_d5b22")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1437875987]
+transform = Transform3D(-0.7649215, -0.5276351, 0.3694541, 0, 0.5735764, 0.81915206, -0.64412355, 0.626587, -0.4387409, 0, 0, 0)
+shadow_enabled = true
+
+[node name="FirstLevelDesign" parent="." unique_id=255581637 instance=ExtResource("1_7lccg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17949581, 2.3841858e-07, -0.76861477)
+
+[node name="CharacterBody3D" parent="." unique_id=2009058340 instance=ExtResource("2_qu7cd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05514252, 1.4066696e-05, 0.88364506)

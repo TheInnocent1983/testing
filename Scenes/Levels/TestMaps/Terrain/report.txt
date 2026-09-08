@@ -1,0 +1,37 @@
+
+──────────────────────────────────────────────────────────────────────────────────────────  GAEA BUILD SWARM  2.3.0.1 ──
+
+                                                                                       
+          Filename:  │ D:/Gaea3/Projects/Presets/MountainTerrain.terrain               
+    Build Location:  │ C:\Users\TheInnocent\Documents\Gaea\Builds\MountainTerrain\010  
+        Build Type:  │ Standard                                                        
+  Build Resolution:  │ 1024 × 1024                                                     
+     Build Profile:  │ None / Last Saved Settings                                      
+             Nodes:  │ 08 to build                                                     
+                     │ 06 to export                                                    
+                                                                                       
+
+──────────────────────────────────────────────────────────────────────────────────────────  GAEA BUILD SWARM  2.3.0.1 ──
+
+                                                                                       
+          Filename:  │ D:/Gaea3/Projects/Presets/MountainTerrain.terrain               
+    Build Location:  │ C:\Users\TheInnocent\Documents\Gaea\Builds\MountainTerrain\010  
+        Build Type:  │ Standard                                                        
+  Build Resolution:  │ 1024 × 1024                                                     
+     Build Profile:  │ None / Last Saved Settings                                      
+             Nodes:  │ 08 to build                                                     
+                     │ 06 to export                                                    
+                                                                                       
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────── Build Report ──
+
+              Build Results                                  Statistics                   
+                                                                                          
+          Result: │ AlreadyBuilt             MountainRange │ 0:00:01.679                  
+      Resolution: │ 1024                           Thermal │ 0:00:00.755                  
+      Node Count: │ 8                                      │                              
+      Start Time: │ 09/08/2026 03:41:06            Fastest │ Mesher @ 0:00:00             
+        End Time: │ 09/08/2026 03:41:17            Slowest │ MountainRange @ 0:00:01.679  
+        Duration: │ 00:00:11.0473896                                                      
+  Non-Build Time: │ 00:00:08.3463896           * nodes that took <100ms are excluded.     
+                                                                                          
